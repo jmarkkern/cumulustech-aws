@@ -1,11 +1,37 @@
+/*CAROSEL LEADERBOARD*/
+.containerLeaderboard1{
+    height: 100vh;
+    display: grid;
+    background-color: #87b3ff;
+    grid-template-columns: 1fr ;
+    grid-template-rows: .3fr .5fr 1fr 1fr ;
+}
+.containerLeaderboard2{
+    height: 100vh;
+    display: grid;
+    background-color: #afd4ab;
+    grid-template-columns: 1fr ;
+    grid-template-rows: .3fr .5fr 1fr 1fr ;
+}
+.containerLeaderboard3{
+    height: 100vh;
+    display: grid;
+    background-color: #cebc8f;
+    grid-template-columns: 1fr ;
+    grid-template-rows: .3fr .5fr 1fr 1fr ;
+}
 
-/*main page */
+
+
+
+/*AGENT LEADERBOARD*/
+/*main page*/
 body {
     margin: 0;
     padding: 0;
   }
   
-.container{
+.containerAgentLeaderboard{
     height: 100vh;
     display: grid;
     grid-template-columns: .5fr 2fr 4fr ;
