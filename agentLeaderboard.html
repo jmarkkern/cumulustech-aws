@@ -1,0 +1,67 @@
+
+<!-- page1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Page 1</title>
+</head>
+<body>
+
+  <div class="container">
+
+
+    <div class="item nav_bar ">
+    <!-- //wrap in anchor tag if its supposed to take us somewhere-->
+    <img class="logo" src="assets/imgs/AWS-General_AWS-Cloud_light-bg.svg" alt="AWS Logo">
+    </div>
+
+
+
+
+    <div class="item award">side awards
+    <!-- //use flexbox to put in awards -->
+    </div>
+
+
+
+
+
+
+    <div class="item texts">
+      <h1>Leaderboard</h1>
+
+      <h2><label for="metric">Choose a metric:</label>
+        <select name="metric" id="select_metric">
+            <option value="default">--Select One--</option>
+            <option value="handle_time">Average Handle Time</option>
+            <option value="active_time">Average Active Time</option>
+        </select></h2>
+       
+        <div class="duration_buttons">
+            <button id="allTime" onclick="clickedAllTime()">All Time</button> 
+            <button id="weekly" onclick="clickedWeekly()">This Week</button>
+        </div>      
+    </div>
+
+
+
+
+
+
+
+    <div class="item board">table
+    <!-- //place table here -->
+    </div>
+    
+
+
+  </div>
+  <!--Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!--Javascript-->
+  <script src="agent.js"></script>
+</body>
+</html>

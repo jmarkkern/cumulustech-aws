@@ -1,3 +1,5 @@
+
+/*main page */
 body {
     margin: 0;
     padding: 0;
@@ -6,14 +8,21 @@ body {
 .container{
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 2fr 4fr ;
-    grid-template-rows: .5fr 1fr 1fr 1fr ;
+    grid-template-columns: .5fr 2fr 4fr ;
+    grid-template-rows: .3fr .5fr 1fr 1fr ;
     gap:2px;
 
 }
 
 .item{
     background-color: darkmagenta;
+}
+
+/*nav bar*/
+.logo{
+    margin-top: 1%;
+    margin-left: 1%;
+
 }
 
 .nav_bar{
@@ -32,12 +41,6 @@ body {
     margin-bottom: 0;
 }
 
-.texts{
-    background-color: #d062d7;
-    grid-column: span 2;
-    margin-top: 0%;
-    margin-bottom: 0;
-}
 
 .board{
     background-color: #b05010;
@@ -48,4 +51,64 @@ body {
     margin-bottom: 0;
 }
 
-grid-column-start: span 1;
+/*metric control section*/
+.texts{
+    background-color: #ffffff;
+    grid-column: span 2;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+h1,h2{
+    margin-left:1%; /*1% of the width of the containing element*/
+}
+
+#allTime{
+    background-color: #FF9900;
+    color: azure;
+}
+
+select{
+    border-radius: 5px;
+    height: 30px;
+}
+
+/* duration buttons*/
+.duration_buttons {
+    display: flex;
+    align-items: start;
+    gap: 2px;
+    margin-bottom: 1%;
+  }
+
+#allTime{
+    color:#FFFFFF;
+    width: 70px;
+    height: 37px;
+    margin-left: 1%;
+    background: #FF9900;
+    border: #FF9900;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#allTime:hover{
+    transform: translateY(-4px);
+}
+
+#weekly{
+    color:#FFFFFF;
+    width: 70px;
+    height: 37px;
+    margin-left: 1%;
+    background-color: #37475A;
+    border: #37475A;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+#weekly:hover{
+    transform: translateY(-4px);
+}
+
+
+
