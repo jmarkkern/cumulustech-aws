@@ -1,15 +1,26 @@
 /*CAROSEL LEADERBOARD*/
+
+#carousel-container {
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.5s ease; /* Add transition for smoother slide animation */
+  }
+
+  /* Add a class for left slide animation */
+  .slide-left {
+    transform: translateX(-100%);
+  }
 .containerLeaderboard1{
     height: 100vh;
     display: grid;
-    background-color: #87b3ff;
+    background-color: #ffffff;
     grid-template-columns: 1fr ;
-    grid-template-rows: .3fr .5fr 1fr 1fr ;
+    grid-template-rows: .1fr .1fr 1fr ;
 }
 .containerLeaderboard2{
     height: 100vh;
     display: grid;
-    background-color: #afd4ab;
+    background-color: #ffffff;
     grid-template-columns: 1fr ;
     grid-template-rows: .3fr .5fr 1fr 1fr ;
 }
@@ -20,6 +31,36 @@
     grid-template-columns: 1fr ;
     grid-template-rows: .3fr .5fr 1fr 1fr ;
 }
+.title{
+    display: flex;
+    justify-content: center;
+
+}
+.table{
+    background-color: rgb(255, 255, 255);
+    grid-row-start: 3;
+    grid-row-end: -1;
+}
+table{
+    border-spacing: 20px;
+}
+tr{
+    height: 2rem;
+    padding-bottom: 1%;
+    row-gap: 20px;
+    height: 3rem;
+}
+td {
+    color:white;
+    border: 1px solid #37475A;
+    border-collapse: collapse;
+    background-color:#37475A;
+    border-radius: 10px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+  }
 
 
 
@@ -40,9 +81,7 @@ body {
 
 }
 
-.item{
-    background-color: darkmagenta;
-}
+
 
 /*nav bar*/
 .logo{
