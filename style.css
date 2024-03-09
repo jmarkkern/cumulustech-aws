@@ -36,14 +36,29 @@
     justify-content: center;
 
 }
-.table{
+.table-container{
     background-color: rgb(255, 255, 255);
     grid-row-start: 3;
     grid-row-end: -1;
+    position: relative;
+    top: 2000px;
+    width: 100%;
 }
 table{
     border-spacing: 20px;
-}
+    position: absolute;
+    top: 140px;
+    left: 0;
+    z-index: 1;
+  }
+
+table.table2 {
+    border-spacing: 20px;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    z-index: 1;
+  }
 tr{
     height: 2rem;
     padding-bottom: 1%;
@@ -62,14 +77,14 @@ td {
     padding-left: 30px;
   }
 
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
 
 /*AGENT LEADERBOARD*/
 /*main page*/
