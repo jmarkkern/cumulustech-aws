@@ -1,7 +1,7 @@
-
 <!-- page2.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
@@ -12,22 +12,23 @@
 
 <body>
   <div class="containerLeaderboard1">
-    
+
     <div class="item nav_bar">
-    <!-- //wrap in anchor tag if its supposed to take us somewhere-->
-    <img class="logo" src="assets/imgs/AWS-General_AWS-Cloud_light-bg.svg" alt="AWS Logo">
+      <!-- //wrap in anchor tag if its supposed to take us somewhere-->
+      <img class="logo" src="assets/imgs/AWS-General_AWS-Cloud_light-bg.svg" alt="AWS Logo">
     </div>
 
     <div class="item title">
       <h1>Average Active Time</h1>
     </div>
-    
+
     <div class="item table">
 
       <table class="table2">
         <tr>
-          <td style="width: 1%; background-color: white; border: none;"></td> </td>
-         
+          <td style="width: 1%; background-color: white; border: none;"></td>
+          </td>
+
         </tr>
         <tr>
           <td> 1 </td>
@@ -44,11 +45,11 @@
         <tr>
           <td> 1 </td>
         </tr>
-       
+
       </table>
 
 
-      <table style="width:100%">
+      <table class="table3" style="width:100%">
         <tr>
           <th style="width:5%">Rank</th>
           <th style="width:50%">Pic/Agent</th>
@@ -82,20 +83,25 @@
       </table>
 
     </div>
-
-
-
-
-
-    
+  </div>
   </div>
 
-  
-  
-  
-  
-  
-  
-  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Select all table rows except the first one (skipping the header row)
+      var tableRows = document.querySelectorAll('.table3 tr:not(:first-child)');
+
+      // Iterate through each table row
+      tableRows.forEach(function (row) {
+        // Select the second <td> element within the row (where the name is)
+        var nameCell = row.querySelector('td:nth-child(2)');
+        nameCell.textContent = "Jane"
+        console.log()
+        var statistic = row.querySelector('td:nth-child(3)');
+        statistic.textContent = "2"
+      });
+    });
+  </script>
 </body>
+
 </html>

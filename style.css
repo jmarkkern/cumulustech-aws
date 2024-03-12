@@ -3,39 +3,46 @@
 #carousel-container {
     width: 100vw;
     height: 100vh;
-    transition: transform 0.5s ease; /* Add transition for smoother slide animation */
+    transition: transform 0.5s ease;
+    /* Add transition for smoother slide animation */
 }
+
 /* Add a class for left slide animation */
 .slide-left {
     transform: translateX(-100%);
 }
-.containerLeaderboard1{
+
+.containerLeaderboard1 {
     height: 100vh;
     display: grid;
     background-color: #ffffff;
-    grid-template-columns: 1fr ;
-    grid-template-rows: .1fr .1fr 1fr ;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr 1fr;
 }
-.containerLeaderboard2{
+
+.containerLeaderboard2 {
     height: 100vh;
     display: grid;
     background-color: #ffffff;
-    grid-template-columns: 1fr ;
-    grid-template-rows: .3fr .5fr 1fr 1fr ;
+    grid-template-columns: 1fr;
+    grid-template-rows: .3fr .5fr 1fr 1fr;
 }
-.containerLeaderboard3{
+
+.containerLeaderboard3 {
     height: 100vh;
     display: grid;
     background-color: #cebc8f;
-    grid-template-columns: 1fr ;
-    grid-template-rows: .3fr .5fr 1fr 1fr ;
+    grid-template-columns: 1fr;
+    grid-template-rows: .3fr .5fr 1fr 1fr;
 }
-.title{
+
+.title {
     display: flex;
     justify-content: center;
 
 }
-.table-container{
+
+.table-container {
     background-color: rgb(255, 255, 255);
     grid-row-start: 3;
     grid-row-end: -1;
@@ -43,13 +50,15 @@
     top: 2000px;
     width: 100%;
 }
-table{
+
+table {
     border-spacing: 20px;
     position: absolute;
     top: 140px;
     left: 0;
     z-index: 1;
 }
+
 table.table2 {
     border-spacing: 20px;
     position: absolute;
@@ -57,25 +66,27 @@ table.table2 {
     left: 0;
     z-index: 1;
 }
-tr{
+
+tr {
     height: 2rem;
     padding-bottom: 1%;
     row-gap: 20px;
     height: 3rem;
 }
+
 td {
-    color:white;
+    color: white;
     border: 1px solid #37475A;
     border-collapse: collapse;
-    background-color:#37475A;
+    background-color: #37475A;
     border-radius: 10px;
 
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 30px;
-  }
+}
 
-  
+
 
 
 
@@ -91,40 +102,42 @@ body {
     padding: 0;
     font-family: AmazonEmber, 'Trebuchet MS', sans-serif;
 }
+
 @font-face {
     font-family: AmazonEmber;
     src: url(assets/font/AmazonEmber_Lt.ttf);
 }
+
 @font-face {
     font-family: AmazonEmber;
     src: url(assets/font/AmazonEmber_Bd.ttf);
     font-weight: bold;
 }
-  
-.containerAgentLeaderboard{
+
+.containerAgentLeaderboard {
     height: 100vh;
     display: grid;
-    grid-template-columns: .5fr 2fr 4fr ;
-    grid-template-rows: .3fr .4fr 1fr 1fr ;
-    gap:2px;
+    grid-template-columns: .5fr 2fr 4fr;
+    grid-template-rows: .3fr .4fr 1fr 1fr;
+    gap: 2px;
 
 }
 
 /*nav bar*/
-.logo{
+.logo {
     margin-top: 1%;
     margin-left: 1%;
 
 }
 
-.nav_bar{
+.nav_bar {
     background-color: #232F3E;
     grid-column: span 3;
     margin-top: 0%;
     margin-bottom: 0;
 }
 
-.award{
+.award {
     background-color: #c3cbd9;
     grid-column: span 1;
     grid-row-start: 2;
@@ -134,7 +147,7 @@ body {
 }
 
 
-.board{
+.board {
     background-color: rgb(255, 255, 255);
     grid-column: span 2;
     grid-row-start: 3;
@@ -144,23 +157,25 @@ body {
 }
 
 /*metric control section*/
-.texts{
+.texts {
     background-color: #ffffff;
     grid-column: span 2;
     margin-top: 0%;
     margin-bottom: 0;
 }
 
-h1,h2{
-    margin-left:1%; /*1% of the width of the containing element*/
+h1,
+h2 {
+    margin-left: 1%;
+    /*1% of the width of the containing element*/
 }
 
-#allTime{
+#allTime {
     background-color: #FF9900;
     color: azure;
 }
 
-select{
+select {
     border-radius: 5px;
     height: 30px;
 }
@@ -171,10 +186,10 @@ select{
     align-items: start;
     gap: 2px;
     margin-bottom: 1%;
-  }
+}
 
-#allTime{
-    color:#FFFFFF;
+#allTime {
+    color: #FFFFFF;
     width: 70px;
     height: 37px;
     margin-left: 1%;
@@ -184,12 +199,12 @@ select{
     transition: transform 0.3s ease;
 }
 
-#allTime:hover{
+#allTime:hover {
     transform: translateY(-4px);
 }
 
-#weekly{
-    color:#FFFFFF;
+#weekly {
+    color: #FFFFFF;
     width: 70px;
     height: 37px;
     margin-left: 1%;
@@ -198,9 +213,23 @@ select{
     border-radius: 5px;
     transition: transform 0.3s ease;
 }
-#weekly:hover{
+
+#weekly:hover {
     transform: translateY(-4px);
 }
 
 
+/* ### */
+.table3 td:nth-child(3) {
+    text-align: center;
+}
 
+/* Pic / Agent */
+.table3 td:nth-child(2) {
+    text-align: center;
+}
+
+/* Rank */
+.table3 td:nth-child(1) {
+    text-align: left;
+}

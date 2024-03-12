@@ -1,7 +1,7 @@
-
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,15 @@
   <style>
     body {
       margin: 0;
-      overflow: hidden;    
+      overflow: hidden;
     }
 
     #carousel-container {
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      transition: transform 0.5s ease; /* Add transition for smoother slide animation */
+      transition: transform 0.5s ease;
+      /* Add transition for smoother slide animation */
     }
 
     .slide-left {
@@ -24,8 +25,9 @@
       transform: translateX(-100%);
     }
   </style>
-  
+
 </head>
+
 <body>
   <div id="carousel-container"></div>
   <script>
@@ -45,18 +47,19 @@
 
     function nextSlide() {
       currentIndex = (currentIndex + 1) % pages.length;
-      document.getElementById('carousel-container').classList.add('slide-left'); 
+      document.getElementById('carousel-container').classList.add('slide-left');
       setTimeout(() => { // Delay the page loading to allow the animation to take effect
         loadPage();
-        document.getElementById('carousel-container').classList.remove('slide-left'); 
-      }, 500); 
+        document.getElementById('carousel-container').classList.remove('slide-left');
+      }, 500);
     }
 
     // Initial load
     loadPage();
 
-    // Set interval to switch pages every 3 seconds
+    // Set interval to switch pages every 5 seconds
     setInterval(nextSlide, 5000);
   </script>
 </body>
+
 </html>
