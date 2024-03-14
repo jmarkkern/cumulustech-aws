@@ -1,17 +1,17 @@
 // Carousel.js
 import React, { useState, useEffect } from 'react';
-import Page1 from './Page1.js';
-import Page2 from './Page2.js';
-import Page3 from './Page3.js';
+import Average_Non_Talk_Time from './Average_Non_Talk_Time.js';
+import Average_Active_Time from './Average_Active_Time.js';
+import Average_Handle_Time from './Average_Handle_Time.js';
 
 const Carousel = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const pages = [<Page1 />, <Page2 />, <Page3 />];
+    const pages = [<Average_Non_Talk_Time />, <Average_Active_Time />, <Average_Handle_Time />];
 
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentPage(prevPage => (prevPage + 1) % pages.length);
-        }, 2000);
+        }, 8000); // 1000ms = 1sec
         return () => clearInterval(intervalId);
     }, [pages.length]);
 

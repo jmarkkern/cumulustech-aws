@@ -24,7 +24,6 @@
 
     <div class="item table">
 
-      <!-- table2 is used to cover the gaps, not meant to show data -->
       <table class="table2">
         <tr>
           <td style="width: 1%; background-color: white; border: none;"></td>
@@ -49,8 +48,7 @@
 
       </table>
 
-        <!-- table3 will display the data -->
-        <table class="table3" style="width:100%">
+      <table style="width:100%">
         <tr>
           <th style="width:5%">Rank</th>
           <th style="width:50%">Pic/Agent</th>
@@ -85,24 +83,23 @@
 
     </div>
 
-  </div>
-  </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Select all table rows except the first one (skipping the header row)
-      var tableRows = document.querySelectorAll('.table3 tr:not(:first-child)');
 
-      // Iterate through each table row
-      tableRows.forEach(function (row) {
-        // Select the second <td> element within the row (where the name is)
-        var nameCell = row.querySelector('td:nth-child(2)');
-        nameCell.textContent = "luka"
-        console.log()
-        var statistic = row.querySelector('td:nth-child(3)');
-        statistic.textContent = "1"
-      });
-    });
-  </script>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
 </body>
 
 </html>

@@ -20,7 +20,7 @@
     grid-template-rows: .1fr .1fr 1fr;
 }
 
-.containerLeaderboard2 {
+/* .containerLeaderboard2 {
     height: 100vh;
     display: grid;
     background-color: #ffffff;
@@ -34,7 +34,7 @@
     background-color: #cebc8f;
     grid-template-columns: 1fr;
     grid-template-rows: .3fr .5fr 1fr 1fr;
-}
+} */
 
 .title {
     display: flex;
@@ -46,7 +46,7 @@
     background-color: rgb(255, 255, 255);
     grid-row-start: 3;
     grid-row-end: -1;
-    position: relative;
+    position: absolute;
     top: 2000px;
     width: 100%;
 }
@@ -57,36 +57,23 @@ table {
     top: 140px;
     left: 0;
     z-index: 1;
+
 }
 
-table.table2 {
-    border-spacing: 20px;
-    position: absolute;
-    top: 140px;
-    left: 0;
-    z-index: 1;
-}
 
+
+/* Table rows and Columns Styles */
 tr {
-    height: 2rem;
-    padding-bottom: 1%;
-    row-gap: 20px;
     height: 3rem;
+    /* Set the height for all rows */
 }
 
 td {
     color: white;
-    border: 1px solid #37475A;
-    border-collapse: collapse;
     background-color: #37475A;
-    border-radius: 10px;
-
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 30px;
 }
-
-
 
 
 /*AGENT LEADERBOARD*/
@@ -212,8 +199,9 @@ select {
     transform: translateY(-4px);
 }
 
+
+
 /* Table Styles */
-/* ### */
 .table3 td:nth-child(3) {
     text-align: center;
 }
@@ -226,4 +214,20 @@ select {
 /* Rank */
 .table3 td:nth-child(1) {
     text-align: left;
+}
+
+/* Rows fading in*/
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
