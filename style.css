@@ -121,7 +121,6 @@ body {
 .logo {
     margin-top: 1%;
     margin-left: 1%;
-
 }
 
 .nav_bar {
@@ -129,6 +128,18 @@ body {
     grid-column: span 3;
     margin-top: 0%;
     margin-bottom: 0;
+    padding: 10px;
+}
+
+.nav_bar a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav_bar a.active {
+    font-weight: bolder;
 }
 
 .award {
