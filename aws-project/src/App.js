@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 // import './App.css';
 import './global.css'; // Import global CSS file
 import Carousel from './Carousel';
