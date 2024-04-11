@@ -61,10 +61,11 @@ const Average_Active_Time = () => {
         <div className="containerLeaderboard1">
             <div className="item nav_bar">
                 <img className="logo" src={amazonLogo} alt="AWS Logo" />
+                <div className="item title">
+                    <h1>Average Active Time</h1>
+                </div>
             </div>
-            <div className="item title">
-                <h1>Average Active Time</h1>
-            </div>
+
             <div className="item table">
                 <table className="table3" style={{
                     paddingLeft: '20px', paddingRight: "20px", width: '100%', borderSpacing: '0px 20px'

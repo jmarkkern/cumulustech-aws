@@ -122,6 +122,10 @@ body {
     margin-bottom: 0;
 }
 
+.nav_bar h1 {
+    color: white;
+}
+
 .award {
     background-color: #c3cbd9;
     grid-column: span 1;
@@ -151,10 +155,10 @@ body {
 }
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1920px) {
 
     tr {
-        font-size: 5em;
+        font-size: 4em;
     }
 
 }
