@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Navig Bar*/
+.logo {
+  margin-top: 1%;
+  margin-left: 1%;
+
+}
+
+.nav_bar {
+  background-color: #232F3E;
+  grid-column: span 3;
+  margin-top: 0%;
+  margin-bottom: 0;
+}
+
+
+
+
+
+/* Sub Navigation */
+.supervisor_links{
+  display: flex;
+  justify-content: left;
+  gap: 30px;
+  
+  background-color: #37475A;
+
+}
+
+.supervisor_links > a{
+  text-decoration: none;
+  color: aliceblue;
+  margin-bottom: 3px;
+  margin-left: 8px;
+
+}
