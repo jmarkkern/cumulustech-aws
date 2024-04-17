@@ -28,9 +28,6 @@ code {
 }
 
 
-
-
-
 /* Sub Navigation */
 .supervisor_links{
   display: flex;
@@ -76,11 +73,133 @@ code {
 }
 
 #navbar.nav_bar {
-  background-color: #36495f /* Change to the desired background color */
+  background-color: #36495f 
 }
 
 #navbar.nav_bar a:hover {
   text-decoration: underline;
   text-decoration-color: white; /* Set the color of the underline */
+}
+
+.super-button {
+  background-color: #FFA500;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Move the button down */
+  margin-left: 110px; /* Move the button to the right */
+  text-decoration: underline; 
+ 
+}
+
+.settings-icon {
+  position: absolute;
+  top: 138px; /* Adjust as needed */
+  left: calc(230px + 20px); /* 110px (margin-left of .super-button) + 20px (padding-right of .super-button) */
+  font-size: 70px; /* Increase icon size */
+  color: grey; 
+}
+
+/* Container for the row */
+.row {
+  display: flex; /* Arrange children in a row */
+  align-items: center; /* Vertically center elements */
+  background-color: #fff; /* White background */
+}
+
+/* Dropdown styles (customize as needed) */
+select {
+  margin: 0 10px; /* Add spacing between dropdowns */
+  font-size: 14px;
+  /* Add other styles (e.g., border, padding) */
+}
+
+
+
+#compare {
+  font-size: 20px;
+  text-color: black;
+  text-decoration: underline;
+
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text within the row */
+  margin-top: 50px; /* Move the button down */
+}
+
+/* Style for the Comparison span */
+#compare {
+  font-size: 20px; 
+  color: black; 
+  text-decoration: underline; 
+  margin-right: 10px; /* Add space between Comparison span and select elements */
+}
+
+/* Style for the select elements */
+.row select {
+  margin: 0 5px; /* Add space between select elements */
+}
+
+/* Button styles */
+.update-button {
+  background-color: #FFA500;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Move the button down */
+  margin-left: 1200px; /* Move the button to the right */
+  text-decoration: underline; 
+}
+
+
+
+#myCheckbox {
+  background-color: #FFA500;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Move the button down */
+  margin-left: 1770px; /* Move the button to the right */
+  text-decoration: underline; 
+
+}
+
+
+.container {
+  display: flex;
+  margin-left: 800px;
+  margin-top: 100px;
+}
+
+.card,
+.trophy,
+.card2 {
+   
+ margin: 0 5px; /* Add spacing between the images */
 }
 
