@@ -158,9 +158,9 @@ body {
 }
 
 .agentDashNum {
-    font-size: 64px;
+    font-size: 48px;
     font-weight: bold;
-    margin: 0;
+    margin: 12px 0;
 }
 
 .agentDashProg {
