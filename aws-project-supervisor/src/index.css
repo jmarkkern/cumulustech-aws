@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -28,16 +34,14 @@ code {
 }
 
 
+
 /* Sub Navigation */
 .supervisor_links{
   display: flex;
   justify-content: left;
   gap: 30px;
-  
   background-color: #37475A;
-
 }
-
 .supervisor_links > a{
   text-decoration: none;
   color: aliceblue;
@@ -45,43 +49,151 @@ code {
   margin-left: 8px;
 
 }
-
-
-/*nav bar*/
-.logo {
-  margin-top: 1%;
-  margin-left: 1%;
-}
-
-.nav_bar {
-  background-color: #232F3E;
-  grid-column: span 3;
-  margin-top: 0%;
-  margin-bottom: 0;
-  padding: 10px;
-}
-
-.nav_bar a {
-  color: white;
-  text-decoration: none;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.nav_bar a.active {
+.supervisor_links a.active {
   font-weight: bolder;
 }
-
-#navbar.nav_bar {
-  background-color: #36495f 
-}
-
-#navbar.nav_bar a:hover {
+.supervisor_links a:hover {
   text-decoration: underline;
   text-decoration-color: white; /* Set the color of the underline */
 }
 
-.super-button {
+
+/*Comparison Page Layout*/
+.gridContainerCompare{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr auto;
+}
+.grid-item1{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.flexMain{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.grid-item2{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.flexcompareFilters{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fbe6e6;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/* .grid-item3{
+  grid-column-start: 1;
+  grid-column-end: 4;
+} */
+
+
+
+
+h1 {
+  margin: 25px;
+  font-size: 2.5rem;
+}
+#selectTeam{
+  background-color: #FFA500; /*or white*/
+  flex-grow: 4;
+  color: black;
+  border-radius: 15px;
+  width: max-content;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 25px;
+  font-size: 1.3rem;
+  /* text-align: center; */
+  /* border: none; */
+}
+#selectTeam:focus:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+
+.flexcompareFilters select{
+  background-color: #FFA500; /*or white*/
+  color: black;
+  height: max-content;
+  border-radius: 15px;
+}
+#compareAll{
+  align-items: center;
+}
+
+
+
+
+
+
+/* Member Card  */
+
+.card {
+  border-radius: 15px;
+  position: relative;
+  padding: 25px 15px;
+  background-color: #d1fefe;
+  margin: 50px 10px;
+  height: 400px;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+}
+
+.top {
+  border-radius: 25px 25px 0 0;
+  height: 100px;
+  width: 100%;
+  background-color: #ffb222c2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.middle > .name{
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.name {
+  font-size: 2em;
+  color: #2d3436;
+  display: flex;
+  flex: 1;
+  margin: 10% 20px 0;
+}
+
+.card img {
+  /* margin: 30px 20px 0 0; */
+}
+
+.img {
+  border-radius: 20%;
+  border: 3px solid #f7c9c9;
+  width: 130px;
+  height: 130px;
+}
+
+.bottom {
+  margin-top: 120px;
+}
+
+.info {
+  margin: 20px 0;
+  color: #1a7e76;
+}
+
+
+
+/* .super-button {
   background-color: #FFA500;
   border: none;
   color: black;
@@ -93,11 +205,11 @@ code {
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Move the button down */
-  margin-left: 110px; /* Move the button to the right */
+  margin-top: 20px; /* Move the button down 
+  margin-left: 110px; /* Move the button to the right 
   text-decoration: underline; 
  
-}
+} */
 
 .settings-icon {
   position: absolute;
@@ -196,10 +308,10 @@ select {
   margin-top: 100px;
 }
 
-.card,
+/* .card,
 .trophy,
 .card2 {
    
- margin: 0 5px; /* Add spacing between the images */
-}
+ margin: 0 5px; /* Add spacing between the images 
+} */
 
