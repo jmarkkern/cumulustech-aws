@@ -3,7 +3,7 @@ import React from "react"
 
 function Challenges(){
     return(
-       text
+       <h1>I HAVE A challenge</h1>
     );
 }
 export default Challenges;

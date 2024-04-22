@@ -10,6 +10,8 @@ function createCard(person) {
         img={person.imgURL}
         rank={person.rank}
         streak={person.streak}
+        metrics={person.metrics}
+        achievements ={person.achievements}
       />
     );
 }
@@ -55,17 +57,20 @@ function Comparison(){
 
         <label class="flex-item" id="compareAll">
             <input type="checkbox" checked="false" />
+            <span class="spacer"></span>
               Compare ALL
         </label>
+
+        <button class="updateButton">Apply</button>
     </div>
 </div>
 
 
 <div class="grid-item3">
     {/* make sure to import later */}
-    <div class="trophy">
+    {/* <div class="trophy">
         <img src="assets/imgs/trophy.svg" alt="Trophy" />
-    </div>
+    </div> */}
     {deets.map(createCard)}
 </div>
 

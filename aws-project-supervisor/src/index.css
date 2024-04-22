@@ -71,7 +71,7 @@ code {
 .flexMain{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .grid-item2{
   grid-column-start: 1;
@@ -80,32 +80,45 @@ code {
 .flexcompareFilters{
   display: flex;
   justify-content: flex-start;
-  background-color: #fbe6e6;
+  align-items: center;
+  background-color: #fafafa;
   padding-top: 2%;
   padding-bottom: 2%;
+  padding-left: 1%;
+  border-bottom: 2px solid #ccc; /* Bottom border */
 }
 
-/* .grid-item3{
+.grid-item3{
   grid-column-start: 1;
   grid-column-end: 4;
-} */
+    /* display: flex; 
+    align-items: center; Align items vertically in the center */
+    display: grid; /* nested grid */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding-top: 0%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
 
 
 
-
+/*Comparison Body*/
 h1 {
   margin: 25px;
   font-size: 2.5rem;
 }
 #selectTeam{
-  background-color: #FFA500; /*or white*/
-  flex-grow: 4;
+  background-color: #ddffff; /*or white*/
+  /* flex-grow: 4; */
   color: black;
   border-radius: 15px;
   width: max-content;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  /* margin-top: 10px; */
   font-size: 1.3rem;
   /* text-align: center; */
   /* border: none; */
@@ -114,16 +127,39 @@ h1 {
   border-color: transparent transparent #fff transparent;
   top: 7px;
 }
-
-
+.spacer::before {
+  content: '\00a0'; /* used in front of compare all*/
+}
 .flexcompareFilters select{
   background-color: #FFA500; /*or white*/
   color: black;
+  padding: 5px 15px;
   height: max-content;
   border-radius: 15px;
+  font-size: 16px;
+  border: none;
 }
 #compareAll{
   align-items: center;
+  accent-color: green;
+  
+}
+/* Apply Button */
+.updateButton{
+  background-color: #FFA500;
+  border: none;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.238);
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 46%;
+}
+.updateButton:hover {
+  background-color: #d88d5b; /* Darker Green */
+  transform: translateY(-3px); /* Move button up by 5 pixels */
 }
 
 
@@ -132,23 +168,22 @@ h1 {
 
 
 /* Member Card  */
-
 .card {
   border-radius: 15px;
   position: relative;
   padding: 25px 15px;
-  background-color: #d1fefe;
-  margin: 50px 10px;
-  height: 400px;
+  background-color: #D7ECFF;
+  margin: 25px 10px;
+  min-height: 400px;
   box-shadow: 0 2px 5px #ccc;
   text-align: left;
 }
 
 .top {
-  border-radius: 25px 25px 0 0;
+  border-radius: 15px 15px 0 0;
   height: 100px;
   width: 100%;
-  background-color: #ffb222c2;
+  background-color: #37475A;
   position: absolute;
   top: 0;
   left: 0;
@@ -165,7 +200,8 @@ h1 {
 
 .name {
   font-size: 2em;
-  color: #2d3436;
+  /* color: #2d3436; */
+  color: #fff;
   display: flex;
   flex: 1;
   margin: 10% 20px 0;
@@ -176,8 +212,8 @@ h1 {
 }
 
 .img {
-  border-radius: 20%;
-  border: 3px solid #f7c9c9;
+  border-radius: 12%;
+  border: 3px solid #FF9900;
   width: 130px;
   height: 130px;
 }
@@ -190,26 +226,46 @@ h1 {
   margin: 20px 0;
   color: #1a7e76;
 }
+.metricSummary li{
+  padding-left: 7%; 
+  list-style-position: inside;
+}
 
 
 
-/* .super-button {
-  background-color: #FFA500;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Move the button down 
-  margin-left: 110px; /* Move the button to the right 
-  text-decoration: underline; 
- 
-} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OLD STUFF */
 
 .settings-icon {
   position: absolute;
@@ -233,15 +289,12 @@ select {
   /* Add other styles (e.g., border, padding) */
 }
 
-
-
 #compare {
   font-size: 20px;
-  text-color: black;
+  color: black;
   text-decoration: underline;
 
 }
-
 .row {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -249,7 +302,6 @@ select {
   text-align: center; /* Center text within the row */
   margin-top: 50px; /* Move the button down */
 }
-
 /* Style for the Comparison span */
 #compare {
   font-size: 20px; 
@@ -262,23 +314,14 @@ select {
 .row select {
   margin: 0 5px; /* Add space between select elements */
 }
-
-/* Button styles */
 .update-button {
-  background-color: #FFA500;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
+  /* padding: 10px 20px; */
   display: inline-block;
-  font-size: 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  
   margin-top: 20px; /* Move the button down */
-  margin-left: 1200px; /* Move the button to the right */
-  text-decoration: underline; 
+  ; /* Move the button to the right */
+  
 }
 
 
