@@ -16,8 +16,6 @@ const AverageActiveTime = () => {
             });
     }, []);
 
-
-
     const convertTimeToSeconds = (time) => {
         const [hours, minutes, seconds] = time.split(':').map(Number);
         return hours * 3600 + minutes * 60 + seconds;
@@ -32,10 +30,6 @@ const AverageActiveTime = () => {
         setNames(sortedNames);
     };
 
-    useEffect(() => {
-        sortNames();
-    }, []);
-
     // State to track the number of rows to show gradually
     const [visibleRows, setVisibleRows] = useState(0);
 
@@ -43,7 +37,6 @@ const AverageActiveTime = () => {
     const incrementVisibleRows = () => {
         setVisibleRows(prevVisibleRows => prevVisibleRows + 1);
     };
-
 
     useEffect(() => {
         // Start showing rows gradually
@@ -56,6 +49,7 @@ const AverageActiveTime = () => {
             clearInterval(timer);
         }
         // Clear interval on component unmount
+        sortNames()
         return () => clearInterval(timer);
     }, [visibleRows]);
 

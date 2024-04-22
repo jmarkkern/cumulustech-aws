@@ -10,6 +10,7 @@ const AverageNonTalkTime = () => {
             .then(response => response.json())
             .then(data => {
                 setNames(data.user)
+
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
@@ -31,9 +32,6 @@ const AverageNonTalkTime = () => {
         setNames(sortedNames);
     };
 
-    useEffect(() => {
-        sortNames();
-    }, []);
 
     // State to track the number of rows to show gradually
     const [visibleRows, setVisibleRows] = useState(0);
@@ -52,7 +50,9 @@ const AverageNonTalkTime = () => {
             clearInterval(timer);
         }
         // Clear interval on component unmount
+        sortNames()
         return () => clearInterval(timer);
+
     }, [visibleRows]);
 
     return (

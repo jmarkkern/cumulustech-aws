@@ -4,8 +4,6 @@ import amazonLogo from "./assets/imgs/amazonLogo.svg";
 import './global.css'; // Import CSS file for styling
 
 const AverageHandleTime = () => {
-
-
     const [names, setNames] = useState([]);
     useEffect(() => {
         fetch("http://localhost:4000/api/AverageHandleTime")
@@ -33,9 +31,7 @@ const AverageHandleTime = () => {
         setNames(sortedNames);
     };
 
-    useEffect(() => {
-        sortNames();
-    }, []);
+
 
     // State to track the number of rows to show gradually
     const [visibleRows, setVisibleRows] = useState(0);
@@ -57,6 +53,7 @@ const AverageHandleTime = () => {
         }
 
         // Clear interval on component unmount
+        sortNames()
         return () => clearInterval(timer);
     }, [visibleRows]);
 
