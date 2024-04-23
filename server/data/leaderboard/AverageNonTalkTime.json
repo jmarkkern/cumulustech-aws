@@ -1,0 +1,40 @@
+{
+    "AverageNonTalkTime": [
+        {
+            "name": "John",
+            "time": "00:02:17"
+        },
+        {
+            "name": "Alice",
+            "time": "00:08:43"
+        },
+        {
+            "name": "Bob",
+            "time": "00:05:59"
+        },
+        {
+            "name": "Eve",
+            "time": "00:07:12"
+        },
+        {
+            "name": "Charlie",
+            "time": "00:04:38"
+        },
+        {
+            "name": "Jane",
+            "time": "00:09:54"
+        },
+        {
+            "name": "Allison",
+            "time": "00:05:22"
+        },
+        {
+            "name": "Charlie",
+            "time": "00:06:07"
+        },
+        {
+            "name": "William",
+            "time": "00:03:48"
+        }
+    ]
+}

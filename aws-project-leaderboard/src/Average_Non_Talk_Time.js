@@ -6,11 +6,10 @@ import amazonLogo from "./assets/imgs/amazonLogo.svg"
 const AverageNonTalkTime = () => {
     const [names, setNames] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:4000/api/AverageHandleTime")
+        fetch("http://localhost:4000/api/AverageNonTalkTime")
             .then(response => response.json())
             .then(data => {
-                setNames(data.user)
-
+                setNames(data.AverageNonTalkTime)
             })
             .catch(error => {
                 console.error('Error fetching data:', error);

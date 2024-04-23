@@ -14,7 +14,7 @@ function App() {
     <Router>  {/* Wrap the entire application with Router */}
       <div>
         <Heading />
-        <SubNav />  
+        <SubNav />
         <Routes>
           <Route path="/challenges" element={<ChallengePage />} />
           {/* Other routes for your application */}

@@ -1,0 +1,40 @@
+{
+    "AverageHandleTime": [
+        {
+            "name": "John",
+            "time": "00:14:22"
+        },
+        {
+            "name": "Alice",
+            "time": "00:17:38"
+        },
+        {
+            "name": "Bob",
+            "time": "00:18:11"
+        },
+        {
+            "name": "Eve",
+            "time": "00:12:57"
+        },
+        {
+            "name": "Charlie",
+            "time": "00:19:21"
+        },
+        {
+            "name": "Jane",
+            "time": "00:14:08"
+        },
+        {
+            "name": "Allison",
+            "time": "00:19:14"
+        },
+        {
+            "name": "Charlie",
+            "time": "00:12:19"
+        },
+        {
+            "name": "William",
+            "time": "00:17:10"
+        }
+    ]
+}

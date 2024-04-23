@@ -9,7 +9,7 @@ const AverageHandleTime = () => {
         fetch("http://localhost:4000/api/AverageHandleTime")
             .then(response => response.json())
             .then(data => {
-                setNames(data.user)
+                setNames(data.AverageHandleTime)
             })
             .catch(error => {
                 console.error('Error fetching data:', error);

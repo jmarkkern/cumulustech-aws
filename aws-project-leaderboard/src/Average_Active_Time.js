@@ -9,7 +9,7 @@ const AverageActiveTime = () => {
         fetch("http://localhost:4000/api/AverageActiveTime")
             .then(response => response.json())
             .then(data => {
-                setNames(data.user)
+                setNames(data.AverageActiveTime)
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
