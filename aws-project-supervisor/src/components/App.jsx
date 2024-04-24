@@ -4,24 +4,24 @@ import SubNav from "./SubNavigation"
 import Compare from "./Comparison"
 import ChallengePage from './Challenges'
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
 
 function App() {
   return (
-    <Router>  {/* Wrap the entire application with Router */}
+    <BrowserRouter>  {/* Wrap the entire application with Router */}
       <div>
         <Heading />
-        <SubNav />
+        <SubNav />  
         <Routes>
+          <Route path="/" element={<Compare />} />
           <Route path="/challenges" element={<ChallengePage />} />
           {/* Other routes for your application */}
         </Routes>
-        <Compare />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 export default App;
