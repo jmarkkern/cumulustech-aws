@@ -63,4 +63,6 @@ app.get("/api/AverageNonTalkTime", (req, res) => {
     });
 });
 
+const port = 4000 // Use environment variable for port or default to 4000
 app.listen(4000, () => { console.log("server started in port 4000") })
+
