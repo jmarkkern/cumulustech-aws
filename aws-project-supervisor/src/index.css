@@ -72,6 +72,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-top: 2%;
 }
 .grid-item2{
   grid-column-start: 1;
@@ -162,7 +163,7 @@ h1 {
   transform: translateY(-3px); /* Move button up by 5 pixels */
 }
 /* Dropdown styles (customize as needed) */
-select {
+.flexcompareFilters select {
   margin: 0 10px; /* Add spacing between dropdowns */
   font-size: 14px;
   /* Add other styles (e.g., border, padding) */
@@ -286,12 +287,15 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding-top:2%;
 
 }
 .challengesColumns{
   display: flex;
   justify-content: space-evenly;
   font-weight: bolder;
+  margin-top: 1.4%;
+  padding-top: .3%;
 
 }
 
@@ -305,7 +309,7 @@ select {
   min-height: 300px;
   margin-right: 3%;
   margin-left: 3%;
-  margin-top: 1.5%;
+  margin-top: 0%;
 
   padding-top: 1%;
 
