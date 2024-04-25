@@ -10,12 +10,17 @@ function ChallengeCard(){
             <div className="topC">
                 
                 <FormGroup>
-                    <FormControlLabel control={<Switch defaultChecked />} label="Active" color="warning" />
+                    {/* label="Active" */}
+                    <FormControlLabel control={<Switch defaultChecked />}  color="warning" /> 
                 </FormGroup>
-                <p>[Name]</p>
+                {/* <p>[Name]</p>
                 <p>[Date]</p>
                 <p>[Trophy]</p>
-                <p>[Point]</p>
+                <p>[Point]</p> */}
+                <p>[Go Beyond Your Limits]</p>
+                <p>[Mar 17, 2024]</p>
+                <p>[Most Improved]</p>
+                <p>[+3]</p>
             </div>
             
             <div className="bottomC">

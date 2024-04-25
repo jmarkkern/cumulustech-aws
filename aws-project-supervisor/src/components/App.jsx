@@ -5,6 +5,8 @@ import Compare from "./Comparison"
 import ChallengePage from './Challenges'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
