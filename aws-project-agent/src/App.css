@@ -44,10 +44,21 @@
   padding: 15px 0;
 }
 
+.agentDashTooltip {
+  position: relative;
+  top: 25px;
+  visibility: hidden;
+  width: 180px;
+  background-color: #929292;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .agentDashNum {
   font-size: 48px;
   font-weight: bold;
-  margin: 12px 0;
+  margin: 6px 0;
 }
 
 .agentDashProg {
@@ -58,25 +69,28 @@
 
 /*nav bar*/
 .logo {
-  margin-top: 1%;
-  margin-left: 1%;
+  padding-left: 10px;
 }
 
-.nav_bar {
-  background-color: #232F3E;
+.navbar {
+  background-color: #232f3e;
   grid-column: span 3;
   margin-top: 0%;
   margin-bottom: 0;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
-.nav_bar a {
+.navbar a {
   color: white;
   text-decoration: none;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.nav_bar a.active {
-  text-decoration: underline;
+.navbar a.active {
+  font-weight: bold;
+}
+
+.header {
+  background-color: #16191f;
 }

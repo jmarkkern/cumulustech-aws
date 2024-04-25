@@ -1,6 +1,6 @@
 function NavBar() {
     return(
-        <div class="nav_bar">
+        <div class="navbar">
             <a href="">My Progress</a>
             <a href="">Team Leaderboard</a>
         </div>
