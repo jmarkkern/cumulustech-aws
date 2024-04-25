@@ -1,6 +1,11 @@
 //Average_Active_Time.js
 import React, { useState, useEffect } from 'react';
-import amazonLogo from "./assets/imgs/amazonLogo.svg"
+import amazonLogo from "./assets/imgs/amazonLogo.svg";
+import rank1 from "./assets/ranks/rank1.png";
+import rank2 from "./assets/ranks/rank2.png";
+import rank3 from "./assets/ranks/rank3.png";
+import rank4 from "./assets/ranks/rank4.png";
+import rank5 from "./assets/ranks/rank5.png";
 import './global.css';
 
 const AverageActiveTime = () => {
@@ -53,6 +58,8 @@ const AverageActiveTime = () => {
         return () => clearInterval(timer);
     }, [visibleRows]);
 
+    const rankBadges = [rank1, rank2, rank3, rank4, rank5];
+
     return (
         <div className="containerLeaderboard1">
             <div className="item nav_bar">
@@ -68,13 +75,13 @@ const AverageActiveTime = () => {
                     < tbody >
                         <tr>
                             <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
-                            <th style={{ width: '33%' }}>Pic/Agent</th>
+                            <th style={{ width: '33%' }}>Agent</th>
                             <th style={{ width: '33%' }}>Times</th>
                         </tr>
                         {/* Map over sorted names and render them */}
                         {names.slice(0, visibleRows).map((item, index) => (
                             <tr key={index} className="fade-in" >
-                                <td style={{ paddingLeft: '15px', textAlign: 'left', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}>{index + 1}</td>
+                                <td style={{ paddingLeft: '15px', textAlign: 'left', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}><img src={rankBadges[index]} className='rank-badge'></img></td>
                                 <td style={{ width: '33%' }}>{item.name}</td>
                                 <td style={{ width: '33%', borderTopRightRadius: '10px', borderBottomRightRadius: '10px' }}>{item.time}</td>
                             </tr>
