@@ -4,7 +4,7 @@ import deets from "../data/fakeMembers"
 import { useState, useEffect } from 'react';
 
 
-function createCard(person) {
+function createCard(person, theMetric) {
     return (
       <Member
         key={person.id}
@@ -15,16 +15,19 @@ function createCard(person) {
         metrics={person.metrics}
         achievements ={person.achievements}
         level ={person.level}
+
+        selectedMetric={theMetric} // Pass the selected metric as a prop
       />
     );
 }
 
+//parent
 function Comparison(){
   // when u select from drop down use useState to update the____ to hold selected item
   //[variable/state, function] 
     const [theTeam, getTeam] = useState("");
 
-    const [theMetric, getMetric] = useState("");
+    const [theMetric, getMetric] = useState("");  //want to send theMetric to memberCard.jsx
     const [theDuration, getDuration] = useState("");
     const [theSortBy, getSelectedSortBy] = useState("");
 
@@ -47,44 +50,28 @@ function Comparison(){
 
 
 
-    useEffect(() => {
-      // Sort the data whenever the sort criteria change
+    // Sort the data whenever the button is clicked and sort criteria is changed
+    const handleButtonClick = () => {
       const sortedDeets = [...deets];
-      if (theSortBy === "ABC") {
+      if (theSortBy === 'ABC') {
         sortedDeets.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (theSortBy === "Level") {
-        sortedDeets.sort((a, b) => a.level - b.level);
+      } else if (theSortBy === 'Level') {
+        sortedDeets.sort((a, b) => b.level - a.level);
       }
       setSortedDeets(sortedDeets);
-    }, [theSortBy]); // This effect will re-run whenever theSortBy changes
+
+    };
+  
     const [sortedDeets, setSortedDeets] = useState([...deets]); // Initialize with unsorted data
     
-
-
-
-    const handleButtonClick = () => {
-      window.alert(theTeam);
-      window.alert(theMetric);
-      window.alert(theDuration);
-      window.alert(theSortBy);
-      window.alert(`${theTeam}, ${theMetric}, ${theDuration}, ${theSortBy}`);
-      // console.log("Selected Item 2:", selectedItem2);
-      // console.log("Selected Item 3:", selectedItem3);
-    }
-
-
-
-    // const sortedDeets = [...deets];
-    // if (theSortBy !== "") {
-    //     const sortedDeets = [...deets];
-    //     if (theSortBy === "ABC") {  // Sort by alph name
-    //       sortedDeets.sort((a, b) => a.name.localeCompare(b.name));
-    //       window.alert("resorting by abc");} 
-    //     else if (theSortBy === "Level") {
-    //       // Sort by level
-    //       sortedDeets.sort((a, b) => a.level - b.level)};
-    //     }
-
+  // TEST how userState works with this
+    // const handleButtonClick = () => {
+    //   window.alert(theTeam);
+    //   window.alert(theMetric);
+    //   window.alert(theDuration);
+    //   window.alert(theSortBy);
+    //   window.alert(`${theTeam}, ${theMetric}, ${theDuration}, ${theSortBy}`);
+    // }
     
       
       
@@ -111,9 +98,9 @@ function Comparison(){
     <div class="flexcompareFilters">
         <select class="flex-item" id="selectMetric" onChange={handleMetric}>
             <option value="" disabled selected>--Select A Metric--</option>
-            <option value="avgActive">Average Active Time</option>
-            <option value="avgHandle">Average Handle Time</option>
-            <option value="avgNonTalk">Average Non-Talk Time</option>
+            <option value="Avg Active Time">Average Active Time</option>
+            <option value="Avg Handle Time">Average Handle Time</option>
+            <option value="Avg Non-Talk Time">Average Non-Talk Time</option>
         </select>
 
         <select class="flex-item" id="selectDuration" onChange={handleDuration}>
@@ -143,7 +130,9 @@ function Comparison(){
 
 
 <div class="grid-item3">
-    {sortedDeets.map(createCard)}
+    {/* {sortedDeets.map(createCard)} */}
+    {/* NOTE updates the props to pass to MemberCard as selectedMetric */}
+    {sortedDeets.map(person => createCard(person, theMetric))}   
 </div>
 
 
