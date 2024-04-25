@@ -161,6 +161,19 @@ h1 {
   background-color: #d88d5b; /* Darker Green */
   transform: translateY(-3px); /* Move button up by 5 pixels */
 }
+/* Dropdown styles (customize as needed) */
+select {
+  margin: 0 10px; /* Add spacing between dropdowns */
+  font-size: 14px;
+  /* Add other styles (e.g., border, padding) */
+}
+
+/* Style for the select elements */
+.row select {
+  margin: 0 5px; /* Add space between select elements */
+}
+
+
 
 
 
@@ -245,116 +258,93 @@ h1 {
 
 
 
+/* Compare Page */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* OLD STUFF */
-
-.settings-icon {
-  position: absolute;
-  top: 138px; /* Adjust as needed */
-  left: calc(230px + 20px); /* 110px (margin-left of .super-button) + 20px (padding-right of .super-button) */
-  font-size: 70px; /* Increase icon size */
-  color: grey; 
-}
-
-/* Container for the row */
-.row {
-  display: flex; /* Arrange children in a row */
-  align-items: center; /* Vertically center elements */
-  background-color: #fff; /* White background */
-}
-
-/* Dropdown styles (customize as needed) */
-select {
-  margin: 0 10px; /* Add spacing between dropdowns */
-  font-size: 14px;
-  /* Add other styles (e.g., border, padding) */
-}
-
-#compare {
-  font-size: 20px;
-  color: black;
-  text-decoration: underline;
-
-}
-.row {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  text-align: center; /* Center text within the row */
-  margin-top: 50px; /* Move the button down */
-}
-/* Style for the Comparison span */
-#compare {
-  font-size: 20px; 
-  color: black; 
-  text-decoration: underline; 
-  margin-right: 10px; /* Add space between Comparison span and select elements */
-}
-
-/* Style for the select elements */
-.row select {
-  margin: 0 5px; /* Add space between select elements */
-}
-.update-button {
-  /* padding: 10px 20px; */
-  display: inline-block;
-
-  
-  margin-top: 20px; /* Move the button down */
-  ; /* Move the button to the right */
-  
-}
-
-
-
-#myCheckbox {
+/* Apply Button */
+.challengeTitles button{
   background-color: #FFA500;
   border: none;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.238);
+  font-size: 18px;
   color: black;
-  padding: 10px 20px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  padding: 5px 15px;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Move the button down */
-  margin-left: 1770px; /* Move the button to the right */
-  text-decoration: underline; 
-
+  margin-left: 46%;
+}
+.challengeTitles button:hover {
+  background-color: #d88d5b; /* Darker Green */
+  transform: translateY(-3px); /* Move button up by 5 pixels */
 }
 
+.challengesPage{
+  display: grid;
 
-.container {
+}
+.challengeTitles{
   display: flex;
-  margin-left: 800px;
-  margin-top: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.challengesColumns{
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bolder;
+
 }
 
-/* .card,
-.trophy,
-.card2 {
-   
- margin: 0 5px; /* Add spacing between the images 
-} */
+
+
+
+/* Compare Card */
+.ChallengeCard{
+  display: grid;
+  border: #ccc solid 1px;
+  min-height: 300px;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 1.5%;
+
+  padding-top: 1%;
+
+}
+
+.topC{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.bottomC{
+  display: grid;
+  padding-left: 2%;
+  padding-right: 2%;
+  row-gap: 2%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
