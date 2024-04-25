@@ -5,6 +5,7 @@ const agentDetail = [
         imgURL:
         "https://www.shutterstock.com/image-vector/top-knot-bun-latina-pretty-260nw-2387965703.jpg",
         achievements: 5,
+        level: 3,
         // rank: "5",
         // streak: "23 days"
         metrics: [
@@ -19,6 +20,7 @@ const agentDetail = [
         imgURL:
         "https://www.shutterstock.com/image-vector/humble-smile-latino-guy-relaxed-260nw-2387965715.jpg",
         achievements: 10,
+        level: 8,
         // rank: "10",
         // streak: "17 days"
         metrics: [
@@ -33,6 +35,7 @@ const agentDetail = [
         imgURL:
         "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
         achievements: 2,
+        level: 1,
         // rank: "44",
         // streak: "5 days"
         metrics: [
@@ -46,13 +49,14 @@ const agentDetail = [
         name: "Wynn Opiz",
         imgURL:
         "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
-        achievements: 2,
+        achievements: 6,
+        level: 1,
         // rank: "44",
         // streak: "5 days"
         metrics: [
-            { id: 3, m_name: "Avg Active Time", streak: "13 days", rank: "4" },
-            { id: 3.2, m_name: "Avg Handle Time", streak: "38 days", rank: "1" },
-            { id: 3.3, m_name: "Avg Non-Talk Time", streak: "9 days", rank: "28" }
+            { id: 4, m_name: "Avg Active Time", streak: "3 days", rank: "32" },
+            { id: 4.2, m_name: "Avg Handle Time", streak: "18 days", rank: "5" },
+            { id: 4.3, m_name: "Avg Non-Talk Time", streak: "29 days", rank: "7" }
         ]
     }
     // , {
