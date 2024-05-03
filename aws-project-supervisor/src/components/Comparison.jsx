@@ -1,68 +1,73 @@
-import React from "react"
-import Member from "./MemberCard"
-import deets from "../data/fakeMembers"
-import { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
+import Member from "./MemberCard";
+// Remove the import of deets from "../data/fakeMembers"
 
 function createCard(person, theMetric) {
-    return (
-      <Member
-        key={person.id}
-        name={person.name}
-        img={person.imgURL}
-        rank={person.rank}
-        streak={person.streak}
-        metrics={person.metrics}
-        achievements ={person.achievements}
-        level ={person.level}
-
-        selectedMetric={theMetric} // Pass the selected metric as a prop
-      />
-    );
+  return (
+    <Member
+      key={person.id}
+      name={person.name}
+      img={person.imgURL}
+      rank={person.rank}
+      streak={person.streak}
+      metrics={person.metrics}
+      achievements={person.achievements}
+      level={person.level}
+      selectedMetric={theMetric} // Pass the selected metric as a prop
+    />
+  );
 }
 
-//parent
-function Comparison(){
-  // when u select from drop down use useState to update the____ to hold selected item
-  //[variable/state, function] 
-    const [theTeam, getTeam] = useState("");
+function Comparison() {
+  const [theTeam, getTeam] = useState("");
+  const [theMetric, getMetric] = useState("");
+  const [theDuration, getDuration] = useState("");
+  const [theSortBy, getSelectedSortBy] = useState("");
+  const [sortedDeets, setSortedDeets] = useState([]);
 
-    const [theMetric, getMetric] = useState("");  //want to send theMetric to memberCard.jsx
-    const [theDuration, getDuration] = useState("");
-    const [theSortBy, getSelectedSortBy] = useState("");
-
-    const handleTeam = (event) =>{
-      getTeam(event.target.value);
-
-    }
-    const handleMetric = (event) =>{
-      getMetric(event.target.value);
-
-    }
-    const handleDuration = (event) =>{
-      getDuration(event.target.value);
-
-    }
-    const handleSortBy = (event) =>{
-      getSelectedSortBy(event.target.value);
-
-    }
-
-
-
-    // Sort the data whenever the button is clicked and sort criteria is changed
-    const handleButtonClick = () => {
-      const sortedDeets = [...deets];
-      if (theSortBy === 'ABC') {
-        sortedDeets.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (theSortBy === 'Level') {
-        sortedDeets.sort((a, b) => b.level - a.level);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:4000/api/deets');
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
+        }
+        const jsonData = await response.json();
+        setSortedDeets(jsonData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
-      setSortedDeets(sortedDeets);
-
     };
+
+    fetchData();
+  }, []); // Empty dependency array to fetch data once when component mounts
+
+  const handleTeam = (event) => {
+    getTeam(event.target.value);
+  };
+  const handleMetric = (event) => {
+    getMetric(event.target.value);
+  };
+  const handleDuration = (event) => {
+    getDuration(event.target.value);
+  };
+  const handleSortBy = (event) => {
+    getSelectedSortBy(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    const sortedDeetsCopy = [...sortedDeets];
+    if (theSortBy === 'ABC') {
+      sortedDeetsCopy.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (theSortBy === 'Level') {
+      sortedDeetsCopy.sort((a, b) => b.level - a.level);
+    }
+    setSortedDeets(sortedDeetsCopy);
+  };
+
+
   
-    const [sortedDeets, setSortedDeets] = useState([...deets]); // Initialize with unsorted data
+  // const [sortedDeets, setSortedDeets] = useState([...deets]); // Initialize with unsorted data
     
   // TEST how userState works with this
     // const handleButtonClick = () => {
@@ -72,12 +77,6 @@ function Comparison(){
     //   window.alert(theSortBy);
     //   window.alert(`${theTeam}, ${theMetric}, ${theDuration}, ${theSortBy}`);
     // }
-    
-      
-      
-      
-
-
     return(
 
 <div className="gridContainerCompare">
