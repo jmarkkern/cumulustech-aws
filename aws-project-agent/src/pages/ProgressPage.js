@@ -2,6 +2,7 @@ import Header from '../components/Header.js';
 import NavBar from '../components/NavBar.js';
 import AgentInfo from '../components/AgentInfo.js';
 import agentpic from '../assets/imgs/agent_default_icon.png';
+import AgentMetric from '../components/AgentMetric.js';
 
 function ProgressPage() {
     return (
@@ -25,22 +26,10 @@ function ProgressPage() {
                     <h1>Progress</h1>
                 </div>
                 <div></div><div></div>
-                <div class="agentDashInfo">
-                    <h2>Metric</h2>
-                    <p>Level 00</p>
-                </div>
-                <div class="agentDashInfo">
-                    <h2>Metric</h2>
-                    <p>Level 00</p>
-                </div>
-                <div class="agentDashInfo">
-                    <h2>Metric</h2>
-                    <p>Level 00</p>
-                </div>
-                <div class="agentDashInfo">
-                    <h2>Metric</h2>
-                    <p>Level 00</p>
-                </div>
+                <AgentMetric type="avg_handle_time"/>
+                <AgentMetric type="avg_active_time"/>
+                <AgentMetric type="avg_nontalk_time"/>
+                <AgentMetric type="avg_greeting_time"/>
                 <div></div>
             </div>
         </div>
