@@ -18,10 +18,12 @@ const infoType = {
 function AgentInfo({type}) {
     const [show, setShow] = React.useState(false);
 
+    const agentNum = 0;
+
     return(
         <div class="agentDashInfo" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             <h2>{infoType[type].name}</h2>
-            <p class="agentDashNum">00</p>
+            <p class="agentDashNum">{agentNum}</p>
             <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
                 {infoType[type].desc}
             </div>
