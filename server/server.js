@@ -82,7 +82,7 @@ app.get("/api/deets", (req, res) => {
     });
 });
 
-
+//Manipulate ranking before returned 
 app.get("/api/jessicaLyn", (req, res) => {
     const filePath = path.join(__dirname, 'data/agents/jessicaLyn.json');
     fs.readFile(filePath, 'utf8', (err, data) => {

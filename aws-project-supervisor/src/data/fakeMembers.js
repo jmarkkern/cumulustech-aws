@@ -1,9 +1,9 @@
 const agentDetail = [
     {
-        id:1,
+        id: 1,
         name: "Jessica Lyn",
         imgURL:
-        "https://www.shutterstock.com/image-vector/top-knot-bun-latina-pretty-260nw-2387965703.jpg",
+            "https://www.shutterstock.com/image-vector/top-knot-bun-latina-pretty-260nw-2387965703.jpg",
         achievements: 5,
         level: 3,
         // rank: "5",
@@ -15,10 +15,10 @@ const agentDetail = [
         ]
     },
     {
-        id:2,
+        id: 2,
         name: "Bauer Nor",
         imgURL:
-        "https://www.shutterstock.com/image-vector/humble-smile-latino-guy-relaxed-260nw-2387965715.jpg",
+            "https://www.shutterstock.com/image-vector/humble-smile-latino-guy-relaxed-260nw-2387965715.jpg",
         achievements: 10,
         level: 8,
         // rank: "10",
@@ -30,25 +30,25 @@ const agentDetail = [
         ]
     },
     {
-        id:3,
+        id: 3,
         name: "Penop Ven",
         imgURL:
-        "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
+            "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
         achievements: 2,
         level: 1,
         // rank: "44",
         // streak: "5 days"
         metrics: [
-            { id: 3, m_name: "Avg Active Time", streak: "13 days", rank: "4" },
+            { id: 3, m_name: "Avg Active Time", streak: "13 days", rank: "#" },
             { id: 3.2, m_name: "Avg Handle Time", streak: "38 days", rank: "1" },
             { id: 3.3, m_name: "Avg Non-Talk Time", streak: "9 days", rank: "28" }
         ]
     },
     {
-        id:4,
+        id: 4,
         name: "Wynn Opiz",
         imgURL:
-        "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
+            "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
         achievements: 6,
         level: 1,
         // rank: "44",
@@ -73,6 +73,6 @@ const agentDetail = [
     //         { id: 3.3, m_name: "Avg Non-Talk Time", streak: "9 days", rank: "28" }
     //     ]
     // }
-  ];
-  
-  export default agentDetail;
+];
+
+export default agentDetail;
