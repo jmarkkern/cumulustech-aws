@@ -74,7 +74,7 @@
 .agentDashMetric .agentDashTooltip {
   position: absolute;
   visibility: hidden;
-  transform: translate(10px, -130px);
+  transform: translate(10px, -105px);
   height: 95px;
   width: 160px;
   background-color: #929292;
