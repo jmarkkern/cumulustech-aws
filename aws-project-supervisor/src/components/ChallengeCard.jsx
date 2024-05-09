@@ -31,9 +31,9 @@ function ChallengeCard(props){
             </div>
             
             <div className="bottomC">
-                <p><em>Descpition: </em> {props.desc}</p>
-                <p><em>How To Win: </em>{props.howToWin}</p>
-                <p><em>Point Allocation: </em></p> 
+                <p><strong>Descpition: </strong> {props.desc}</p>
+                <p><strong>How To Win: </strong>{props.howToWin}</p>
+                <p><strong>Point Allocation: </strong></p> 
             </div>
        </div>
     );

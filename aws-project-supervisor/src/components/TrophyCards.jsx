@@ -53,7 +53,12 @@ function TrophyCards() {
 
   };
 
-  
+   // Function to get the list of created trophies
+   //!!not toooo big of a deal but this func breaks encapsulation by exposing internal state, so we should change so we are passing props
+   //HOLD ON thinking about how to do this properly so it can be used easily by multiple files - waynelle 
+   const getSavedTrophies = () => {
+    return trophies;
+  };
 
   // Function to edit a flashcard
   const handleEditTrophy = (index) => {

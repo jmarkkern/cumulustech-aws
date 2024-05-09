@@ -7,6 +7,9 @@ function Trophy(){
         <div className="trophyPage">
         <div className="trophyAnalysis">
             <h1>Trophy Overview Analysis</h1>
+            {/* onClick={} show distribution component or trend component*/}
+            <button> Distribution </button>
+            <button>Trend</button>
         </div>
         <div className="trophyCards">
             <h1>Trophies</h1>

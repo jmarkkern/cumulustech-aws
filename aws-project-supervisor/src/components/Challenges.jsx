@@ -40,7 +40,9 @@ function Challenges(){
        </div>
        <div>
             {/* <ChallengeCard /> */}
-            {challengeData.map(createChallengeCard)}
+            {/* constant-time operation */}
+            {challengeData.length > 0 ? challengeData.map(createChallengeCard) : <h2 id="emptyChallenges">No challenges created yet!</h2>}
+            {/* {challengeData.map(createChallengeCard)} */}
         </div>
         <ChallengeForm show={show} setShow={setShow} />
 

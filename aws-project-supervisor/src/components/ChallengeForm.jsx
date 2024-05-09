@@ -26,8 +26,7 @@ function ChallengeForm({ show, setShow }) {
 
     const handleShow = () => setShow(true);
 
-    //CHALLENGE ARRAY, when they hit save the form is added to the array of challenges
-    const handleSave = () => {
+    const handleSave = (event) => {
       const currentDate = new Date();
       const formattedDate = currentDate.toLocaleDateString('en-US', {
         year: 'numeric',
@@ -35,6 +34,13 @@ function ChallengeForm({ show, setShow }) {
         day: 'numeric'
       });
 
+      event.preventDefault();
+      if (!name || !selectedTrophyValue || !selectedPointValue || !howTo) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      //CHALLENGE ARRAY, when they hit save the form is added to the array of challenges in the data folder
       addChallengeData({
         // key:id,
         // status:activeLvl, might put elsewhere
@@ -85,6 +91,7 @@ function ChallengeForm({ show, setShow }) {
 
         <Modal.Body>
             <Form.Label htmlFor="inputPassword5">Challenge Name</Form.Label>
+            <Form.Text className="text-danger">*</Form.Text>
             <Form.Control
                 type="name"
                 id="inputPassword5"
@@ -100,6 +107,7 @@ function ChallengeForm({ show, setShow }) {
 
             <br />
             <Form.Label htmlFor="inputPassword5">Which Trophy will be awarded?</Form.Label>
+            <Form.Text className="text-danger">*</Form.Text>
             <InputGroup className="mb-3">
                 <Form.Control 
                   aria-label="Text input with dropdown button" 
@@ -126,6 +134,7 @@ function ChallengeForm({ show, setShow }) {
 
 
             <Form.Label htmlFor="inputPassword5">How many point will be given?</Form.Label>
+            <Form.Text className="text-danger">*</Form.Text>
             <InputGroup className="mb-3">
             {/* flip this and when they click an item fill in blank*/}
                 <Form.Control 
@@ -158,7 +167,9 @@ function ChallengeForm({ show, setShow }) {
                 />
             </FloatingLabel>
 
-            <FloatingLabel controlId="floatingTextarea2" label="How To Win">
+            <FloatingLabel controlId="floatingTextarea2" label={<span className="floating-label">How To Win</span>}>
+            <Form.Text className="text-danger">   *</Form.Text>
+            
                 <Form.Control
                 as="textarea"
                 placeholder="How To Win"
@@ -167,6 +178,7 @@ function ChallengeForm({ show, setShow }) {
                 value={howTo}
                 onChange={handleHowToChange}   //when they type update the HowTo variable
                 />
+             
             </FloatingLabel>
             
             </Modal.Body>
