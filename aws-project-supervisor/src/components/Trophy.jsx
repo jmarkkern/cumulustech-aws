@@ -1,22 +1,19 @@
 import React from "react"
-import PieChart from "./PieChart";
+import TrophyCards from "./TrophyCards";
 
 
 function Trophy(){
     return(
-        <>
-        <h1>Trophy Overview</h1>
-        <div className= "trophy-container">
-
-            <div  className= "t-contain-item1">
-                <h2>Tophy Overview</h2>
-                <PieChart />
-             </div>
-
+        <div className="trophyPage">
+        <div className="trophyAnalysis">
+            <h1>Trophy Overview Analysis</h1>
+        </div>
+        <div className="trophyCards">
+            <h1>Trophies</h1>
+            <TrophyCards />
         </div>
 
-       
-        </>
+        </div>
     );
 }
 export default Trophy;

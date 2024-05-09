@@ -3,6 +3,7 @@ import Heading from "./Header";
 import SubNav from "./SubNavigation"
 import Compare from "./Comparison"
 import ChallengePage from './Challenges'
+import Trophy from "./Trophy";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +21,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Compare />} />
           <Route path="/challenges" element={<ChallengePage />} />
+          <Route path="/trophy" element={<Trophy />} />
           {/* Other routes for your application */}
+
         </Routes>
       </div>
     </BrowserRouter>
