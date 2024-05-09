@@ -53,11 +53,9 @@
   padding: 15px 0;
 }
 
-.metricLvl {
-  position: absolute;
+.metricRank {
   text-align: center;
   width: 198px;
-  transform: translate(0, -95px);
 }
 
 .agentDashInfo .agentDashTooltip {
@@ -77,7 +75,7 @@
   position: absolute;
   visibility: hidden;
   transform: translate(10px, -130px);
-  height: 115px;
+  height: 95px;
   width: 160px;
   background-color: #929292;
   font-size: 14px;
@@ -92,7 +90,7 @@
   margin: 6px 0;
 }
 
-.agentDashProg {
+.agentDashTitle {
   grid-column-start: 2;
   grid-column-end: 6;
   line-height: 75px;

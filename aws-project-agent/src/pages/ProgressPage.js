@@ -22,8 +22,8 @@ function ProgressPage() {
                 <AgentInfo type="achievements"/>
                 <AgentInfo type="streak"/>
                 <div></div>
-                <div class="agentDashProg">
-                    <h1>Progress</h1>
+                <div class="agentDashTitle">
+                    <h1>Metric Ranks</h1>
                 </div>
                 <div></div><div></div>
                 <AgentMetric type="avg_handle_time"/>

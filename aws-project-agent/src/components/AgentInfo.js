@@ -2,8 +2,8 @@ import React from "react";
 
 const infoType = {
     level: {
-        name: "Level",
-        desc: "Your level is based on your progress on metrics and assigned challenges.",
+        name: "Overall Rank",
+        desc: "Your overall rank is based metric ranks, challenge completion, and streaks.",
     },
     achievements: {
         name: "Achievements",
