@@ -3,7 +3,23 @@ import ChallengeCard from "./ChallengeCard";
 import ChallengeForm from "./ChallengeForm"
 import { useState } from 'react';
 
+import challengeData from "../data/dataChallenge";
 
+
+
+function createChallengeCard(challenge) { //loops through the array, and for each challenge it creates a challengeCard when called
+    return (
+      <ChallengeCard
+        name={challenge.name}  //left hand is props
+        tropy={challenge.trophy} //right hand side is from the array, which is created in challengeForm
+        points={challenge.points}
+        desc={challenge.descrip}
+        howToWin={challenge.howToWin}
+        date={challenge.date}
+
+      />
+    );
+  }
 
 function Challenges(){
     const [show, setShow] = useState(false);
@@ -23,7 +39,8 @@ function Challenges(){
             <p>Point</p> 
        </div>
        <div>
-            <ChallengeCard />
+            {/* <ChallengeCard /> */}
+            {challengeData.map(createChallengeCard)}
         </div>
         <ChallengeForm show={show} setShow={setShow} />
 

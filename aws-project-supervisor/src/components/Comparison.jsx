@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Member from "./MemberCard";
-// Remove the import of deets from "../data/fakeMembers"
 
 function createCard(person, theMetric) {
   return (
