@@ -121,7 +121,7 @@ function Comparison() {
               Compare ALL
         </label> */}
 
-        <button class="updateButton" onClick={handleButtonClick}>Apply</button>
+        <button class="updateButton" id="leaderboardbutton" onClick={handleButtonClick}>Apply</button>
     </div>
 </div>
 
