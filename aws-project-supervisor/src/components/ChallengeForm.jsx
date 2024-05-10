@@ -66,6 +66,7 @@ function ChallengeForm({ show, setShow }) {
 
     }
     
+    
      // FOR TEXT FORMS
      const [name, setName] = useState('');
     function handleNameChange(event){
