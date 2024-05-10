@@ -1,0 +1,248 @@
+/*CAROSEL LEADERBOARD*/
+
+#carousel-container {
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.5s ease;
+    /* Add transition for smoother slide animation */
+}
+
+/* Add a class for left slide animation */
+.slide-left {
+    transform: translateX(-100%);
+}
+
+.containerLeaderboard1 {
+    height: 100vh;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr 1fr;
+    font-size: 1em;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+
+}
+
+.table-container {
+    background-color: rgb(255, 255, 255);
+    grid-row-start: 3;
+    grid-row-end: -1;
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+}
+
+table {
+    border-spacing: 20px;
+    position: absolute;
+    top: flex;
+    left: 0;
+    z-index: 1;
+
+}
+
+
+
+/* Table rows and Columns Styles */
+tr {
+    height: auto;
+    font-size: 1em;
+    /* Set the height for all rows */
+}
+
+td {
+    color: white;
+    background-color: #37475A;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1em;
+
+}
+
+
+/*AGENT LEADERBOARD*/
+/*main page*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: AmazonEmber, 'Trebuchet MS', sans-serif;
+}
+
+@font-face {
+    font-family: AmazonEmber;
+    src: url(assets/font/AmazonEmber_Lt.ttf);
+}
+
+@font-face {
+    font-family: AmazonEmber;
+    src: url(assets/font/AmazonEmber_Bd.ttf);
+    font-weight: bold;
+}
+
+.containerAgentLeaderboard {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: .5fr 2fr 4fr;
+    grid-template-rows: .3fr .4fr 1fr 1fr;
+    gap: 2px;
+
+}
+
+/*nav bar*/
+.logo {
+    margin-top: 1%;
+    margin-left: 1%;
+
+}
+
+.nav_bar {
+    background-color: #232F3E;
+    grid-column: span 3;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+.nav_bar h1 {
+    color: white;
+}
+
+.award {
+    background-color: #c3cbd9;
+    grid-column: span 1;
+    grid-row-start: 2;
+    grid-row-end: -1;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+
+.board {
+    background-color: rgb(255, 255, 255);
+    grid-column: span 2;
+    grid-row-start: 3;
+    grid-row-end: -1;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+/*metric control section*/
+.texts {
+    background-color: #ffffff;
+    grid-column: span 2;
+    margin-top: 0%;
+    margin-bottom: 0;
+    font-size: 1em;
+}
+
+
+@media screen and (min-width: 1920px) {
+
+    tr {
+        font-size: 4em;
+    }
+
+    h1 {
+        font-size: 5em;
+        padding-bottom: 200px;
+    }
+
+}
+
+h1,
+h2 {
+    margin-left: 1%;
+    /*1% of the width of the containing element*/
+}
+
+#allTime {
+    background-color: #FF9900;
+    color: azure;
+}
+
+select {
+    border-radius: 5px;
+    height: 30px;
+}
+
+/* duration buttons*/
+.duration_buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+    margin-bottom: 1%;
+}
+
+#allTime {
+    color: #FFFFFF;
+    width: 70px;
+    height: 37px;
+    margin-left: 1%;
+    background: #FF9900;
+    border: #FF9900;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#allTime:hover {
+    transform: translateY(-4px);
+}
+
+#weekly {
+    color: #FFFFFF;
+    width: 70px;
+    height: 37px;
+    margin-left: 1%;
+    background-color: #37475A;
+    border: #37475A;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#weekly:hover {
+    transform: translateY(-4px);
+}
+
+
+
+/* Table Styles */
+.table3 td:nth-child(3) {
+    text-align: center;
+}
+
+/* Pic / Agent */
+.table3 td:nth-child(2) {
+    text-align: center;
+}
+
+/* Rank */
+.table3 td:nth-child(1) {
+    text-align: left;
+}
+
+/* Rows fading in*/
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.rank-badge {
+    height: calc(1em + 22px);
+    position: absolute;
+    transform: translate(0%, -50%);
+}

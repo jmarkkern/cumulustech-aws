@@ -1,0 +1,377 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* Navig Bar*/
+.logo {
+  margin-top: 1%;
+  margin-left: 1%;
+
+}
+
+.nav_bar {
+  background-color: #232F3E;
+  grid-column: span 3;
+  margin-top: 0%;
+  margin-bottom: 0;
+}
+
+
+
+/* Sub Navigation */
+.supervisor_links{
+  display: flex;
+  justify-content: left;
+  gap: 30px;
+  background-color: #37475A;
+}
+.supervisor_links > a{
+  text-decoration: none;
+  color: aliceblue;
+  margin-bottom: 3px;
+  margin-left: 8px;
+
+}
+.supervisor_links a.active {
+  font-weight: bolder;
+}
+.supervisor_links a:hover {
+  text-decoration: underline;
+  text-decoration-color: white; /* Set the color of the underline */
+}
+
+
+/*Comparison Page Layout*/
+.gridContainerCompare{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr auto;
+}
+.grid-item1{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.flexMain{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2%;
+}
+.grid-item2{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.flexcompareFilters{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fafafa;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 1%;
+  border-bottom: 2px solid #ccc; /* Bottom border */
+}
+
+.grid-item3{
+  grid-column-start: 1;
+  grid-column-end: 4;
+    /* display: flex; 
+    align-items: center; Align items vertically in the center */
+    display: grid; /* nested grid */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding-top: 0%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+
+
+/*Comparison Body*/
+h1 {
+  margin: 25px;
+  font-size: 2.5rem;
+}
+#selectTeam{
+  background-color: #ddffff; /*or white*/
+  /* flex-grow: 4; */
+  color: black;
+  border-radius: 15px;
+  width: max-content;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  /* margin-top: 10px; */
+  font-size: 1.3rem;
+  /* text-align: center; */
+  /* border: none; */
+}
+#selectTeam:focus:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+.spacer::before {
+  content: '\00a0'; /* used in front of compare all*/
+}
+.flexcompareFilters select{
+  background-color: #FFA500; /*or white*/
+  color: black;
+  padding: 5px 15px;
+  height: max-content;
+  border-radius: 15px;
+  font-size: 16px;
+  border: none;
+}
+#compareAll{
+  align-items: center;
+  accent-color: green;
+  
+}
+/* Apply Button */
+.updateButton{
+  background-color: #FFA500;
+  border: none;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.238);
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 46%;
+}
+.updateButton:hover {
+  background-color: #d88d5b; /* Darker Green */
+  transform: translateY(-3px); /* Move button up by 5 pixels */
+}
+/* Dropdown styles (customize as needed) */
+.flexcompareFilters select {
+  margin: 0 10px; /* Add spacing between dropdowns */
+  font-size: 14px;
+  /* Add other styles (e.g., border, padding) */
+}
+
+/* Style for the select elements */
+.row select {
+  margin: 0 5px; /* Add space between select elements */
+}
+
+
+
+
+
+
+
+
+/* Member Card  */
+.card {
+  border-radius: 15px;
+  position: relative;
+  padding: 25px 15px;
+  background-color: #D7ECFF;
+  margin: 25px 10px;
+  min-height: 400px;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+}
+
+.top {
+  border-radius: 15px 15px 0 0;
+  height: 100px;
+  width: 100%;
+  background-color: #37475A;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.middle > .name{
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.name {
+  font-size: 2em;
+  /* color: #2d3436; */
+  color: #fff;
+  display: flex;
+  flex: 1;
+  margin: 10% 20px 0;
+}
+
+.card img {
+  /* margin: 30px 20px 0 0; */
+}
+
+.img {
+  border-radius: 12%;
+  border: 3px solid #FF9900;
+  width: 130px;
+  height: 130px;
+}
+
+.bottom {
+  margin-top: 120px;
+}
+
+.info {
+  margin: 20px 0;
+  color: #1a7e76;
+}
+.metricSummary li{
+  padding-left: 7%; 
+  list-style-position: inside;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Compare Page */
+
+/* Apply Button */
+.challengeTitles button{
+  background-color: #FFA500;
+  border: none;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.238);
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 46%;
+}
+.challengeTitles button:hover {
+  background-color: #d88d5b; /* Darker Green */
+  transform: translateY(-3px); /* Move button up by 5 pixels */
+}
+
+.challengesPage{
+  display: grid;
+
+}
+.challengeTitles{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top:2%;
+
+}
+.challengesColumns{
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bolder;
+  margin-top: 1.4%;
+  padding-top: .3%;
+
+}
+
+#emptyChallenges{
+  color: gray;
+  display:flex;
+  border: 1px solid gray;
+  min-height: 300px;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 0%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+
+/* Compare Card */
+.ChallengeCard{
+  display: grid;
+  grid-template-rows: .35fr 1fr;
+  border: #ccc solid 1px;
+  min-height: 300px;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 0%;
+  margin-bottom: 2%;
+
+  padding-top: 1%;
+
+}
+
+.topC{
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom:0%;
+  /*height: 10px;*/
+}
+
+.topC p{
+  /*height: 10px;*/
+  margin-bottom:0%;
+
+}
+
+.bottomC{
+  display: grid;
+  padding-left: 2%;
+  padding-right: 2%;
+  row-gap: 2%;
+
+}
+
+
+
+
+
+/* Trophy Page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

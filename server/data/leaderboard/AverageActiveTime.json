@@ -1,0 +1,40 @@
+{
+    "AverageActiveTime": [
+        {
+            "name": "John",
+            "time": "04:27:12"
+        },
+        {
+            "name": "Alice",
+            "time": "07:15:43"
+        },
+        {
+            "name": "Bob",
+            "time": "06:59:54"
+        },
+        {
+            "name": "Eve",
+            "time": "05:32:01"
+        },
+        {
+            "name": "Charlie",
+            "time": "06:18:37"
+        },
+        {
+            "name": "Jane",
+            "time": "03:45:10"
+        },
+        {
+            "name": "Allison",
+            "time": "07:41:17"
+        },
+        {
+            "name": "Charlie",
+            "time": "05:09:28"
+        },
+        {
+            "name": "William",
+            "time": "06:23:49"
+        }
+    ]
+}

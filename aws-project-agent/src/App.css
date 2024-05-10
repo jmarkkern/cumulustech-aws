@@ -1,0 +1,125 @@
+/* AGENT DASHBOARD */
+.containerAgentDashboard {
+  display: grid;
+  grid-template-columns: auto 200px 200px 200px 200px auto;
+  grid-template-rows: 60px 145px 60px;
+  gap: 15px;
+}
+
+.containerAgentDashboard h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.containerAgentDashboard h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.agentDashPic {
+  -ms-grid-row-span: 2;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.agentDashPic img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.agentDashName {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  line-height: 75px;
+}
+
+.agentDashInfo {
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #929292;
+  padding: 15px 0;
+}
+
+.agentDashMetric {
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #929292;
+  padding: 15px 0;
+}
+
+.metricRank {
+  text-align: center;
+  width: 198px;
+}
+
+.agentDashInfo .agentDashTooltip {
+  position: absolute;
+  visibility: hidden;
+  transform: translate(10px, -60px);
+  height: 60px;
+  width: 160px;
+  background-color: #929292;
+  font-size: 14px;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.agentDashMetric .agentDashTooltip {
+  position: absolute;
+  visibility: hidden;
+  transform: translate(10px, -105px);
+  height: 95px;
+  width: 160px;
+  background-color: #929292;
+  font-size: 14px;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.agentDashNum {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.agentDashTitle {
+  grid-column-start: 2;
+  grid-column-end: 6;
+  line-height: 75px;
+}
+
+/*nav bar*/
+.logo {
+  padding-left: 10px;
+}
+
+.navbar {
+  background-color: #232f3e;
+  grid-column: span 3;
+  margin-top: 0%;
+  margin-bottom: 0;
+  padding: 5px 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar a.active {
+  font-weight: bold;
+}
+
+.header {
+  background-color: #16191f;
+}

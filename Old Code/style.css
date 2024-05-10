@@ -1,0 +1,292 @@
+/*CAROSEL LEADERBOARD*/
+
+#carousel-container {
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.5s ease;
+    /* Add transition for smoother slide animation */
+}
+
+/* Add a class for left slide animation */
+.slide-left {
+    transform: translateX(-100%);
+}
+
+.containerLeaderboard1 {
+    height: 100vh;
+    display: grid;
+    background-color: #ffffff;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr 1fr;
+}
+
+.containerLeaderboard2 {
+    height: 100vh;
+    display: grid;
+    background-color: #ffffff;
+    grid-template-columns: 1fr;
+    grid-template-rows: .3fr .5fr 1fr 1fr;
+}
+
+.containerLeaderboard3 {
+    height: 100vh;
+    display: grid;
+    background-color: #cebc8f;
+    grid-template-columns: 1fr;
+    grid-template-rows: .3fr .5fr 1fr 1fr;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+
+}
+
+.table-container {
+    background-color: rgb(255, 255, 255);
+    grid-row-start: 3;
+    grid-row-end: -1;
+    position: relative;
+    top: 2000px;
+    width: 100%;
+}
+
+table {
+    border-spacing: 20px;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    z-index: 1;
+}
+
+table.table2 {
+    border-spacing: 20px;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    z-index: 1;
+}
+
+tr {
+    height: 2rem;
+    padding-bottom: 1%;
+    row-gap: 20px;
+    height: 3rem;
+}
+
+td {
+    color: white;
+    border: 1px solid #37475A;
+    border-collapse: collapse;
+    background-color: #37475A;
+    border-radius: 10px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+
+
+
+/*AGENT LEADERBOARD*/
+/*main page*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: AmazonEmber, 'Trebuchet MS', sans-serif;
+}
+
+@font-face {
+    font-family: AmazonEmber;
+    src: url(assets/font/AmazonEmber_Lt.ttf);
+}
+
+@font-face {
+    font-family: AmazonEmber;
+    src: url(assets/font/AmazonEmber_Bd.ttf);
+    font-weight: bold;
+}
+
+.containerAgentLeaderboard {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: .5fr 2fr 4fr;
+    grid-template-rows: .3fr .4fr 1fr 1fr;
+    gap: 2px;
+}
+
+/* AGENT DASHBOARD */
+.containerAgentDashboard {
+    display: grid;
+    grid-template-columns: auto 200px 200px 200px 200px auto;
+    grid-template-rows: 60px 145px 60px;
+    gap: 15px;
+}
+
+.containerAgentDashboard h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.containerAgentDashboard h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.agentDashPic {
+    -ms-grid-row-span: 2;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.agentDashName {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    line-height: 75px;
+}
+
+.agentDashInfo {
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #929292;
+    padding: 15px 0;
+}
+
+.agentDashNum {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.agentDashProg {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    line-height: 75px;
+}
+
+/*nav bar*/
+.logo {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.nav_bar {
+    background-color: #232F3E;
+    grid-column: span 3;
+    margin-top: 0%;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+.nav_bar a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav_bar a.active {
+    font-weight: bolder;
+}
+
+.award {
+    background-color: #c3cbd9;
+    grid-column: span 1;
+    grid-row-start: 2;
+    grid-row-end: -1;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+
+.board {
+    background-color: rgb(255, 255, 255);
+    grid-column: span 2;
+    grid-row-start: 3;
+    grid-row-end: -1;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+/*metric control section*/
+.texts {
+    background-color: #ffffff;
+    grid-column: span 2;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+h1,
+h2 {
+    margin-left: 1%;
+    /*1% of the width of the containing element*/
+}
+
+#allTime {
+    background-color: #FF9900;
+    color: azure;
+}
+
+select {
+    border-radius: 5px;
+    height: 30px;
+}
+
+/* duration buttons*/
+.duration_buttons {
+    display: flex;
+    align-items: start;
+    gap: 2px;
+    margin-bottom: 1%;
+}
+
+#allTime {
+    color: #FFFFFF;
+    width: 70px;
+    height: 37px;
+    margin-left: 1%;
+    background: #FF9900;
+    border: #FF9900;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#allTime:hover {
+    transform: translateY(-4px);
+}
+
+#weekly {
+    color: #FFFFFF;
+    width: 70px;
+    height: 37px;
+    margin-left: 1%;
+    background-color: #37475A;
+    border: #37475A;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#weekly:hover {
+    transform: translateY(-4px);
+}
+
+/* Table Styles */
+/* ### */
+.table3 td:nth-child(3) {
+    text-align: center;
+}
+
+/* Pic / Agent */
+.table3 td:nth-child(2) {
+    text-align: center;
+}
+
+/* Rank */
+.table3 td:nth-child(1) {
+    text-align: left;
+}
