@@ -9,4 +9,5 @@ function Motivation(){
         </div>
     );
 }
+
 export default Motivation;
