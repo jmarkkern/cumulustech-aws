@@ -1,6 +1,6 @@
 //example of how the trophies count should look for the anaylsis page
 //BUT u have to get tropies from trophy creation?
-const agentDetail = [
+export const agentDetail = [
     {
         Jan:
         [
@@ -75,3 +75,6 @@ const agentDetail = [
         ]
     }
     ]
+
+
+// rewritten data for the distribution chart
