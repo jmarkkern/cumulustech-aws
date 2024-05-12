@@ -21,7 +21,7 @@ export default class TrophyDistribution extends React.Component {
    
     return (
       <div>
-        <XYPlot xType="ordinal" width={300} height={300} xDistance={100}>
+        <XYPlot xType="ordinal" width={1300} height={400} xDistance={100}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />

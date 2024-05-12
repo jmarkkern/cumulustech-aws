@@ -13,18 +13,29 @@ function Trophy(){
 
   const handleDistributionClick = () => {
     setShowDistribution(true);
+    setActiveButton('Distribution');
   };
 
   const handleTrendClick = () => {
     setShowDistribution(false);
+    setActiveButton('Trend');
   };
+
+  const [activeButton, setActiveButton] = useState('Distribution');
+
 
   return (
     <div className="trophyPage">
       <div className="trophyAnalysis">
         <h1>Trophy Overview Analysis</h1>
-        <button onClick={handleDistributionClick}>Distribution</button>
-        <button onClick={handleTrendClick}>Trend</button>
+         {/* distribution button */}
+         <button className={`distributionButton ${activeButton === 'Distribution' ? 'active' : ''}`} onClick={handleDistributionClick}>
+          Distribution
+        </button>
+        {/* trend button */}
+        <button className={`trendButton ${activeButton === 'Trend' ? 'active' : ''}`} onClick={handleTrendClick}>
+          Trend
+        </button>
         {showDistribution ? <TrophyDistribution greenData={greenData} /> : <TrophyTrend />}
       </div>
       <div className="trophyCards">

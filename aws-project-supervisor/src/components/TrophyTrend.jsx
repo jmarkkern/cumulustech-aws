@@ -1,15 +1,37 @@
+
 import React from 'react';
 
 
-import {XYPlot, XAxis, YAxis, VerticalGridLines, LineSeries} from 'react-vis';
+import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineSeries } from 'react-vis';
 
-export default function TrophyTrend(props) {
+
+const MSEC_DAILY = 86400000;
+
+export default function Example(props) {
+  const timestamp = new Date('September 9 2017').getTime();
   return (
-    <XYPlot width={300} height={300}>
-      <VerticalGridLines values={[2, 2.3, 2.7]} />
-      <XAxis />
-      <YAxis />
-      <LineSeries data={[{x: 1, y: 10}, {x: 2, y: 5}, {x: 3, y: 15}]} />
+    <XYPlot xType="time" width={1300} height={400} >
+      <HorizontalGridLines />
+      <VerticalGridLines />
+      <XAxis title="X Axis" />
+      <YAxis title="Y Axis" />
+      <LineSeries
+        data={[
+          {x: timestamp + MSEC_DAILY, y: 3},
+          {x: timestamp + MSEC_DAILY * 2, y: 5},
+          {x: timestamp + MSEC_DAILY * 3, y: 15},
+          {x: timestamp + MSEC_DAILY * 4, y: 12}
+        ]}
+      />
+      <LineSeries data={null} />
+      <LineSeries
+        data={[
+          {x: timestamp + MSEC_DAILY, y: 10},
+          {x: timestamp + MSEC_DAILY * 2, y: 4},
+          {x: timestamp + MSEC_DAILY * 3, y: 2},
+          {x: timestamp + MSEC_DAILY * 4, y: 15}
+        ]}
+      />
     </XYPlot>
   );
 }
