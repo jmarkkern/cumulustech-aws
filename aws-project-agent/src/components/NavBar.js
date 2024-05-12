@@ -1,8 +1,14 @@
+import React from "react"
+import { NavLink } from "react-router-dom";
+
 function NavBar() {
     return(
         <div class="navbar">
-            <a href="">My Progress</a>
-            <a href="">Team Leaderboard</a>
+            <div className="supervisor_links">
+                <NavLink to="/">My Progress</NavLink>
+                <NavLink to="/trophy">Team Leaderboard</NavLink>
+                <NavLink to="/challenges">Challenges</NavLink>
+            </div>
         </div>
     )
 }

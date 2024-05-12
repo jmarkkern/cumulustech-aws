@@ -7,8 +7,6 @@ import AgentMetric from '../components/AgentMetric.js';
 function ProgressPage() {
     return (
         <div>
-            <Header />
-            <NavBar />
             <div class="containerAgentDashboard">
                 <div></div>
                 <div class="agentDashPic">
