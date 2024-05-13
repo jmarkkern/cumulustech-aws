@@ -1,42 +1,62 @@
 import TrophyCards from "./TrophyCards";
+import React, { useState } from "react";
 import TrophyDistribution from "./TrophyDistribution";
 import TrophyTrend from "./TrophyTrend";
-import React, { useState } from "react";
+import Select from 'react-dropdown-select';
 
 
 // will remove later and instead use fakedata
 const greenData = [{ x: 'A', y: 10 }, { x: 'B', y: 5 }, { x: 'C', y: 15 }];
 
-
-function Trophy(){
-        const [showDistribution, setShowDistribution] = useState(true);
+function Trophy() {
+  const [showDistribution, setShowDistribution] = useState(true);
+  const [selectedValues, setSelectedValues] = useState([]);
 
   const handleDistributionClick = () => {
     setShowDistribution(true);
-    setActiveButton('Distribution');
   };
 
   const handleTrendClick = () => {
     setShowDistribution(false);
-    setActiveButton('Trend');
   };
 
-  const [activeButton, setActiveButton] = useState('Distribution');
-
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setSelectedValues([...selectedValues, value]);
+    } else {
+      setSelectedValues(selectedValues.filter(item => item !== value));
+    }
+  };
 
   return (
     <div className="trophyPage">
       <div className="trophyAnalysis">
         <h1>Trophy Overview Analysis</h1>
-         {/* distribution button */}
-         <button className={`distributionButton ${activeButton === 'Distribution' ? 'active' : ''}`} onClick={handleDistributionClick}>
+        {/* distribution button */}
+        <button className={`distributionButton ${showDistribution ? 'active' : ''}`} onClick={handleDistributionClick}>
           Distribution
         </button>
         {/* trend button */}
-        <button className={`trendButton ${activeButton === 'Trend' ? 'active' : ''}`} onClick={handleTrendClick}>
+        <button className={`trendButton ${!showDistribution ? 'active' : ''}`} onClick={handleTrendClick}>
           Trend
         </button>
-        {showDistribution ? <TrophyDistribution greenData={greenData} /> : <TrophyTrend />}
+        {/* Checkbox buttons */}
+        <div className="checkboxContainer"> {/* Container for checkbox buttons */}
+            {/* Checkbox buttons */}
+            {greenData.map(item => (
+              <label key={item.x}>
+                <input
+                  type="checkbox"
+                  value={item.x}
+                  checked={selectedValues.includes(item.x)}
+                  onChange={handleCheckboxChange}
+                />
+                {item.x}
+              </label>
+            ))}
+        </div>
+        {showDistribution ? <TrophyDistribution greenData={greenData} selectedValues={selectedValues} /> :  <TrophyTrend />}
       </div>
       <div className="trophyCards">
         <h1>Trophies</h1>
@@ -45,4 +65,5 @@ function Trophy(){
     </div>
   );
 }
+
 export default Trophy;

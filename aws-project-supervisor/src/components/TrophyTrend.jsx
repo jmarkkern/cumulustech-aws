@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 
@@ -7,7 +6,7 @@ import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineSerie
 
 const MSEC_DAILY = 86400000;
 
-export default function Example(props) {
+export default function TrophyTrend(props) {
   const timestamp = new Date('September 9 2017').getTime();
   return (
     <XYPlot xType="time" width={1300} height={400} >

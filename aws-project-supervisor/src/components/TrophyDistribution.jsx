@@ -10,15 +10,25 @@ export default class TrophyDistribution extends React.Component {
     const { useCanvas } = this.state;
     const BarSeries = useCanvas ? VerticalBarSeriesCanvas : VerticalBarSeries;
 
-    const { greenData } = this.props;
+    const { greenData, selectedValues } = this.props;
 
-    // Calculate labelData based on greenData
-    const labelData = greenData.map((d, idx) => ({
+    // Filter greenData based on selectedValues
+    const filteredData = greenData.filter(d => selectedValues.includes(d.x));
+
+    // Calculate labelData based on filteredData
+    const labelData = filteredData.map((d, idx) => ({
       x: d.x,
       y: d.y * 1.5 // Example calculation for label data
     }));
 
-   
+    if (filteredData.length === 0) {
+        return (
+          <div className="empty-graph">
+            No trophies selected
+          </div>
+        );
+      }
+
     return (
       <div>
         <XYPlot xType="ordinal" width={1300} height={400} xDistance={100}>
@@ -26,7 +36,7 @@ export default class TrophyDistribution extends React.Component {
           <HorizontalGridLines />
           <XAxis />
           <YAxis />
-          <BarSeries className="vertical-bar-series-example" data={greenData} />
+          <BarSeries className="vertical-bar-series-example" data={filteredData} />
           <LabelSeries data={labelData} getLabel={d => d.x} />
         </XYPlot>
       </div>
