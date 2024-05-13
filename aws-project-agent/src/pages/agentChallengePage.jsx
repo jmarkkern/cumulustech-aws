@@ -1,8 +1,8 @@
-import React from "react"
-import Collapse from 'react-bootstrap/Collapse';
-import { useState } from 'react';
 
-import agentChallengeData from "../data/agentChallengeData"
+import Collapse from 'react-bootstrap/Collapse';
+import React, { useState, useEffect } from 'react';
+
+// import agentChallengeData from "../data/agentChallengeData"
 import AgentChallengeCard from "../components/agentChallengeCard"
 
 
@@ -21,13 +21,26 @@ function showChallengeCard(challenge) { //loops through the array, and for each 
   }
 
 function AgentChallenge(props){ 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:4000/agentChallenges")
+            .then(response => response.json())
+            .then(data => {
+                setOpen(data)
+                console.log()
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     return(
         <div className="agentChallenges">
             <h1>Challenges</h1>
 
             {/* for every visible challenge make a challenge visible to the agent */}
-            {agentChallengeData.map(showChallengeCard)}            
+            {open.map(showChallengeCard)}            
         </div>
     );
 }
