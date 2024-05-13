@@ -104,6 +104,27 @@ app.get("/api/jessicaLyn", (req, res) => {
 });
 
 
+app.get("/agentChallenges", (req, res) => {
+    const filePath = path.join(__dirname, 'data/supervisor/challenge.json');
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON file:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        try {
+            const jsonData = JSON.parse(data);
+            res.json(jsonData);
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            res.status(500).send('Internal Server Error');
+        }
+    });
+});
+
+
+
+
 // Post to Challenge.json
 app.post('/challenge-data', async (req, res) => {
     filePath = path.join(__dirname, 'data/supervisor/challenge.json');
