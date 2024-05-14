@@ -16,6 +16,7 @@ function Leaderboard() {
   const [theDuration, getDuration] = useState("");
   const [theSortBy, getSelectedSortBy] = useState("");
   const [sortedDeets, setSortedDeets] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(""); // State to hold the selected option
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +39,7 @@ function Leaderboard() {
     getTeam(event.target.value);
   };
   const handleMetric = (event) => {
+    setSelectedOption(event.target.value); // Update selected option when dropdown changes
     getMetric(event.target.value);
   };
   const handleDuration = (event) => {
@@ -111,6 +113,7 @@ function Leaderboard() {
 
 
   return (
+    
   
     <div className="grid-item1">
     <div className="flexMain">
@@ -143,7 +146,7 @@ function Leaderboard() {
     {/* Code taken from average_active_time.js */}
     <div className="containerLeaderboard1">
             <div className="item title">
-                <h1>Average Active Time</h1>
+              <h1>{selectedOption}</h1> {/* Display selected option as the title */}
             </div>
             <div className="item table">
                 <table className="table3" style={{
