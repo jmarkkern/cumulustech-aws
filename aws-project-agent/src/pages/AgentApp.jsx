@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from '../components/Header.js';
 import NavBar from '../components/NavBar.js';
-import AgentInfo from '../components/AgentInfo.js';
+import AgentTrophies from '../components/AgentTrophies.js';
 import agentpic from '../assets/imgs/agent_default_icon.png';
 import AgentMetric from '../components/AgentMetric.js';
 import ProgressPage from "./ProgressPage.js";
