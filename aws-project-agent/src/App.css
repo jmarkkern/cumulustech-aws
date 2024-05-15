@@ -1,7 +1,7 @@
 /* AGENT DASHBOARD */
 .containerAgentDashboard {
   display: grid;
-  grid-template-columns: auto 200px 200px 200px 200px auto;
+  grid-template-columns: auto 240px 240px 240px auto;
   grid-template-rows: 60px 145px 60px;
   gap: 15px;
 }
@@ -31,11 +31,13 @@
 
 .agentDashName {
   grid-column-start: 3;
-  grid-column-end: 6;
-  line-height: 75px;
+  grid-column-end: 5;
+  padding-top: 20px;
 }
 
-.agentDashInfo {
+.agentDashTrophies {
+  grid-column-start: 3;
+  grid-column-end: 5;
   text-align: center;
   border-style: solid;
   border-width: 1px;
@@ -53,35 +55,26 @@
   padding: 15px 0;
 }
 
-.metricRank {
-  text-align: center;
-  width: 198px;
-}
-
-.agentDashInfo .agentDashTooltip {
+.agentDashTooltip {
   position: absolute;
   visibility: hidden;
-  transform: translate(10px, -60px);
-  height: 60px;
-  width: 160px;
   background-color: #929292;
   font-size: 14px;
   color: white;
   border-radius: 10px;
   padding: 10px;
+}
+
+.agentDashTrophies .agentDashTooltip {
+  transform: translate(9px, 0px);
+  width: 475px;
+  /* height: 60px; */
 }
 
 .agentDashMetric .agentDashTooltip {
-  position: absolute;
-  visibility: hidden;
-  transform: translate(10px, -105px);
-  height: 95px;
-  width: 160px;
-  background-color: #929292;
-  font-size: 14px;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
+  transform: translate(9px, -70px);
+  width: 220px;
+  /* height: 95px; */
 }
 
 .agentDashNum {
@@ -92,8 +85,8 @@
 
 .agentDashTitle {
   grid-column-start: 2;
-  grid-column-end: 6;
-  line-height: 75px;
+  grid-column-end: 5;
+  padding-top: 20px;
 }
 
 /*nav bar*/

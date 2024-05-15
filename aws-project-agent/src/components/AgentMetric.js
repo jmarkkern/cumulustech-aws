@@ -3,19 +3,15 @@ import React from "react";
 const infoType = {
     avg_handle_time: {
         name: "Avg Handle Time",
-        desc: "The average time, from start to finish, that a contact was connected with an agent (average handle time).",
+        desc: "The average time, from start to finish, that a contact was connected with an agent.",
     },
     avg_active_time: {
         name: "Avg Active Time",
-        desc: "The average time, from start to finish, that an agent was working on a contact (average active time).",
+        desc: "The average time, from start to finish, that an agent was working on a contact.",
     },
     avg_nontalk_time: {
         name: "Avg Non-Talk Time",
-        desc: "The average of total non-talk time in a voice conversation.",
-    },
-    avg_greeting_time: {
-        name: "Avg Greeting Time",
-        desc: "The average first response time of agents on chat, how quickly they engage with customers after joining the chat."
+        desc: "The average of total silence between agent and contact in a voice conversation.",
     }
 };
 
@@ -52,7 +48,6 @@ function AgentMetric({type}) {
         <div class="agentDashMetric" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             <h2>{infoType[type].name}</h2>
             <p class="agentDashNum">{agentRank}</p>
-            <p class="metricRank">Top {percentile}%</p>
             <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
                 {infoType[type].desc}
             </div>
