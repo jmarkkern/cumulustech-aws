@@ -19,5 +19,7 @@ export const addChallengeData = async (input) => {
 export const getChallengeData = () => {
   return challengeData;
 };
-
+export const setChallengeData = (data) => {
+  challengeData = data;
+};
 export default challengeData;
