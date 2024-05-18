@@ -1,6 +1,8 @@
 import React from "react"
 import {useState} from "react"
 
+import Icon from "../assets/ranks/svg/diamond.jsx"
+
 // child
 function Membercard(props){
   console.log("Props:", props); 
@@ -38,6 +40,22 @@ function Membercard(props){
                     </ul>
                 ))}
           </div>
+
+          <div className="rankCard">
+            <p id="metricName">METRIC Name</p>
+            <Icon number={1}> 1 </Icon>
+
+            <div className="memberStreaks">
+            <p>current streak</p>
+            <p>best streak</p>
+            </div>
+            
+          </div>
+
+
+
+
+
         </div>
       );
 }
