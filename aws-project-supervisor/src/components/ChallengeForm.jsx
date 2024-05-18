@@ -8,6 +8,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 import { addChallengeData } from '../data/dataChallenge'; 
+import {trophyNameData} from '../data/trophyNames';
 
 
 
@@ -123,9 +124,24 @@ function ChallengeForm({ show, setShow }) {
                 title="Trophy"
                 id="input-group-dropdown-2"
                 >
+                  {/* DEFAULT TROPHY OPTIONS, might remove? */}
                 <Dropdown.Item onClick={() => handleTrophySelect('Customer Service Hero')}>Customer Service Hero</Dropdown.Item>
                 <Dropdown.Item onClick={() => handleTrophySelect('Most Improved')}>Most Improved</Dropdown.Item>
                 <Dropdown.Item onClick={() => handleTrophySelect('Most Effient')}>Most Effient</Dropdown.Item>
+
+                {/* TESTER, SEE ALL TROPHYIES CREATED */}
+                <Dropdown.Item onClick={() => handleTrophySelect('Others') & console.log(trophyNameData)}>Click to see custom trophies</Dropdown.Item>
+                
+                {/* THIS IS HOW TO GET THE LIST OF TROPHY NAMES, remember to import trophyNameData array from data folder*/}
+                {trophyNameData.map((item, index) => (
+                    <Dropdown.Item
+                        key={index}
+                        onClick={() => handleTrophySelect(item.singleTrophy.name)}
+                    >
+                        {item.singleTrophy.name}
+                    </Dropdown.Item>
+                ))}
+
                 {/* <Dropdown.Divider />
                 <Dropdown.Item href="#">Separated link</Dropdown.Item> */}
                 </DropdownButton>
