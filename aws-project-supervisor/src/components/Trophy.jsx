@@ -1,12 +1,16 @@
+
 import TrophyCards from "./TrophyCards";
 import React, { useState } from "react";
 import TrophyDistribution from "./TrophyDistribution";
 import TrophyTrend from "./TrophyTrend";
-import Select from 'react-dropdown-select';
-
 
 // will remove later and instead use fakedata
 const greenData = [{ x: 'Customer Service Hero', y: 10 }, { x: 'Most Improved', y: 5 }, { x: 'Most Efficient', y: 15 }];
+const blueData = [
+  { x: 'Customer Service Hero', y: 10, timestamp: '2023-05-01' },
+  { x: 'Most Improved', y: 5, timestamp: '2023-05-02' },
+  { x: 'Most Efficient', y: 15, timestamp: '2023-05-03' }
+];
 
 function Trophy() {
   const [showDistribution, setShowDistribution] = useState(true);
@@ -57,7 +61,11 @@ function Trophy() {
             ))}
         </div>
         {/* distribution and trophy will grab data and display it */}
-        {showDistribution ? <TrophyDistribution greenData={greenData} selectedValues={selectedValues} /> :  <TrophyTrend />}
+        {showDistribution ? (
+          <TrophyDistribution greenData={greenData} selectedValues={selectedValues} />
+        ) : (
+          <TrophyTrend blueData={blueData} selectedValues={selectedValues} />
+        )}
       </div>
       <div className="trophyCards">
         <h1>Trophies</h1>
@@ -68,3 +76,6 @@ function Trophy() {
 }
 
 export default Trophy;
+
+
+
