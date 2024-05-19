@@ -18,7 +18,6 @@ function ChallengeForm({ show, setShow }) {
     
   const handleClose = () => {
       setShow(false);
-      setSelectedPointValue('');
       setSelectedTrophyValue('');
       setName('');
       setDescription('');
@@ -36,7 +35,7 @@ function ChallengeForm({ show, setShow }) {
       });
 
       event.preventDefault();
-      if (!name || !selectedTrophyValue || !selectedPointValue || !howTo) {
+      if (!name || !selectedTrophyValue  || !howTo) {
         alert("Please fill in all required fields.");
         return;
       }
@@ -45,9 +44,9 @@ function ChallengeForm({ show, setShow }) {
       addChallengeData({
         // key:id,
         // status:activeLvl, might put elsewhere
+        active:active,
         name: name,
         trophy: selectedTrophyValue,
-        points:selectedPointValue,
         descrip: description,
         howToWin:howTo,
         date: formattedDate
@@ -56,10 +55,6 @@ function ChallengeForm({ show, setShow }) {
     }
 
     // FOR DROP DOWN FORMS
-    const [selectedPointValue, setSelectedPointValue] = useState('');
-    const handlePointSelect = (value) => {
-      setSelectedPointValue(value);
-    };
 
     const [selectedTrophyValue, setSelectedTrophyValue] = useState('');
     const handleTrophySelect = (value) => {
@@ -67,8 +62,13 @@ function ChallengeForm({ show, setShow }) {
 
     }
     
-    
      // FOR TEXT FORMS
+
+    const [active, setActive] = useState(false);
+    function handleActiveChange(event){
+      setActive(event.target.checked)
+
+    }
      const [name, setName] = useState('');
     function handleNameChange(event){
       setName(event.target.value);
@@ -92,6 +92,18 @@ function ChallengeForm({ show, setShow }) {
         </Modal.Header>
 
         <Modal.Body>
+
+          <Form.Label>Active Status</Form.Label>
+          <Form.Check
+            type="checkbox"
+            id="active-switch"
+            label="Active"
+            checked={active}
+            onChange={handleActiveChange}
+          />
+
+
+
             <Form.Label htmlFor="inputPassword5">Challenge Name</Form.Label>
             <Form.Text className="text-danger">*</Form.Text>
             <Form.Control
@@ -144,32 +156,6 @@ function ChallengeForm({ show, setShow }) {
 
                 {/* <Dropdown.Divider />
                 <Dropdown.Item href="#">Separated link</Dropdown.Item> */}
-                </DropdownButton>
-            </InputGroup>
-
-
-
-
-            <Form.Label htmlFor="inputPassword5">How many point will be given?</Form.Label>
-            <Form.Text className="text-danger">*</Form.Text>
-            <InputGroup className="mb-3">
-            {/* flip this and when they click an item fill in blank*/}
-                <Form.Control 
-                  aria-label="Text input with dropdown button" 
-                  value={selectedPointValue} 
-                  onChange={(e) => setSelectedPointValue(e.target.value)}
-                  required={true}
-                />
-
-                <DropdownButton
-                variant="outline-secondary"
-                title="Point Allocation"
-                id="input-group-dropdown-2">
-                    <Dropdown.Item onClick={() => handlePointSelect('1')}>1</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handlePointSelect('5')}>5</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handlePointSelect('15')}>15</Dropdown.Item>
-                    {/* <Dropdown.Divider />
-                    <Dropdown.Item href="#">Separated link</Dropdown.Item> */}
                 </DropdownButton>
             </InputGroup>
 
