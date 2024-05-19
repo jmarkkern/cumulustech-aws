@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Member from "./MemberCard";
 
+
+//this function is in this file so we can run
+//{sortedDeets.map(person => createCard(person, theMetric))} when rendering the front end
 function createCard(person, theMetric) {
   return (
     <Member

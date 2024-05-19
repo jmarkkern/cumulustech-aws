@@ -11,10 +11,11 @@ import Rank5Icon from "../assets/ranks/svg/rank5.jsx"
 
 
 
-// childx
+// takes all the props that are named in Comparison.jsx 
 function Membercard(props){
-  console.log("Props:", props); 
-
+  console.log("Props:", props);
+  console.log("Metrics:", props.metrics); 
+ 
   let filteredMetrics;
 
   if (props.selectedMetric !==""){
@@ -43,14 +44,14 @@ function Membercard(props){
             {/* {props.metrics.map(metric => ( */}
 
 
-            {agentDetail.metrics.map(metric => (
-  <div key={metric.id}>
-    <p>Metric Name: {metric.m_name}</p>
-    <p>Max Streak: {metric.maxStreak}</p>
-    <p>Current Streak: {metric.currStreak}</p>
-    <p>Rank: {metric.rank}</p>
-  </div>
-))};
+            {/* {agentDetail.metrics.map(metric => (
+            <div key={metric.id}>
+              <p>Metric Name: {metric.m_name}</p>
+              <p>Max Streak: {metric.maxStreak}</p>
+              <p>Current Streak: {metric.currStreak}</p>
+              <p>Rank: {metric.rank}</p>
+            </div>
+          ))}; */}
 
 
 
