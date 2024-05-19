@@ -6,7 +6,7 @@ import Select from 'react-dropdown-select';
 
 
 // will remove later and instead use fakedata
-const greenData = [{ x: 'A', y: 10 }, { x: 'B', y: 5 }, { x: 'C', y: 15 }];
+const greenData = [{ x: 'Customer Service Hero', y: 10 }, { x: 'Most Improved', y: 5 }, { x: 'Most Efficient', y: 15 }];
 
 function Trophy() {
   const [showDistribution, setShowDistribution] = useState(true);
