@@ -3,7 +3,7 @@ import React from "react";
 function Icon({ number }) {
   return (
     <svg
-      className="icon-svg"
+      className="icon-jsx"
 
       xmlns="http://www.w3.org/2000/svg"
       id="svg1"
@@ -84,6 +84,7 @@ function Icon({ number }) {
           opacity="1"
           transform="translate(-47.781 -145.359) scale(2.75208)"
         ></path>
+
         <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle">
           {number}
         </text>
