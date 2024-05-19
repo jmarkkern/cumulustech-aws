@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled, { css } from "styled-components";
 
+import {addTrophyNameData} from "../data/trophyNames"
 
 
 
@@ -26,8 +27,15 @@ function TrophyCards() {
       name: nameInput,
       description: descriptionInput
     };
-    addTrophy(newTrophy);
-    setShowAddFormModal(false);
+    // Add the new trophy to the list of trophies
+    setTrophies([...trophies, newTrophy]);
+
+    addTrophyNameData({
+      singleTrophy:newTrophy
+    });
+
+    // Implement logic to save flashcard
+    setShowAddFormModal(false); // Close modal after saving
     setNameInput('');
     setDescriptionInput('');
   };

@@ -8,6 +8,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 import { addChallengeData } from '../data/dataChallenge'; 
+import {trophyNameData} from '../data/trophyNames';
 
 
 
@@ -17,7 +18,6 @@ function ChallengeForm({ show, setShow }) {
     
   const handleClose = () => {
       setShow(false);
-      setSelectedPointValue('');
       setSelectedTrophyValue('');
       setName('');
       setDescription('');
@@ -35,7 +35,7 @@ function ChallengeForm({ show, setShow }) {
       });
 
       event.preventDefault();
-      if (!name || !selectedTrophyValue || !selectedPointValue || !howTo) {
+      if (!name || !selectedTrophyValue  || !howTo) {
         alert("Please fill in all required fields.");
         return;
       }
@@ -44,9 +44,9 @@ function ChallengeForm({ show, setShow }) {
       addChallengeData({
         // key:id,
         // status:activeLvl, might put elsewhere
+        active:active,
         name: name,
         trophy: selectedTrophyValue,
-        points:selectedPointValue,
         descrip: description,
         howToWin:howTo,
         date: formattedDate
@@ -55,10 +55,6 @@ function ChallengeForm({ show, setShow }) {
     }
 
     // FOR DROP DOWN FORMS
-    const [selectedPointValue, setSelectedPointValue] = useState('');
-    const handlePointSelect = (value) => {
-      setSelectedPointValue(value);
-    };
 
     const [selectedTrophyValue, setSelectedTrophyValue] = useState('');
     const handleTrophySelect = (value) => {
@@ -66,8 +62,13 @@ function ChallengeForm({ show, setShow }) {
 
     }
     
-    
      // FOR TEXT FORMS
+
+    const [active, setActive] = useState(false);
+    function handleActiveChange(event){
+      setActive(event.target.checked)
+
+    }
      const [name, setName] = useState('');
     function handleNameChange(event){
       setName(event.target.value);
@@ -91,6 +92,18 @@ function ChallengeForm({ show, setShow }) {
         </Modal.Header>
 
         <Modal.Body>
+
+          <Form.Label>Active Status</Form.Label>
+          <Form.Check
+            type="checkbox"
+            id="active-switch"
+            label="Active"
+            checked={active}
+            onChange={handleActiveChange}
+          />
+
+
+
             <Form.Label htmlFor="inputPassword5">Challenge Name</Form.Label>
             <Form.Text className="text-danger">*</Form.Text>
             <Form.Control
@@ -123,37 +136,26 @@ function ChallengeForm({ show, setShow }) {
                 title="Trophy"
                 id="input-group-dropdown-2"
                 >
+                  {/* DEFAULT TROPHY OPTIONS, might remove? */}
                 <Dropdown.Item onClick={() => handleTrophySelect('Customer Service Hero')}>Customer Service Hero</Dropdown.Item>
                 <Dropdown.Item onClick={() => handleTrophySelect('Most Improved')}>Most Improved</Dropdown.Item>
                 <Dropdown.Item onClick={() => handleTrophySelect('Most Effient')}>Most Effient</Dropdown.Item>
+
+                {/* TESTER, SEE ALL TROPHYIES CREATED */}
+                <Dropdown.Item onClick={() => handleTrophySelect('Others') & console.log(trophyNameData)}>Click to see custom trophies</Dropdown.Item>
+                
+                {/* THIS IS HOW TO GET THE LIST OF TROPHY NAMES, remember to import trophyNameData array from data folder*/}
+                {trophyNameData.map((item, index) => (
+                    <Dropdown.Item
+                        key={index}
+                        onClick={() => handleTrophySelect(item.singleTrophy.name)}
+                    >
+                        {item.singleTrophy.name}
+                    </Dropdown.Item>
+                ))}
+
                 {/* <Dropdown.Divider />
                 <Dropdown.Item href="#">Separated link</Dropdown.Item> */}
-                </DropdownButton>
-            </InputGroup>
-
-
-
-
-            <Form.Label htmlFor="inputPassword5">How many point will be given?</Form.Label>
-            <Form.Text className="text-danger">*</Form.Text>
-            <InputGroup className="mb-3">
-            {/* flip this and when they click an item fill in blank*/}
-                <Form.Control 
-                  aria-label="Text input with dropdown button" 
-                  value={selectedPointValue} 
-                  onChange={(e) => setSelectedPointValue(e.target.value)}
-                  required={true}
-                />
-
-                <DropdownButton
-                variant="outline-secondary"
-                title="Point Allocation"
-                id="input-group-dropdown-2">
-                    <Dropdown.Item onClick={() => handlePointSelect('1')}>1</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handlePointSelect('5')}>5</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handlePointSelect('15')}>15</Dropdown.Item>
-                    {/* <Dropdown.Divider />
-                    <Dropdown.Item href="#">Separated link</Dropdown.Item> */}
                 </DropdownButton>
             </InputGroup>
 
