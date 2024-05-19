@@ -56,6 +56,7 @@ function Trophy() {
               </label>
             ))}
         </div>
+        {/* distribution and trophy will grab data and display it */}
         {showDistribution ? <TrophyDistribution greenData={greenData} selectedValues={selectedValues} /> :  <TrophyTrend />}
       </div>
       <div className="trophyCards">
