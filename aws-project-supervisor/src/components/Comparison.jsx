@@ -103,13 +103,13 @@ function Comparison() {
             <option value="Avg Non-Talk Time">Average Non-Talk Time</option>
         </select>
 
-        <select class="flex-item" id="selectDuration" onChange={handleDuration}>
+        {/* <select class="flex-item" id="selectDuration" onChange={handleDuration}>
             <option value="" disabled selected>--Duration--</option>
             <option value="7">Past 7 days</option>
             <option value="30">Past 30 days</option>
             <option value="60">Past 60 days</option>
             <option value="90">Past 90 days</option>
-        </select>
+        </select> */}
 
         <select class="flex-item" id="selectFilterBy"  onChange={handleSortBy}>
             <option value="" disabled selected>--Sort By--</option>
