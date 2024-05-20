@@ -8,56 +8,58 @@ import '../global.css';
 import { fetchData } from '../fetchData.js';
 
 const Leaderboard = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("Avg Active Time");
   const [names, setNames] = useState([]);
-  const [visibleRows, setVisibleRows] = useState(0);
 
   useEffect(() => {
     if (selectedOption) {
       let url = '';
+      let dataName = ''
       if (selectedOption === "Avg Active Time") {
         url = "http://localhost:4000/api/AverageActiveTime";
+        dataName = "AverageActiveTime"
       } else if (selectedOption === "Avg Handle Time") {
         url = "http://localhost:4000/api/AverageHandleTime";
+        dataName = "AverageHandleTime"
       } else if (selectedOption === "Avg Non-Talk Time") {
         url = "http://localhost:4000/api/AverageNonTalkTime";
+        dataName = "AverageNonTalkTime"
       }
       fetchData(url, (data) => {
         if (data) {
-          setNames(data[selectedOption.replace(/ /g, "")] || []); //updated for reading maps error
+          if (dataName == "AverageActiveTime") {
+            data = data.AverageActiveTime
+          }
+          else if (dataName === "AverageHandleTime") {
+            data = data.AverageHandleTime
+          }
+          else if (dataName === "AverageNonTalkTime") {
+            data = data.AverageNonTalkTime
+          }
+          if (Array.isArray(data)) {
+            const sortedData = sortNames(data);
+            setNames(sortedData); // Updated for reading maps error
+          }
+          else {
+            setNames([])
+          }
         }
       });
     }
   }, [selectedOption]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      incrementVisibleRows();
-    }, 200);
-
-    if (visibleRows === 5) {
-      clearInterval(timer);
-    }
-    sortNames();
-    return () => clearInterval(timer);
-  }, [visibleRows]);
 
   const convertTimeToSeconds = (time) => {
     const [hours, minutes, seconds] = time.split(':').map(Number);
     return hours * 3600 + minutes * 60 + seconds;
   };
 
-  const sortNames = () => {
-    const sortedNames = [...names].sort((a, b) => {
+  const sortNames = (data) => {
+    const sortedNames = [...data].sort((a, b) => {
       const timeA = convertTimeToSeconds(a.time);
       const timeB = convertTimeToSeconds(b.time);
       return selectedOption === "Avg Active Time" ? timeB - timeA : timeA - timeB;
     });
-    setNames(sortedNames);
-  };
-
-  const incrementVisibleRows = () => {
-    setVisibleRows(prevVisibleRows => prevVisibleRows + 1);
+    return sortedNames;
   };
 
   const handleMetric = (event) => {
@@ -74,7 +76,7 @@ const Leaderboard = () => {
       <div className="grid-item2">
         <div className="flexcompareFilters">
           <select className="flex-item" id="selectMetric" onChange={handleMetric}>
-            <option value="" disabled selected>Select A Metric</option>
+            {/* <option value="" disabled selected>Select A Metric</option> */}
             <option value="Avg Active Time">Average Active Time</option>
             <option value="Avg Handle Time">Average Handle Time</option>
             <option value="Avg Non-Talk Time">Average Non-Talk Time</option>
@@ -97,9 +99,18 @@ const Leaderboard = () => {
                   <th style={{ width: '33%' }}>Times</th>
                 </tr>
                 {names.map((item, index) => (
-                  <tr key={index}>
-                    <td style={{ paddingLeft: '15px', textAlign: 'left', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}>
-                      {rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />}
+                  <tr key={index} >
+                    <td style={{
+                      paddingLeft: index >= 5 ? '30px' : '15px', // Increased padding for rows >= 5
+                      textAlign: 'left',
+                      borderTopLeftRadius: '10px',
+                      borderBottomLeftRadius: '10px',
+                    }}>
+                      {index < 5 ? (
+                        rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />
+                      ) : (
+                        index + 1
+                      )}
                     </td>
                     <td style={{ width: '33%' }}>{item.name}</td>
                     <td style={{ width: '33%', borderTopRightRadius: '10px', borderBottomRightRadius: '10px' }}>{item.time}</td>
@@ -117,4 +128,3 @@ const Leaderboard = () => {
 }
 
 export default Leaderboard;
-
