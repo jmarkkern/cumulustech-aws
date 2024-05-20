@@ -35,7 +35,6 @@ function Membercard(props){
             <h2 className="name">{props.name}</h2>
           </div>
           <div className="bottom">
-            {/* <p className="info">{props.name} is on level {props.level}!</p> */}
             <p className="info">{props.name} has {props.achievements} achievements!</p>
             {/* <ul>For Metric:
                 <li className="info">They have been on the leadeboard for {props.streak}</li>
@@ -57,10 +56,6 @@ function Membercard(props){
 
             {filteredMetrics.map((metric) => (
                 <div>
-                    <ul className="metricSummary" key={metric.id}> For {metric.m_name}: {/* Add a unique key for each list */}
-                        <li className="info">For this metric they have a rank of {metric.rank}.</li>
-                        <li className="info">They have been on the leadeboard for {metric.streak}.</li>
-                    </ul>
 
                     <div className="rankIcons">
                     <h3>{metric.m_name}</h3>
@@ -71,8 +66,10 @@ function Membercard(props){
                     {metric.rank == 5 && <Rank5Icon />}
                     {metric.rank > 5 && <BronzeIcon number={metric.rank} />}
                     <div className="memberStreaks">
-                      <p>Current Streak: {metric.currStreak} </p>
-                      <p>Max Streak: {metric.maxStreak}</p>
+                      <p id="currentStreak-top">Current Streak: 15 days </p>
+                      <p id="maxStreak-bottom">Max Streak: 7 days</p>
+                      {/* <p>Current Streak: {metric.currStreak} </p>
+                      <p>Max Streak: {metric.maxStreak}</p> */}
                       <p></p>
                       <p></p>
                     </div>
@@ -81,12 +78,8 @@ function Membercard(props){
                 ))}
           </div>
 
+
           
-            
-
-
-
-
 
         </div>
       );

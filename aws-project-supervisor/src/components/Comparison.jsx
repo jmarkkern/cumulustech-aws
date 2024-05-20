@@ -82,7 +82,6 @@ function Comparison() {
     return(
 
 <div className="gridContainerCompare">
-{/* <p>{whatMetric}</p> */}
 
 <div className="grid-item1">
     <div className="flexMain">

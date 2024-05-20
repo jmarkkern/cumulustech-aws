@@ -129,8 +129,6 @@ h1 {
   width: max-content;
   padding-left: 5px;
   padding-right: 5px;
-  padding-top: .5%;
-  padding-bottom: .5%;
   /* margin-top: 10px; */
   font-size: 1.3rem;
   /* text-align: center; */
@@ -284,8 +282,60 @@ h1 {
 
 /* NESTED CARD */
 .icon-jsx {
-  height: 10%;
+  height: 200px;
 }
+
+/* STREAK BOX */
+.memberStreaks {
+  position: relative;
+  width: 95%; /* Adjust width as needed */
+  height: 120px; /* Adjust height as needed */
+  border: 1px solid #858484; /* Optional border for visibility */
+  overflow: hidden; /* Hide overflow to keep content within the box */
+  margin-top:5%;
+  right:70px;
+  left:10px;
+  margin-bottom:3%;
+}
+
+.memberStreaks::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, transparent 49.5%, #858484 50.5%); /* Diagonal line */
+  z-index: 1;
+}
+
+#currentStreak-top, #maxStreak-bottom {
+  position: absolute;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 2; /* Ensure text is above the line */
+}
+
+#currentStreak-top {
+  top: 10;
+  left: 0;
+  /* transform: translateY(-10%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#maxStreak-bottom{
+  bottom: 0;
+  right: 0;
+  color:white;
+  /* transform: translateY(10%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 
 
