@@ -8,6 +8,7 @@ import AgentTrophies from '../components/AgentTrophies.js';
 import agentpic from '../assets/imgs/agent_default_icon.png';
 import AgentMetric from '../components/AgentMetric.js';
 import ProgressPage from "./ProgressPage.js";
+import Leaderboard from "./AgentLeaderboard.js";
 import AgentChallenge from "./agentChallengePage.jsx"
 
 
@@ -19,7 +20,7 @@ function AgentApp() {
             <NavBar />
             <Routes>
                 <Route path="/" element={<ProgressPage />} />
-                {/* <Route path="/teamLeaderboard" element={<TeamLeaderboard />} /> */}
+                <Route path="/Leaderboard" element={<Leaderboard />} />
                 <Route path="/challenges" element={<AgentChallenge />} />
             </Routes>
         </div>

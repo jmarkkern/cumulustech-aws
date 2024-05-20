@@ -6,12 +6,12 @@ function AgentInfo({type}) {
     const agentNum = 0;
 
     return(
-        <div class="agentDashTrophies" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-            <h2>Trophies</h2>
-            <p class="agentDashNum">{agentNum}</p>
+        <div class="agentDashTrophies">
+            <h2 onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>Trophies</h2>
             <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
-                This is the number of trophies you've earned. Great job!
+                Trophies are earned through individual efforts toward skills and collaboration. Keep it up!
             </div>
+            <p class="agentDashNum">{agentNum}</p>
         </div>
     )
 }

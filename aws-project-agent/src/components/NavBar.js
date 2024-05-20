@@ -6,7 +6,7 @@ function NavBar() {
         <div class="navbar">
             <div className="supervisor_links">
                 <NavLink to="/">My Progress</NavLink>
-                <NavLink to="/trophy">Team Leaderboard</NavLink>
+                <NavLink to="/leaderboard">Team Leaderboard</NavLink>
                 <NavLink to="/challenges">Challenges</NavLink>
             </div>
         </div>
