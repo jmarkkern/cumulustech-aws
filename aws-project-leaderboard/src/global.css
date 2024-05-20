@@ -39,13 +39,13 @@
 }
 
 table {
-    border-spacing: 20px;
+    border-spacing: 0px 20px;
     position: absolute;
     top: flex;
     left: 0;
     z-index: 1;
-
 }
+
 
 
 /* Table rows and Columns Styles */

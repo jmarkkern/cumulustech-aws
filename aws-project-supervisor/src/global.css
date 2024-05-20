@@ -225,6 +225,13 @@ select {
     text-align: left;
 }
 
+.table3 tr:not(:last-child) {
+    border-bottom: 10px solid white;
+    /* Add a white border between rows */
+
+}
+
+
 /* Rows fading in*/
 .fade-in {
     animation: fadeIn 1.5s ease forwards;

@@ -95,16 +95,16 @@ const Leaderboard = () => {
               <tbody>
                 <tr>
                   <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
-                  <th style={{ width: '33%' }}>Agent</th>
-                  <th style={{ width: '33%' }}>Times</th>
+                  <th style={{ textAlign: 'center' }}>Agent</th>
+                  <th style={{ textAlign: 'center' }}>Times</th>
                 </tr>
                 {names.map((item, index) => (
                   <tr key={index} >
                     <td style={{
                       paddingLeft: index >= 5 ? '30px' : '15px', // Increased padding for rows >= 5
                       textAlign: 'left',
-                      borderTopLeftRadius: '10px',
-                      borderBottomLeftRadius: '10px',
+                      borderTopLeftRadius: '100px',
+                      borderBottomLeftRadius: '100px',
                     }}>
                       {index < 5 ? (
                         rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />
@@ -113,7 +113,7 @@ const Leaderboard = () => {
                       )}
                     </td>
                     <td style={{ width: '33%' }}>{item.name}</td>
-                    <td style={{ width: '33%', borderTopRightRadius: '10px', borderBottomRightRadius: '10px' }}>{item.time}</td>
+                    <td style={{ width: '33%', borderTopRightRadius: '100px', borderBottomRightRadius: '100px' }}>{item.time}</td>
                   </tr>
                 ))}
               </tbody>

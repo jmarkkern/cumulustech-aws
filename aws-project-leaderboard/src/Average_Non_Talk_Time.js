@@ -59,7 +59,7 @@ const AverageNonTalkTime = () => {
 
     }, [visibleRows]);
 
-        const rankBadges = [rank1, rank2, rank3, rank4, rank5];
+    const rankBadges = [rank1, rank2, rank3, rank4, rank5];
 
     return (
         <div className="containerLeaderboard1">
