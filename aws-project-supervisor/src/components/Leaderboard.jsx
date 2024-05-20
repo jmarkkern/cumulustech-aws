@@ -89,9 +89,7 @@ const Leaderboard = () => {
         </div>
         <div className="item table">
           {names.length > 0 ? (
-            <table className="table3" style={{
-              paddingLeft: '20px', paddingRight: "20px", width: '100%', borderSpacing: '0px 20px'
-            }}>
+            <table className="table3">
               <tbody>
                 <tr>
                   <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
@@ -103,8 +101,8 @@ const Leaderboard = () => {
                     <td style={{
                       paddingLeft: index >= 5 ? '30px' : '15px', // Increased padding for rows >= 5
                       textAlign: 'left',
-                      borderTopLeftRadius: '100px',
-                      borderBottomLeftRadius: '100px',
+                      borderTopLeftRadius: '20px',
+                      borderBottomLeftRadius: '20px',
                     }}>
                       {index < 5 ? (
                         rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />
@@ -113,7 +111,7 @@ const Leaderboard = () => {
                       )}
                     </td>
                     <td style={{ width: '33%' }}>{item.name}</td>
-                    <td style={{ width: '33%', borderTopRightRadius: '100px', borderBottomRightRadius: '100px' }}>{item.time}</td>
+                    <td style={{ width: '33%', borderTopRightRadius: '20px', borderBottomRightRadius: '20px' }}>{item.time}</td>
                   </tr>
                 ))}
               </tbody>
