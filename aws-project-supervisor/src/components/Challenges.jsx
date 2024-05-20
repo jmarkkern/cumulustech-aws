@@ -11,12 +11,12 @@ function createChallengeCard(challenge, onDelete, onSwitch) {
     <ChallengeCard
       name={challenge.name}
       trophy={challenge.trophy}
-      active ={challenge.active}
+      active={challenge.active}
       desc={challenge.descrip}
       howToWin={challenge.howToWin}
       date={challenge.date}
-      onDelete={onDelete} 
-      onSwitch = {onSwitch}
+      onDelete={onDelete}
+      onSwitch={onSwitch}
     />
   );
 }
@@ -47,25 +47,21 @@ function Challenges() {
     setChallenges(newdata);
     setChallengeData(newdata)
     addChallengeData(null)
-   
+
   };
 
-   const handleSwitch = (name) => {
-    
+  const handleSwitch = (name) => {
+    console.log(name, "I am here")
     challenges.forEach(challenge => {
-       
-    if (challenge.name === name) {
-      challenge.active = !challenge.active
-      console.log(challenge.active, name)
-      
-    }
-    addChallengeData(null)
-    
-  });
+      if (challenge.name === name) {
+        challenge.active = !challenge.active
+        addChallengeData(null)
+      }
+    });
 
-    
-    
-   
+
+
+
   };
 
   return (
@@ -83,7 +79,6 @@ function Challenges() {
       </div>
 
       <div>
-  
         {challenges.length > 0 ? challenges.map(challenge => createChallengeCard(challenge, handleDelete, handleSwitch)) : <h2 id="emptyChallenges">No challenges created yet!</h2>}
       </div>
 

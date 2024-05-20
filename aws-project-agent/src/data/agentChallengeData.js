@@ -8,7 +8,7 @@ const challengDetail = [
         date: "May 9, 2024",
         trophy: "Customer Service Hero"
     },
-     {
+    {
         id: 2,
         name: "No time wasted",
         descrip: "no breaks, no talking to friends only think of shareholder intrests!",
@@ -19,3 +19,4 @@ const challengDetail = [
     }
 ]
 export default challengDetail;
+// Depreciated

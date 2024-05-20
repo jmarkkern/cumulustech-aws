@@ -1,18 +1,18 @@
 [
   {
-    "active": false,
-    "name": "dsad",
+    "active": true,
+    "name": "dasdasdasdasdasda",
     "trophy": "Most Improved",
-    "descrip": "dasd",
-    "howToWin": "asdasd",
-    "date": "May 18, 2024"
+    "descrip": "asda",
+    "howToWin": "dasdas",
+    "date": "May 19, 2024"
   },
   {
     "active": true,
-    "name": "dasd",
-    "trophy": "Customer Service Hero",
-    "descrip": "dasdd",
-    "howToWin": "dasd",
-    "date": "May 18, 2024"
+    "name": "dasdasdasda",
+    "trophy": "Most Improved",
+    "descrip": "dasdas",
+    "howToWin": "dasdasd",
+    "date": "May 19, 2024"
   }
-]]
+]
