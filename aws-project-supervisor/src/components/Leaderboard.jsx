@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import rank1 from "../ranks/rank1.png"; 
+import rank1 from "../ranks/rank1.png";
 import rank2 from "../ranks/rank2.png";
 import rank3 from "../ranks/rank3.png";
 import rank4 from "../ranks/rank4.png";
 import rank5 from "../ranks/rank5.png";
 import '../global.css';
 import { fetchData } from '../fetchData.js';
-
 
 const Leaderboard = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -23,7 +22,11 @@ const Leaderboard = () => {
       } else if (selectedOption === "Avg Non-Talk Time") {
         url = "http://localhost:4000/api/AverageNonTalkTime";
       }
-      fetchData(url, (data) => setNames(data[selectedOption.replace(" ", "")]));
+      fetchData(url, (data) => {
+        if (data) {
+          setNames(data[selectedOption.replace(/ /g, "")] || []); //updated for reading maps error
+        }
+      });
     }
   }, [selectedOption]);
 
@@ -83,26 +86,30 @@ const Leaderboard = () => {
           <h1>{selectedOption}</h1>
         </div>
         <div className="item table">
-          <table className="table3" style={{
-            paddingLeft: '20px', paddingRight: "20px", width: '100%', borderSpacing: '0px 20px'
-          }}>
-            <tbody>
-              <tr>
-                <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
-                <th style={{ width: '33%' }}>Agent</th>
-                <th style={{ width: '33%' }}>Times</th>
-              </tr>
-              {names.map((item, index) => (
-                <tr key={index} >
-                  <td style={{ paddingLeft: '15px', textAlign: 'left', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}>
-                    {rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />}
-                  </td>
-                  <td style={{ width: '33%' }}>{item.name}</td>
-                  <td style={{ width: '33%', borderTopRightRadius: '10px', borderBottomRightRadius: '10px' }}>{item.time}</td>
+          {names.length > 0 ? (
+            <table className="table3" style={{
+              paddingLeft: '20px', paddingRight: "20px", width: '100%', borderSpacing: '0px 20px'
+            }}>
+              <tbody>
+                <tr>
+                  <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
+                  <th style={{ width: '33%' }}>Agent</th>
+                  <th style={{ width: '33%' }}>Times</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+                {names.map((item, index) => (
+                  <tr key={index}>
+                    <td style={{ paddingLeft: '15px', textAlign: 'left', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px' }}>
+                      {rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />}
+                    </td>
+                    <td style={{ width: '33%' }}>{item.name}</td>
+                    <td style={{ width: '33%', borderTopRightRadius: '10px', borderBottomRightRadius: '10px' }}>{item.time}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <p>No data available</p>
+          )}
         </div>
       </div>
     </div>
