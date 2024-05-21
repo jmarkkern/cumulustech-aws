@@ -8,39 +8,40 @@ import AgentChallengeCard from "../components/agentChallengeCard"
 
 function showChallengeCard(challenge) { //loops through the array, and for each challenge it creates a challengeCard when called
     return (
-      <AgentChallengeCard
-        name={challenge.name}  //left hand is props
-        tropy={challenge.trophy} //right hand side is from the array, which is created in challengeForm
-        points={challenge.points}
-        desc={challenge.descrip}
-        howToWin={challenge.howToWin}
-        date={challenge.date}
+        <AgentChallengeCard
+            name={challenge.name}
+            tropy={challenge.trophy}
+            desc={challenge.descrip}
+            howToWin={challenge.howToWin}
+            date={challenge.date}
 
-      />
+        />
     );
-  }
+}
 
-function AgentChallenge(props){ 
-    const [open, setOpen] = useState([]);
+function AgentChallenge(props) {
+    const [challenges, setChallenges] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:4000/agentChallenges")
             .then(response => response.json())
             .then(data => {
-                setOpen(data)
-                console.log()
+
+                const fliteredData = data.filter(challenge => challenge.active !== false)
+                setChallenges(fliteredData)
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, []);
 
-    return(
+    return (
         <div className="agentChallenges">
             <h1>Challenges</h1>
-
             {/* for every visible challenge make a challenge visible to the agent */}
-            {open.map(showChallengeCard)}            
+
+            {challenges.length > 0 ? challenges.map(showChallengeCard) : <h2 id="emptyChallenges">No Challenges Yet!</h2>}
+
         </div>
     );
 }

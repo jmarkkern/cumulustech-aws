@@ -2,17 +2,21 @@ import React, { useState, useEffect } from "react";
 import ChallengeCard from "./ChallengeCard";
 import ChallengeForm from "./ChallengeForm";
 import { addChallengeData, setChallengeData } from "../data/dataChallenge";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 
-function createChallengeCard(challenge, onDelete) {
+function createChallengeCard(challenge, onDelete, onSwitch) {
   return (
     <ChallengeCard
       name={challenge.name}
       trophy={challenge.trophy}
-      active ={challenge.active}
+      active={challenge.active}
       desc={challenge.descrip}
       howToWin={challenge.howToWin}
       date={challenge.date}
-      onDelete={onDelete} 
+      onDelete={onDelete}
+      onSwitch={onSwitch}
     />
   );
 }
@@ -43,6 +47,21 @@ function Challenges() {
     setChallenges(newdata);
     setChallengeData(newdata)
     addChallengeData(null)
+
+  };
+
+  const handleSwitch = (name) => {
+    console.log(name, "I am here")
+    challenges.forEach(challenge => {
+      if (challenge.name === name) {
+        challenge.active = !challenge.active
+        addChallengeData(null)
+      }
+    });
+
+
+
+
   };
 
   return (
@@ -60,7 +79,7 @@ function Challenges() {
       </div>
 
       <div>
-        {challenges.length > 0 ? challenges.map(challenge => createChallengeCard(challenge, handleDelete)) : <h2 id="emptyChallenges">No challenges created yet!</h2>}
+        {challenges.length > 0 ? challenges.map(challenge => createChallengeCard(challenge, handleDelete, handleSwitch)) : <h2 id="emptyChallenges">No challenges created yet!</h2>}
       </div>
 
       <ChallengeForm show={show} setShow={setShow} />

@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "active": true,
+    "name": "dasdasdasdasdasda",
+    "trophy": "Most Improved",
+    "descrip": "asda",
+    "howToWin": "dasdas",
+    "date": "May 19, 2024"
+  },
+  {
+    "active": true,
+    "name": "dasdasdasda",
+    "trophy": "Most Improved",
+    "descrip": "dasdas",
+    "howToWin": "dasdasd",
+    "date": "May 19, 2024"
+  }
+]
