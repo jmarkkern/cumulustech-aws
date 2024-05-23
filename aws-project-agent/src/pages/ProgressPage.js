@@ -1,28 +1,52 @@
-import AgentTrophies from '../components/AgentTrophies.js';
-import agentpic from '../assets/imgs/agent_default_icon.png';
 import AgentMetric from '../components/AgentMetric.js';
+import { useState, useEffect } from 'react';
+import AgentTrophy from '../components/AgentTrophies.js';
 
 function ProgressPage() {
+    const [agent, setAgent] =useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:4000/api/jessicaLyn")
+            .then(response => response.json())
+            .then(data => {
+                setAgent(data)
+       
+            })
+            .catch(error => {
+                console.error('Error fetching agent data:', error);
+            });
+    }, []);
+
+
+    
+   
+    const listofTrophies = agent.Trophies ? agent.Trophies : [];
+    const metrics = agent.metrics ? agent.metrics : [];
+
+
     return (
         <div>
             <div class="containerAgentDashboard">
                 <div></div>
                 <div class="agentDashPic">
-                    <img src={agentpic}></img>
+                    <img src={agent.imgURL}></img>
                 </div>
                 <div class="agentDashName">
-                    <h1>Allison McAndrew</h1>
+                    <h1>{agent.FirstName} {agent.LastName}</h1>
                 </div>
-                <div></div><div></div>
-                <AgentTrophies/>
-                <div></div>
+               
+                <AgentTrophy numTrophies={listofTrophies}/>
+               
+                
                 <div class="agentDashTitle">
                     <h1>Metric Ranks</h1>
                 </div>
                 <div></div><div></div>
-                <AgentMetric type="avg_handle_time"/>
-                <AgentMetric type="avg_active_time"/>
-                <AgentMetric type="avg_nontalk_time"/>
+
+                {metrics.map(metric => (
+              <AgentMetric metric ={metric}/>
+            ))}
+                
                 <div></div>
             </div>
         </div>

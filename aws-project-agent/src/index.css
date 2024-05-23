@@ -23,4 +23,145 @@ code {
   justify-content: center;
   align-items: center;
 
+}/* CSS styles for dropdown menu */
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center; }
+
+.dropdown-btn {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  max-height: 200px;
+ 
+  overflow-y: auto;
+  z-index: 1;
+  top: calc(100% + 5px); /* Position dropdown below the button */
+}
+
+.scrollable-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scrollable-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.scrollable-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+
+}
+
+.table-container {
+    background-color: rgb(255, 255, 255);
+    grid-row-start: 3;
+    grid-row-end: -1;
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+}
+
+table {
+    border-spacing: 20px;
+    position: absolute;
+    top: flex;
+    left: 0;
+    z-index: 1;
+
+}
+
+
+
+/* Table rows and Columns Styles */
+tr {
+    height: auto;
+    font-size: 1em;
+    /* Set the height for all rows */
+}
+
+td {
+    color: white;
+    background-color: #37475A;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1em;
+
+}
+
+
+/*AGENT LEADERBOARD*/
+
+
+.containerAgentLeaderboard {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: .5fr 2fr 4fr;
+    grid-template-rows: .3fr .4fr 1fr 1fr;
+    gap: 2px;
+
+}
+
+
+/* Table Styles */
+.table3 td:nth-child(3) {
+    text-align: center;
+}
+
+/* Pic / Agent */
+.table3 td:nth-child(2) {
+    text-align: center;
+}
+
+/* Rank */
+.table3 td:nth-child(1) {
+    text-align: left;
+}
+
+.table3 tr:not(:last-child) {
+    border-bottom: 10px solid white;
+    /* Add a white border between rows */
+
+}
+
+.table3 {
+    padding-left: 20px;
+    /* Add left padding */
+    padding-right: 20px;
+    /* Add right padding */
+    width: 100%;
+    border-spacing: 0px 20px;
+    /* Spacing between rows */
+}
+
+
+
+/* Rows fading in*/
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
+}
+
+
+
+.rank-badge {
+    height: calc(1em + 22px);
+    position: absolute;
+    transform: translate(0%, -50%);
 }
