@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import AgentChallengeCard from "../components/agentChallengeCard"
 
 
+
 function showChallengeCard(challenge) { //loops through the array, and for each challenge it creates a challengeCard when called
     return (
         <AgentChallengeCard
@@ -14,6 +15,8 @@ function showChallengeCard(challenge) { //loops through the array, and for each 
             desc={challenge.descrip}
             howToWin={challenge.howToWin}
             date={challenge.date}
+            progressCurrent ={challenge.progressCurrent}
+            progressTotal = {challenge.progressTotal}
 
         />
     );

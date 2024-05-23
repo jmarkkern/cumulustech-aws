@@ -1,18 +1,32 @@
 [
   {
-    "active": true,
-    "name": "dasdasdasdasdasda",
+    "active": false,
+    "name": "fsdfsd",
     "trophy": "Most Improved",
-    "descrip": "asda",
-    "howToWin": "dasdas",
-    "date": "May 19, 2024"
+    "descrip": "fsdf",
+    "howToWin": "dsfsdf",
+    "date": "May 22, 2024",
+    "progressCurrent": 41,
+    "progressTotal": 100
   },
   {
     "active": true,
-    "name": "dasdasdasda",
+    "name": "dasd",
     "trophy": "Most Improved",
-    "descrip": "dasdas",
-    "howToWin": "dasdasd",
-    "date": "May 19, 2024"
+    "descrip": "dasd",
+    "howToWin": "dasd",
+    "date": "May 22, 2024",
+    "progressCurrent": 25,
+    "progressTotal": 100
+  },
+  {
+    "active": false,
+    "name": "dasdasdasdasd",
+    "trophy": "Most Improved",
+    "descrip": "dasdasdasd",
+    "howToWin": "sdasd",
+    "date": "May 22, 2024",
+    "progressCurrent": 55,
+    "progressTotal": 100
   }
 ]

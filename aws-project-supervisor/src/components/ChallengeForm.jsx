@@ -16,6 +16,8 @@ import React from "react"
 
 function ChallengeForm({ show, setShow }) {
 
+  
+
   const handleClose = () => {
     setShow(false);
     setSelectedTrophyValue('');
@@ -27,6 +29,9 @@ function ChallengeForm({ show, setShow }) {
   const handleShow = () => setShow(true);
 
   const handleSave = (event) => {
+    //Hard Code to be change to the total percentage of a goal reached
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    const progress = randomNumber; // Progress state
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString('en-US', {
       year: 'numeric',
@@ -44,12 +49,15 @@ function ChallengeForm({ show, setShow }) {
     addChallengeData({
       // key:id,
       // status:activeLvl, might put elsewhere
+      
       active: active,
       name: name,
       trophy: selectedTrophyValue,
       descrip: description,
       howToWin: howTo,
-      date: formattedDate
+      date: formattedDate, 
+      progressCurrent : progress,
+      progressTotal :100,
     });
     handleClose();
   }

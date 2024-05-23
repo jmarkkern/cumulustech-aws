@@ -6,17 +6,22 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
+
 function createChallengeCard(challenge, onDelete, onSwitch) {
   return (
     <ChallengeCard
+    
       name={challenge.name}
       trophy={challenge.trophy}
       active={challenge.active}
       desc={challenge.descrip}
       howToWin={challenge.howToWin}
+      progressCurrent = {challenge.progressCurrent}
+      progressTotal ={challenge.progressTotal}
       date={challenge.date}
       onDelete={onDelete}
       onSwitch={onSwitch}
+
     />
   );
 }
@@ -24,6 +29,7 @@ function createChallengeCard(challenge, onDelete, onSwitch) {
 function Challenges() {
   const [challenges, setChallenges] = useState([]);
   const [show, setShow] = useState(false);
+
 
   const handleShow = () => setShow(true);
 
@@ -51,7 +57,6 @@ function Challenges() {
   };
 
   const handleSwitch = (name) => {
-    console.log(name, "I am here")
     challenges.forEach(challenge => {
       if (challenge.name === name) {
         challenge.active = !challenge.active
@@ -77,8 +82,12 @@ function Challenges() {
         <p>Date Created</p>
         <p>Trophy</p>
       </div>
+      
+       
+
 
       <div>
+        
         {challenges.length > 0 ? challenges.map(challenge => createChallengeCard(challenge, handleDelete, handleSwitch)) : <h2 id="emptyChallenges">No challenges created yet!</h2>}
       </div>
 
