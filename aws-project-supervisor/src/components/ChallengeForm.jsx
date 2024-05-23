@@ -8,7 +8,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 import { addChallengeData } from '../data/dataChallenge';
-import { trophyNameData } from '../data/trophyNames';
+import { trophyNameData, getTrophyData } from '../data/trophyNames';
 
 
 
@@ -16,7 +16,7 @@ import React from "react"
 
 function ChallengeForm({ show, setShow }) {
 
-  
+
 
   const handleClose = () => {
     setShow(false);
@@ -49,15 +49,15 @@ function ChallengeForm({ show, setShow }) {
     addChallengeData({
       // key:id,
       // status:activeLvl, might put elsewhere
-      
+
       active: active,
       name: name,
       trophy: selectedTrophyValue,
       descrip: description,
       howToWin: howTo,
-      date: formattedDate, 
-      progressCurrent : progress,
-      progressTotal :100,
+      date: formattedDate,
+      progressCurrent: progress,
+      progressTotal: 100,
     });
     handleClose();
   }
@@ -150,15 +150,15 @@ function ChallengeForm({ show, setShow }) {
               <Dropdown.Item onClick={() => handleTrophySelect('Most Effient')}>Most Effient</Dropdown.Item>
 
               {/* TESTER, SEE ALL TROPHYIES CREATED */}
-              <Dropdown.Item onClick={() => handleTrophySelect('Others') & console.log(trophyNameData)}>Click to see custom trophies</Dropdown.Item>
+              {/* <Dropdown.Item onClick={() => handleTrophySelect('Others') & console.log(trophyNameData)}>Click to see custom trophies</Dropdown.Item> */}
 
               {/* THIS IS HOW TO GET THE LIST OF TROPHY NAMES, remember to import trophyNameData array from data folder*/}
               {trophyNameData.map((item, index) => (
                 <Dropdown.Item
                   key={index}
-                  onClick={() => handleTrophySelect(item.singleTrophy.name)}
+                  onClick={() => handleTrophySelect(item.name)}
                 >
-                  {item.singleTrophy.name}
+                  {item.name}
                 </Dropdown.Item>
               ))}
 

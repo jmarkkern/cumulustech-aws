@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import ChallengeCard from "./ChallengeCard";
 import ChallengeForm from "./ChallengeForm";
 import { addChallengeData, setChallengeData } from "../data/dataChallenge";
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+// import FormGroup from '@mui/material/FormGroup';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Switch from '@mui/material/Switch';
 
 
 function createChallengeCard(challenge, onDelete, onSwitch) {
   return (
     <ChallengeCard
-    
+
       name={challenge.name}
       trophy={challenge.trophy}
       active={challenge.active}
       desc={challenge.descrip}
       howToWin={challenge.howToWin}
-      progressCurrent = {challenge.progressCurrent}
-      progressTotal ={challenge.progressTotal}
+      progressCurrent={challenge.progressCurrent}
+      progressTotal={challenge.progressTotal}
       date={challenge.date}
       onDelete={onDelete}
       onSwitch={onSwitch}
@@ -82,12 +82,12 @@ function Challenges() {
         <p>Date Created</p>
         <p>Trophy</p>
       </div>
-      
-       
+
+
 
 
       <div>
-        
+
         {challenges.length > 0 ? challenges.map(challenge => createChallengeCard(challenge, handleDelete, handleSwitch)) : <h2 id="emptyChallenges">No challenges created yet!</h2>}
       </div>
 

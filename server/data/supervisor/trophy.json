@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "name": "asdas",
+    "description": "dasd",
+    "agents": [
+      "person 1",
+      "person 2",
+      "person 3"
+    ]
+  },
+  {
+    "name": "dasd",
+    "description": "dasd",
+    "agents": [
+      "person 1",
+      "person 2",
+      "person 3"
+    ]
+  },
+  {
+    "name": "dasd",
+    "description": "dasdads",
+    "agents": [
+      "person 1",
+      "person 2",
+      "person 3"
+    ]
+  }
+]
