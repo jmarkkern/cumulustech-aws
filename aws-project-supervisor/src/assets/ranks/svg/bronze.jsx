@@ -13,51 +13,7 @@ function BronzeIcon({ number }) {
       viewBox="0 0 264.848 264.848"
       xmlSpace="preserve"
     >
-      <g id="layer1" fillOpacity="1" stroke="none">
-        <circle
-          id="path1"
-          cx="132.424"
-          cy="132.424"
-          r="132.326"
-          fill="#c28d3f"
-          strokeWidth="8.953"
-        ></circle>
-        <path
-          id="path1-5"
-          fill="#d29d4f"
-          strokeWidth="8.953"
-          d="M264.75-132.424A132.326 132.326 0 01132.424-.098v-132.326z"
-          transform="scale(1 -1)"
-        ></path>
-        <path
-          id="path1-5-1"
-          fill="#ebd9c0"
-          strokeWidth="8.953"
-          d="M247.022-66.26a132.326 132.326 0 01-48.435 48.434l-66.163-114.598z"
-          transform="scale(1 -1)"
-        ></path>
-        <path
-          id="path1-5-9"
-          fill="#8d5c14"
-          strokeWidth="8.953"
-          d="M-.098 132.424A132.326 132.326 0 01-132.424 264.75V132.424z"
-          transform="scale(-1 1)"
-        ></path>
-        <path
-          id="path1-5-1-2"
-          fill="#3f2d14"
-          strokeWidth="8.953"
-          d="M-17.826 198.587a132.326 132.326 0 01-48.435 48.435l-66.163-114.598z"
-          transform="scale(-1 1)"
-        ></path>
-        <circle
-          id="path2"
-          cx="132.424"
-          cy="132.424"
-          r="92.951"
-          fill="#b07b2d"
-          strokeWidth="14.976"
-        ></circle>
+      
 
 <text
           xmlSpace="preserve"
@@ -113,7 +69,6 @@ function BronzeIcon({ number }) {
              {number}
           </tspan>
         </text>
-      </g>
     </svg>
   );
 }

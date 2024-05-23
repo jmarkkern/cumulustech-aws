@@ -6,11 +6,30 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled from "styled-components";
 
+import AwardTrophyForm from "./AssignTrophy"
+
+
+import agentDetail from "../data/fakeMembers"
+
+
 function TrophyCards() {
   const [trophies, setTrophies] = useState([]); // Manage state internally
   const [showAddFormModal, setShowAddFormModal] = useState(false);
   const [nameInput, setNameInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
+  const [showAssignForm, setAssignShowForm] = useState(false);
+
+
+  //when they click on assign form show checkboxes
+  const assignTrophy = () => {
+    setAssignShowForm(!showAssignForm);
+  };
+
+  //when they hit save hide checkboxes and get list of names
+  const handleAssignTrophySubmit = (selectedAgents) => {
+    console.log('Selected agents:', selectedAgents);
+    setAssignShowForm(false); // Hide the form after submission
+  };
 
   const handleAddTrophyCard = () => {
     setShowAddFormModal(true);
@@ -38,6 +57,9 @@ function TrophyCards() {
       setIsExpanded(!isExpanded);
     };
 
+
+
+// THIS IS THE TROPHY CARD
     return (
       <TrophyCardContainer onClick={toggleExpanded}>
         <div className="card-body">
@@ -45,23 +67,29 @@ function TrophyCards() {
           <p className="card-text">{trophy.name}</p>
           <h5 className="card-title">Description:</h5>
           <p className="card-text">{trophy.description}</p>
+          <Button onClick={assignTrophy}>Award Trophy</Button>
+          {showAssignForm && (
+          <AwardTrophyForm onSubmit={handleAssignTrophySubmit} />
+        )}
         </div>
-        {isExpanded && (
+        {/* {isExpanded && (
           <ExpandedCardContent>
             <h5 className="card-title">Name:</h5>
             <p className="card-text">{trophy.name}</p>
             <h5 className="card-title">Description:</h5>
             <p className="card-text">{trophy.description}</p>
           </ExpandedCardContent>
-        )}
+        )} */}
       </TrophyCardContainer>
     );
   };
 
+
+  // THIS IS THE TROPHY FORM
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-end py-4">
-        <button className="btn btn-primary" onClick={handleAddTrophyCard}>Create New Trophy</button>
+        <button className="btn btn-primary" onClick={handleAddTrophyCard}>+ Create New Trophy</button>
       </div>
 
       <Modal show={showAddFormModal} onHide={() => setShowAddFormModal(false)}>
@@ -69,6 +97,7 @@ function TrophyCards() {
           <Modal.Title>Create Custom Trophy</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          
           <label htmlFor="name" className="mt-3">Name:</label>
           <textarea
             className="form-control"
@@ -78,6 +107,8 @@ function TrophyCards() {
             placeholder="Type the name here..."
             rows="2"
           />
+
+
           <label htmlFor="description" className="mt-3">Description:</label>
           <textarea
             className="form-control"
@@ -87,7 +118,10 @@ function TrophyCards() {
             placeholder="Type the description here..."
             rows="4"
           />
+
         </Modal.Body>
+
+
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowAddFormModal(false)}>Close</Button>
           <Button variant="primary" onClick={handleSaveTrophyCard}>Save</Button>
