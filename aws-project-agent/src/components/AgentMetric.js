@@ -41,7 +41,7 @@ const infoType = {
 function AgentMetric({type}) {
     const [show, setShow] = React.useState(false);
     const totalAgents = 1;
-    const agentRank = 0;
+    const agentRank = 2;
     const percentile = agentRank / totalAgents;
 
     return(

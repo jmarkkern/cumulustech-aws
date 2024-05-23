@@ -11,7 +11,7 @@ function ProgressPage() {
                     <img src={agentpic}></img>
                 </div>
                 <div class="agentDashName">
-                    <h1>Agent First Last Name</h1>
+                    <h1>Allison McAndrew</h1>
                 </div>
                 <div></div><div></div>
                 <AgentTrophies/>
