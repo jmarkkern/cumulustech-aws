@@ -5,6 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import styled from "styled-components";
 
 import { addTrophyNameData, setTrophyData, trophyNameData } from '../data/trophyNames';
+import AwardTrophyForm from "./AssignTrophy";
+import agentDetail from "../data/fakeMembers";
+
 
 function TrophyCards() {
   const [trophies, setTrophies] = useState([]); // Manage state internally
@@ -31,9 +34,9 @@ function TrophyCards() {
       const [showAssignForm, setAssignShowForm] = useState(false);
 
 
-  //when they click on assign form show checkboxes
+  //when they click on assign form, show checkboxes
   const assignTrophy = () => {
-    setAssignShowForm(!showAssignForm);
+    setAssignShowForm(true);
   };
 
   //when they hit save hide checkboxes and get list of names
