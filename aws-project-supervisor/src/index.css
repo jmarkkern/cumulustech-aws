@@ -122,8 +122,6 @@ h1 {
 
 #selectTeam {
   background-color: #ddffff;
-  /*or white*/
-  /* flex-grow: 4; */
   color: black;
   border-radius: 15px;
   width: max-content;
@@ -131,8 +129,6 @@ h1 {
   padding-right: 5px;
   /* margin-top: 10px; */
   font-size: 1.3rem;
-  /* text-align: center; */
-  /* border: none; */
 }
 
 #selectTeam:focus:after {
