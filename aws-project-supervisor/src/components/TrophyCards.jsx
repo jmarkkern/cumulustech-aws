@@ -1,23 +1,34 @@
-
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled from "styled-components";
 
-import AwardTrophyForm from "./AssignTrophy"
-
-
-import agentDetail from "../data/fakeMembers"
-
+import { addTrophyNameData, setTrophyData, trophyNameData } from '../data/trophyNames';
 
 function TrophyCards() {
   const [trophies, setTrophies] = useState([]); // Manage state internally
   const [showAddFormModal, setShowAddFormModal] = useState(false);
   const [nameInput, setNameInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
-  const [showAssignForm, setAssignShowForm] = useState(false);
+
+  useEffect(() => {
+    const fetchTrophies = async () => {
+      try {
+        const response = await fetch("http://localhost:4000/trophy-data");
+        const data = await response.json();
+        setTrophyData(data);
+        setTrophies(data);  // Update local state with fetched data
+      } catch (error) {
+        console.error('Error fetching Trophy data:', error);
+      }
+    };
+
+    fetchTrophies();
+  }, []);
+
+
+      const [showAssignForm, setAssignShowForm] = useState(false);
 
 
   //when they click on assign form show checkboxes
@@ -35,20 +46,31 @@ function TrophyCards() {
     setShowAddFormModal(true);
     setNameInput('');
     setDescriptionInput('');
+
+
   };
 
   const handleSaveTrophyCard = () => {
     const newTrophy = {
       name: nameInput,
-      description: descriptionInput
+      description: descriptionInput,
+      agents : ["person 1", "person 2", "person 3"]
+
     };
-
-    setTrophies([...trophies, newTrophy]);
-
-    setShowAddFormModal(false); // Close modal after saving
+    addTrophyNameData(newTrophy)
     setNameInput('');
     setDescriptionInput('');
+    setShowAddFormModal(false); // Close modal after saving
+    
   };
+
+  const deleteTrophy = (name) =>{
+    let newdata = trophies.filter(trophy => trophy.name !== name)
+    setTrophyData(newdata);
+    setTrophies(newdata)
+    addTrophyNameData(null)
+
+  }
 
   const TrophyCard = ({ trophy }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -67,6 +89,11 @@ function TrophyCards() {
           <p className="card-text">{trophy.name}</p>
           <h5 className="card-title">Description:</h5>
           <p className="card-text">{trophy.description}</p>
+
+          <div>
+            <button onClick={() => deleteTrophy(trophy.name)}>Delete</button> {/* Delete button */}
+          </div>
+          
           <Button onClick={assignTrophy}>Award Trophy</Button>
           {showAssignForm && (
           <AwardTrophyForm onSubmit={handleAssignTrophySubmit} />
@@ -129,9 +156,9 @@ function TrophyCards() {
       </Modal>
 
       <div className="card-list-container" style={{ display: "flex", flexWrap: "wrap" }}>
-        {trophies.map((trophy, index) => (
+        {trophies.length > 0 ?trophies.map((trophy, index) => (
           <TrophyCard key={index} trophy={trophy} />
-        ))}
+        )): <h2 style={{display:'right'}}>No Trophies created yet!</h2>}
       </div>
     </div>
   );
