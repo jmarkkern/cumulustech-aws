@@ -40,16 +40,20 @@ const infoType = {
 
 function AgentMetric({type}) {
     const [show, setShow] = React.useState(false);
-    const totalAgents = 1;
-    const agentRank = 2;
-    const percentile = agentRank / totalAgents;
+    const agentRank = 0;
+    const currentStreak = 0;
+    const topStreak = 0;
 
     return(
-        <div class="agentDashMetric" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-            <h2>{infoType[type].name}</h2>
-            <p class="agentDashNum">{agentRank}</p>
+        <div class="agentDashMetric">
+            <h2 onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>{infoType[type].name}</h2>
             <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
                 {infoType[type].desc}
+            </div>
+            <p class="agentDashNum">{agentRank}</p>
+            <div class="agentDashStreak">
+                <p>Current Streak: <strong><u>{currentStreak} days!</u></strong></p>
+                <small>Top Streak: {topStreak} days</small>
             </div>
         </div>
     )

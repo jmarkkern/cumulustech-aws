@@ -6,7 +6,7 @@
   gap: 15px;
 }
 
-.containerAgentDashboard h1 {
+h1 {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
@@ -42,7 +42,7 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
-  border-color: #929292;
+  border-color: #9BA3AC;
   padding: 15px 0;
 }
 
@@ -51,36 +51,45 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
-  border-color: #929292;
-  padding: 15px 0;
+  border-color: #9BA3AC;
+  padding: 15px 0 0px 0px;
+}
+
+.agentDashStreak {
+  background-color: #FF9900;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.agentDashStreak p {
+  margin-bottom: 0px;
 }
 
 .agentDashTooltip {
   position: absolute;
   visibility: hidden;
-  background-color: #929292;
+  background-color: #9BA3AC;
   font-size: 14px;
   color: white;
+  width: 220px;
   border-radius: 10px;
   padding: 10px;
 }
 
 .agentDashTrophies .agentDashTooltip {
-  transform: translate(9px, 0px);
-  width: 475px;
-  /* height: 60px; */
+  transform: translate(135px, 15px);
 }
 
 .agentDashMetric .agentDashTooltip {
-  transform: translate(9px, -70px);
-  width: 220px;
-  /* height: 95px; */
+  transform: translate(9px, 15px);
 }
 
 .agentDashNum {
   font-size: 48px;
   font-weight: bold;
-  margin: 6px 0;
+  margin: 6px 0 12px 0;
 }
 
 .agentDashTitle {
@@ -114,7 +123,7 @@
 }
 
 .header {
-  background-color: #16191f;
+  background-color: #131921;
 }
 
 
