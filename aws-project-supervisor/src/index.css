@@ -785,3 +785,17 @@ h1 {
   transform: translateY(-30px) translateX(-300px);
 
 }
+
+/* display when they have no trophies  */
+.empty-graph{
+  color: gray;
+  display: flex;
+  border: 1px solid gray;
+  min-height: 300px;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 0%;
+  justify-content: center;
+  align-items: center;
+
+}
