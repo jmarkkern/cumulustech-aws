@@ -7,27 +7,27 @@ import Button from "react-bootstrap/esm/Button";
 
 function AwardTrophyForm({ trophyName, onSubmit}) {
     const [selectedAgents, setSelectedAgents] = useState([]);
-    const [selectedAgentNames, setSelectedAgentNames] = useState([]);
+    const [selectedAgentNames, setSelectedAgentNames] = useState([]);  //selectedAgentNames is the list of names
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        onSubmit(trophyName, selectedAgents);
-      };
-
-    //for selecting and unselcting the checkbox, and thus updating the states and names
-    const handleCheckboxChange = (agentId, agentName) => {
-        setSelectedAgents((prevSelectedAgents) =>
-            prevSelectedAgents.includes(agentId)
-            ? prevSelectedAgents.filter((id) => id !== agentId)
-            : [...prevSelectedAgents, agentId]
-        );
-
-        setSelectedAgentNames((prevSelectedAgentNames) =>
-        prevSelectedAgentNames.includes(agentName)
-          ? prevSelectedAgentNames.filter((name) => name !== agentName)
-          : [...prevSelectedAgentNames, agentName]
+      e.preventDefault();
+      
+      // Map selected agent IDs to their names
+      const selectedAgentNames = selectedAgents.map(agentId => {
+        const selectedAgent = agentDetail.find(agent => agent.id === agentId);
+        return selectedAgent ? selectedAgent.name : null;
+      }).filter(name => name !== null); // Filter out null values
+    
+      // Pass both trophy name and selected agent names to onSubmit
+      onSubmit({ trophyName, selectedAgentNames });
+    };
+  
+    const handleCheckboxChange = (agentId) => {
+      setSelectedAgents((prevSelectedAgents) =>
+        prevSelectedAgents.includes(agentId)
+          ? prevSelectedAgents.filter((id) => id !== agentId)
+          : [...prevSelectedAgents, agentId]
       );
-
     };
 
 

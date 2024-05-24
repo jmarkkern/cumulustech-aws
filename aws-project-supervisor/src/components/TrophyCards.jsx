@@ -31,19 +31,11 @@ function TrophyCards() {
   }, []);
 
 
-      const [showAssignForm, setAssignShowForm] = useState(false);
+      // const [showAssignForm, setAssignShowForm] = useState(false);
+      
 
 
-  //when they click on assign form, show checkboxes
-  const assignTrophy = () => {
-    setAssignShowForm(true);
-  };
 
-  //when they hit save hide checkboxes and get list of names
-  const handleAssignTrophySubmit = (selectedAgents) => {
-    console.log('Selected agents:', selectedAgents);
-    setAssignShowForm(false); // Hide the form after submission
-  };
 
   const handleAddTrophyCard = () => {
     setShowAddFormModal(true);
@@ -77,10 +69,22 @@ function TrophyCards() {
 
   const TrophyCard = ({ trophy }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [showAssignForm, setShowAssignForm] = useState(false);
 
-    const toggleExpanded = () => {
-      setIsExpanded(!isExpanded);
+      //when they click on assign form, show checkboxes
+    const assignTrophy = () => {
+      setShowAssignForm(true);
     };
+
+    //when they hit save hide checkboxes and get list of names
+    const handleAssignTrophySubmit = (selectedAgents) => {
+      console.log('Selected agents:', selectedAgents);
+      setShowAssignForm(false); // Hide the form after submission
+    };
+
+        const toggleExpanded = () => {
+          setIsExpanded(!isExpanded);
+        };
 
 
 
@@ -97,10 +101,14 @@ function TrophyCards() {
             <button onClick={() => deleteTrophy(trophy.name)}>Delete</button> {/* Delete button */}
           </div>
           
-          <Button onClick={assignTrophy}>Award Trophy</Button>
+          <Button onClick={() => setShowAssignForm(true)}>Award Trophy</Button>
           {showAssignForm && (
-          <AwardTrophyForm onSubmit={handleAssignTrophySubmit} />
+          <AwardTrophyForm 
+          trophyName={trophy.name}
+          onSubmit={handleAssignTrophySubmit} />
         )}
+
+
         </div>
         {/* {isExpanded && (
           <ExpandedCardContent>
