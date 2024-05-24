@@ -1,9 +1,5 @@
 import React from "react";
 
-
-
-
-
 function AgentMetric({metric}) {
     const [show, setShow] = React.useState(false);
     var metricName = "Missing Metric"
@@ -17,15 +13,13 @@ function AgentMetric({metric}) {
         topStreak = metric.topStreak
         
     }
-   
-    
 
     return(
         <div class="agentDashMetric">
             <h2 onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>{metricName}</h2>
-            {/* <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
+            <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
                 {""}
-            </div> */}
+            </div>
             <p class="agentDashNum">{agentRank}</p>
             <div class="agentDashStreak">
                 <p>Current Streak: <strong><u>{currentStreak} days!</u></strong></p>

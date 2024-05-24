@@ -16,6 +16,7 @@ h1 {
   font-size: 20px;
   font-weight: normal;
   margin: 0;
+  cursor: pointer;
 }
 
 .agentDashPic {
@@ -38,12 +39,26 @@ h1 {
 .agentDashTrophies {
   grid-column-start: 3;
   grid-column-end: 5;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 50% 50%;
   text-align: center;
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
   border-color: #9BA3AC;
   padding: 15px 0;
+  h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  p {
+    margin: 0;
+  }
+  .agentDashNum {
+    line-height: 50px;
+    margin: 0;
+  }
 }
 
 .agentDashMetric {
@@ -73,17 +88,17 @@ h1 {
   background-color: #9BA3AC;
   font-size: 14px;
   color: white;
-  width: 220px;
   border-radius: 10px;
   padding: 10px;
 }
-
 .agentDashTrophies .agentDashTooltip {
-  transform: translate(135px, 15px);
+  width: 245px;
+  transform: translate(120px, 35px);
 }
 
 .agentDashMetric .agentDashTooltip {
-  transform: translate(9px, 15px);
+  width: 220px;
+  transform: translate(9px, 10px);
 }
 
 .agentDashNum {

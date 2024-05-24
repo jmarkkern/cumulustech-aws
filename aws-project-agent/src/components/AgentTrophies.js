@@ -24,27 +24,29 @@ function AgentTrophy({numTrophies}) {
     return(
         <div class="agentDashTrophies">
             <h2 onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>Trophies</h2>
+            <div>
+              <p>Trophies Earned:</p>
+              <div class="agentDashNum">{countTrophies}</div>
+            </div>
+            <div className="dropdown">
+              {/* Dropdown button */}
+              <button onClick={toggleList} className="dropdown-btn">
+                {isExpanded ?  "Hide Trophy List": "Show Trophy List"}
+              </button>
+              {/* Dropdown list */}
+              {isExpanded && (
+                <div className="dropdown-content">
+                  <ul className="scrollable-list">
+                    {numTrophies.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
             <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
                 Trophies are earned through individual efforts toward skills and collaboration. Keep it up!
             </div>
-            <p class="agentDashNum">{countTrophies}</p>
-             <div className="dropdown">
-      {/* Dropdown button */}
-      <button onClick={toggleList} className="dropdown-btn">
-        {isExpanded ?  "Hide Trophy List": "Show Trophy List"}
-      </button>
-      {/* Dropdown list */}
-      {isExpanded && (
-        <div className="dropdown-content">
-          <ul className="scrollable-list">
-            {numTrophies.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-
         </div>
     )
 }

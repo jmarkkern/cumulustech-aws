@@ -31,21 +31,23 @@ code {
   align-items: center; }
 
 .dropdown-btn {
+  background-color: #FF9900;
+  border: 1px solid #9BA3AC;
+  border-radius: 10px;
+  width: 200px;
   padding: 8px 12px;
   cursor: pointer;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
 }
 
 .dropdown-content {
   position: absolute;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #9BA3AC;
   max-height: 200px;
  
   overflow-y: auto;
   z-index: 1;
-  top: calc(100% + 5px); /* Position dropdown below the button */
+  top: calc(100% - 6px); /* Position dropdown below the button */
 }
 
 .scrollable-list {
