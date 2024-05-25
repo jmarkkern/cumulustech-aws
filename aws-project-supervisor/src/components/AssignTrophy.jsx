@@ -34,6 +34,8 @@ function AwardTrophyForm({ trophyName, onSubmit}) {
   return (
     //get checkbox
     //sumbit button
+    //when they sumbit a checklist of names, we get a local list of names in selectedAgentNames
+      //immediatly assigns to people, so Trophy.Name is added to the trophy list of each person in fakeMembers.js or json
 
       <div>
         <Form>
@@ -52,8 +54,7 @@ function AwardTrophyForm({ trophyName, onSubmit}) {
         ))}      
            
       </Form>
-      //when they sumbit a checklist of names, we get a local list of names in selectedAgentNames
-      //immediatly assigns to people, so Trophy.Name is added to the trophy list of each person in fakeMembers.js or json
+      
       <Button onClick={handleSubmit} variant="primary" type="submit">  
       Submit
       </Button>

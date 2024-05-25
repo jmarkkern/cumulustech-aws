@@ -68,7 +68,7 @@ function Trophy() {
         )}
       </div>
       <div className="trophyCards">
-        <h1>Trophies</h1>
+        
         <TrophyCards />
       </div>
     </div>

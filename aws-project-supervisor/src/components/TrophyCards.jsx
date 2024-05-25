@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import styled from "styled-components";
+import Form from 'react-bootstrap/Form';
+
 
 import { addTrophyNameData, setTrophyData, trophyNameData } from '../data/trophyNames';
 import AwardTrophyForm from "./AssignTrophy";
 import agentDetail from "../data/fakeMembers";
+import trophImg from "../assets/imgs/trophy.svg"
 
 
 function TrophyCards() {
@@ -46,12 +49,19 @@ function TrophyCards() {
   };
 
   const handleSaveTrophyCard = () => {
+    
+    // event.preventDefault();
+    if (!nameInput || !descriptionInput) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
     const newTrophy = {
       name: nameInput,
       description: descriptionInput,
       agents : ["person 1", "person 2", "person 3"]
-
     };
+
     addTrophyNameData(newTrophy)
     setNameInput('');
     setDescriptionInput('');
@@ -86,22 +96,30 @@ function TrophyCards() {
           setIsExpanded(!isExpanded);
         };
 
+    
 
 
 // THIS IS THE TROPHY CARD
     return (
       <TrophyCardContainer onClick={toggleExpanded}>
         <div className="card-body">
+          
+          <div className="topTrophyCard">
+          <img className="trophyImg" src={trophImg} alt="tophy" />
           <h5 className="card-title">Name:</h5>
           <p className="card-text">{trophy.name}</p>
+          </div>
+
+          <div className="bottomTrophyCard">
           <h5 className="card-title">Description:</h5>
           <p className="card-text">{trophy.description}</p>
-
-          <div>
-            <button onClick={() => deleteTrophy(trophy.name)}>Delete</button> {/* Delete button */}
           </div>
-          
-          <Button onClick={() => setShowAssignForm(true)}>Award Trophy</Button>
+
+          <div className="buttonsTrophyCard">
+          <Button onClick={() => setShowAssignForm(true)}>Award Trophy</Button> {/* Assign Trophy button */}
+          <Button variant="danger" onClick={() => deleteTrophy(trophy.name)}>Delete</Button> {/* Delete button */}
+          </div>
+         
           {showAssignForm && (
           <AwardTrophyForm 
           trophyName={trophy.name}
@@ -126,7 +144,10 @@ function TrophyCards() {
   // THIS IS THE TROPHY FORM
   return (
     <div className="container mt-5">
-      <div className="d-flex justify-content-end py-4">
+      
+        {/* <div className="d-flex justify-content-end py-4 showTrophies"> */}
+        <div className="py-4 showTrophies">
+        <h1>Trophies</h1>
         <button className="btn btn-primary" onClick={handleAddTrophyCard}>+ Create New Trophy</button>
       </div>
 
@@ -137,6 +158,7 @@ function TrophyCards() {
         <Modal.Body>
           
           <label htmlFor="name" className="mt-3">Name:</label>
+          <Form.Text className="text-danger">   *</Form.Text>
           <textarea
             className="form-control"
             id="name"
@@ -144,10 +166,12 @@ function TrophyCards() {
             onChange={(e) => setNameInput(e.target.value)}
             placeholder="Type the name here..."
             rows="2"
+            required={true}
           />
 
 
           <label htmlFor="description" className="mt-3">Description:</label>
+          <Form.Text className="text-danger">   *</Form.Text>
           <textarea
             className="form-control"
             id="description"
@@ -155,6 +179,7 @@ function TrophyCards() {
             onChange={(e) => setDescriptionInput(e.target.value)}
             placeholder="Type the description here..."
             rows="4"
+            required={true}
           />
 
         </Modal.Body>
@@ -175,19 +200,37 @@ function TrophyCards() {
   );
 }
 
+// const TrophyCardContainer = styled(motion.div)`
+//   background-color: #637E9E;
+//   color: #fff;
+//   width: 400px;
+//   height: 300px;
+//   margin: 10px;
+//   padding: 10px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   position: relative;
+//   transition: all 0.3s ease-in-out;
+// `;
 const TrophyCardContainer = styled(motion.div)`
-  background-color: #637E9E;
-  color: #fff;
-  width: 400px;
-  height: 300px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-`;
+        background-color: #637E9E;
+        color: #fff;
+        width: 400px;
+        margin: 10px;
+        min-height: 300px;
+        padding: 16px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+        // cursor: pointer;
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: flex-start;
+        transition: max-height 0.3s ease;
+        transition: all 0.3s ease-in-out;
+      `;
 
 const ExpandedCardContent = styled.div`
   background-color: #637E9E;

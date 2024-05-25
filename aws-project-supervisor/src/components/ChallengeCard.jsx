@@ -23,8 +23,8 @@ function ChallengeCard(props) {
                 {/* Switch component with controlled value */}
                 <FormGroup>
                     <FormControlLabel
-                        control={<Switch checked={active} onChange={handleSwitchChange} />}
-                        color="warning"
+                        control={<Switch checked={active} color="primary" onChange={handleSwitchChange} />}
+                        
                     />
                 </FormGroup>
 
@@ -35,10 +35,10 @@ function ChallengeCard(props) {
             <div className="bottomC">
                 <p><strong>Description: </strong> {props.desc}</p>
                 <p><strong>How To Win: </strong>{props.howToWin}</p>
-                Progress Completed: {((props.progressCurrent/props.progressTotal)*100).toFixed(0)}%
-                <LinearProgress variant="determinate" value={props.progressCurrent}  sx={{ height: 10, backgroundColor: '#A9A9A9', '& .MuiLinearProgress-bar': {
-      backgroundColor: '#FF9900',}}}  /> 
-                <button onClick={() => props.onDelete(props.name)}>Delete</button> {/* Delete button */}
+                <p><strong>Progress Completed: </strong>{((props.progressCurrent/props.progressTotal)*100).toFixed(0)}%
+                <LinearProgress id="progressBar" variant="determinate" value={props.progressCurrent}  sx={{ height: 10, backgroundColor: '#A9A9A9', '& .MuiLinearProgress-bar': {
+      backgroundColor: '#FF9900',}}}  /></p>
+                <button id="deleteChallenge" onClick={() => props.onDelete(props.name)}>Delete</button> {/* Delete button */}
             </div>
         </div>
     );

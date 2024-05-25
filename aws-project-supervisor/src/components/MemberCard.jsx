@@ -35,7 +35,7 @@ function Membercard(props){
             <h2 className="name">{props.name}</h2>
           </div>
           <div className="bottom">
-            <p className="info">{props.name} has {props.achievements} achievements!</p>
+            <p className="info">{props.name} has <strong>{props.achievements} trophies!</strong></p>
             {/* <ul>For Metric:
                 <li className="info">They have been on the leadeboard for {props.streak}</li>
                 <li className="info">Rank: {props.rank}</li>
@@ -66,8 +66,8 @@ function Membercard(props){
                     {metric.rank == 5 && <Rank5Icon />}
                     {metric.rank > 5 && <BronzeIcon number={metric.rank} />}
                     <div className="memberStreaks">
-                      <p id="currentStreak-top">Current Streak: 15 days </p>
-                      <p id="maxStreak-bottom">Max Streak: 7 days</p>
+                      <p id="currentStreak-top">Current Streak: {metric.currStreak} </p>
+                      <p id="maxStreak-bottom">Max Streak: {metric.maxStreak}</p>
                       {/* <p>Current Streak: {metric.currStreak} </p>
                       <p>Max Streak: {metric.maxStreak}</p> */}
                       <p></p>

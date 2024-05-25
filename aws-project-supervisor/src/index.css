@@ -125,7 +125,8 @@ h1 {
 }
 
 #selectTeam {
-  background-color: #ddffff;
+  /* background-color: #ddffff; */
+  background-color: #e7fafa;
   color: black;
   border-radius: 15px;
   width: max-content;
@@ -271,7 +272,7 @@ h1 {
 
 .info {
   margin: 20px 0;
-  color: #1a7e76;
+  color: #000000;
 }
 
 .metricSummary li {
@@ -282,20 +283,21 @@ h1 {
 
 /* NESTED CARD */
 .icon-jsx {
-  height: 200px;
+  height: 130px;
 }
 
 /* STREAK BOX */
 .memberStreaks {
   position: relative;
   width: 95%; /* Adjust width as needed */
-  height: 120px; /* Adjust height as needed */
-  border: 1px solid #9BA3AC; /* Optional border for visibility */
+  height: 110px; /* Adjust height as needed */
+  border: .5px solid #c4c6c8; /* Optional border for visibility */
   overflow: hidden; /* Hide overflow to keep content within the box */
   margin-top:5%;
   right:70px;
   left:10px;
   margin-bottom:3%;
+  border-radius: 18px;
 }
 
 .memberStreaks::before {
@@ -433,14 +435,105 @@ h1 {
   display: grid;
   padding-left: 2%;
   padding-right: 2%;
+  padding-bottom: 1.5%;
   row-gap: 2%;
 
+}
+
+#progressBar{
+  /* size of bar */
+  padding-top: 1.3%; 
+  /* space above the bar */
+  margin-top: 1%;
+}
+
+#deleteChallenge{
+  background-color: #fff;
+  border-color: rgb(218, 115, 115);
 }
 
 
 
 /* Trophy Page */
 
+.showTrophies{
+  display: flex;
+  justify-content: space-between;
+}
+
+.showTrophies h1{
+  margin: 0;
+}
+.showTrophies button{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.trophyAnalysis h1{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2%;
+}
+
+/* STYLE TROPHY CARD */
+.TrophyCardContainer{
+  margin-bottom: 16px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: max-height 0.3s ease;
+}
+.AwardTrophyForm {
+  margin-top: 16px;
+  /* width: 100%; */
+}
+.topTrophyCard{
+  display: flex;
+  align-content: center;
+}
+  .card-text{
+    background-color: #fff;
+    color: #000;
+    border: #c3c3c3 .5px sold;
+    border-radius: 20px;
+    min-height: 10px;
+    padding-left: 2%;
+    margin-left:10px;
+    align-content: center;
+    width: 100%;
+  }
+  .card-title{
+    padding-left: 10px;
+    align-content: center;
+
+  }
+
+.bottomTrophyCard .card-text{
+  min-height: 140px;
+  margin-right: 20%;
+  margin-bottom: 20px;
+  /* align-content: top; */
+  width: 95%;
+}
+.bottomTrophyCard .card-title{
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+
+.buttonsTrophyCard{
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+  /* TROPHY ANALYTICS */
 .react-vis-magic-css-import-rule {
   display: inherit;
 }
@@ -785,6 +878,7 @@ h1 {
 .checkboxContainer {
   display: flex;
   justify-content: flex-end;
+  gap:1.3%;
   margin-right: 20px;
   transform: translateY(-30px) translateX(-300px);
 
