@@ -39,19 +39,23 @@ code {
 .supervisor_links {
   display: flex;
   justify-content: left;
-  gap: 30px;
-  background-color: #37475A;
+  gap: 0;
+  background-color: #232F3E;
 }
 
 .supervisor_links>a {
   text-decoration: none;
+  width: auto;
   color: aliceblue;
-  margin-bottom: 3px;
-  margin-left: 8px;
-
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .supervisor_links a.active {
+  background-color: #232F3E !important;
   font-weight: bolder;
 }
 
@@ -221,7 +225,7 @@ h1 {
   background-color: #D7ECFF;
   margin: 25px 10px;
   min-height: 400px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 2px 5px #9BA3AC;
   text-align: left;
 }
 
@@ -286,7 +290,7 @@ h1 {
   position: relative;
   width: 95%; /* Adjust width as needed */
   height: 120px; /* Adjust height as needed */
-  border: 1px solid #858484; /* Optional border for visibility */
+  border: 1px solid #9BA3AC; /* Optional border for visibility */
   overflow: hidden; /* Hide overflow to keep content within the box */
   margin-top:5%;
   right:70px;
@@ -301,7 +305,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, transparent 49.5%, #858484 50.5%); /* Diagonal line */
+  background: linear-gradient(to bottom right, transparent 49.5%, #FF9900 50.5%); /* Diagonal line */
   z-index: 1;
 }
 
@@ -340,7 +344,7 @@ h1 {
 
 /* Apply Button */
 .challengeTitles button {
-  background-color: #FFA500;
+  background-color: #FF9900;
   border: none;
   box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.238);
   font-size: 18px;
@@ -353,7 +357,7 @@ h1 {
 }
 
 .challengeTitles button:hover {
-  background-color: #d88d5b;
+  background-color: #FF7B00;
   /* Darker Green */
   transform: translateY(-3px);
   /* Move button up by 5 pixels */
@@ -384,7 +388,7 @@ h1 {
 #emptyChallenges {
   color: gray;
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid #9BA3AC;
   min-height: 300px;
   margin-right: 3%;
   margin-left: 3%;
@@ -401,7 +405,7 @@ h1 {
 .ChallengeCard {
   display: grid;
   grid-template-rows: .35fr 1fr;
-  border: #ccc solid 1px;
+  border: #9BA3AC solid 1px;
   min-height: 300px;
   margin-right: 3%;
   margin-left: 3%;
@@ -750,7 +754,7 @@ h1 {
 }
 
 .trendButton:hover {
-  background-color: #d88d5b;
+  background-color: #FF7B00;
   transform: translateY(-3px) translateX(50px);
 
 
@@ -773,7 +777,7 @@ h1 {
 }
 
 .distributionButton:hover {
-  background-color: #d88d5b;
+  background-color: #FF7B00;
   transform: translateY(-3px) translateX(50px);
 
 }
