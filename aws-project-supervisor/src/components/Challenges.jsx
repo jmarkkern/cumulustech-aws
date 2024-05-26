@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Modal, Button } from "react-bootstrap";
 import ChallengeCard from "./ChallengeCard";
 import ChallengeForm from "./ChallengeForm";
 import { addChallengeData, setChallengeData } from "../data/dataChallenge";
@@ -30,6 +31,8 @@ function Challenges() {
   const [challenges, setChallenges] = useState([]);
   const [show, setShow] = useState(false);
 
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [challengeToDelete, setChallengeToDelete] = useState(null);
 
   const handleShow = () => setShow(true);
 
@@ -48,12 +51,18 @@ function Challenges() {
     fetchChallenges();
   }, []);
 
+  // handles delete button
   const handleDelete = (name) => {
-    let newdata = challenges.filter(challenge => challenge.name !== name)
-    setChallenges(newdata);
-    setChallengeData(newdata)
-    addChallengeData(null)
+    setChallengeToDelete(name);
+    setShowConfirmModal(true);
+  };
 
+  const confirmDelete = () => {
+    let newdata = challenges.filter(challenge => challenge.name !== challengeToDelete);
+    setChallenges(newdata);
+    setChallengeData(newdata);
+    addChallengeData(null);
+    setShowConfirmModal(false);
   };
 
   const handleSwitch = (name) => {
@@ -92,6 +101,23 @@ function Challenges() {
       </div>
 
       <ChallengeForm show={show} setShow={setShow} />
+
+      {/* modal for confirming deleting challenge */}
+      <Modal show={showConfirmModal} onHide={() => setShowConfirmModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Deletion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this challenge?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={confirmDelete}>
+            Yes, Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </div>
   );
 }
