@@ -216,7 +216,7 @@ function TrophyCards() {
 const TrophyCardContainer = styled(motion.div)`
         background-color: #637E9E;
         color: #fff;
-        width: 400px;
+        width: 350px;
         margin: 10px;
         min-height: 300px;
         padding: 16px;
