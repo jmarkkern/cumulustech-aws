@@ -47,7 +47,7 @@ h1 {
   border-width: 1px;
   border-radius: 10px;
   border-color: #9BA3AC;
-  padding: 15px 0;
+  padding: 15px 0;}
   h2 {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -59,7 +59,7 @@ h1 {
     line-height: 50px;
     margin: 0;
   }
-}
+
 
 .agentDashMetric {
   text-align: center;
@@ -182,7 +182,7 @@ h1 {
 }
 
 .agentChallengeCards {
-  border: 1px solid #ccc; /* Optional border for visibility */
+  border: 1px solid #ccc; 
   padding: 16px;
   border-radius: 25px; /* Optional rounded corners */
   margin-right: 3%;
@@ -215,5 +215,46 @@ h1 {
 }
 
 
+/* LEADERBOARD */
+.flexMain {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2%;
+}
 
+.flexcompareFilters select {
+  background-color: #FFA500;
+  /*or white*/
+  color: black;
+  margin-left: 25px;
+  padding: 5px 15px;
+  height: max-content;
+  border-radius: 15px;
+  font-size: 16px;
+  border: none;
+}
+h1 {
+  margin: 25px;
+  font-size: 2.5rem;
+}
+
+
+/* MOTIVATION*/
+.agentMotivation{
+  display: flex;
+  border: 1px solid #ccc; 
+  border-radius: 10px;
+  min-height: 90px;
+  align-items: center;
+  color: #483108;
+  font-size: .9rem;
+  padding: 1%;
+  margin: 1.2%;
+  /* margin-left: 15%;
+  margin-right: 15%; */
+  margin-left: 21%;
+  margin-right: 21%;
+
+}
 
