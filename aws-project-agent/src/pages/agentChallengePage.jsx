@@ -39,7 +39,7 @@ function AgentChallenge(props) {
     }, []);
 
     return (
-        <div className="agentChallenges">
+        <div className="containerChallenges">
             <h1>Challenges</h1>
             {/* for every visible challenge make a challenge visible to the agent */}
 
