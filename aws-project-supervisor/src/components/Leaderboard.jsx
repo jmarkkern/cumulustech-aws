@@ -27,7 +27,7 @@ const Leaderboard = () => {
       }
       fetchData(url, (data) => {
         if (data) {
-          if (dataName == "AverageActiveTime") {
+          if (dataName === "AverageActiveTime") {
             data = data.AverageActiveTime
           }
           else if (dataName === "AverageHandleTime") {

@@ -1,5 +1,5 @@
 import React from "react"
-import {useState} from "react"
+import { useState } from "react"
 
 import Icon from "../assets/ranks/svg/diamond.jsx"
 import BronzeIcon from "../assets/ranks/svg/bronze.jsx"
@@ -12,38 +12,38 @@ import Rank5Icon from "../assets/ranks/svg/rank5.jsx"
 
 
 // takes all the props that are named in Comparison.jsx 
-function Membercard(props){
+function Membercard(props) {
   console.log("Props:", props);
-  console.log("Metrics:", props.metrics); 
- 
+  console.log("Metrics:", props.metrics);
+
   let filteredMetrics;
 
-  if (props.selectedMetric !==""){
+  if (props.selectedMetric !== "") {
     filteredMetrics = props.metrics.filter((metric) => metric.m_name === props.selectedMetric);
   }
-  else{
+  else {
     filteredMetrics = props.metrics;
   }
-  
-  
 
 
-    return (
-        <div className="card">
-          <div className="top">
-            <img className="img" src={props.img} alt="avatar_img" />
-            <h2 className="name">{props.name}</h2>
-          </div>
-          <div className="bottom">
-            <p className="info">{props.name} has <strong>{props.achievements} trophies!</strong></p>
-            {/* <ul>For Metric:
+
+
+  return (
+    <div className="card">
+      <div className="top">
+        <img className="img" src={props.img} alt="avatar_img" />
+        <h2 className="name">{props.name}</h2>
+      </div>
+      <div className="bottom">
+        <p className="info">{props.name} has <strong>{props.achievements} trophies!</strong></p>
+        {/* <ul>For Metric:
                 <li className="info">They have been on the leadeboard for {props.streak}</li>
                 <li className="info">Rank: {props.rank}</li>
             </ul> */}
-            {/* {props.metrics.map(metric => ( */}
+        {/* {props.metrics.map(metric => ( */}
 
 
-            {/* {agentDetail.metrics.map(metric => (
+        {/* {agentDetail.metrics.map(metric => (
             <div key={metric.id}>
               <p>Metric Name: {metric.m_name}</p>
               <p>Max Streak: {metric.maxStreak}</p>
@@ -54,34 +54,34 @@ function Membercard(props){
 
 
 
-            {filteredMetrics.map((metric) => (
-                <div>
+        {filteredMetrics.map((metric) => (
+          <div>
 
-                    <div className="rankIcons">
-                    <h3>{metric.m_name}</h3>
-                    {metric.rank == 1 && <Rank1Icon />}
-                    {metric.rank == 2 && <Rank2Icon />}
-                    {metric.rank == 3 && <Rank3Icon />}
-                    {metric.rank == 4 && <Rank4Icon />}
-                    {metric.rank == 5 && <Rank5Icon />}
-                    {metric.rank > 5 && <BronzeIcon number={metric.rank} />}
-                    <div className="memberStreaks">
-                      <p id="currentStreak-top">Current Streak: {metric.currStreak} </p>
-                      <p id="maxStreak-bottom">Max Streak: {metric.maxStreak}</p>
-                      {/* <p>Current Streak: {metric.currStreak} </p>
+            <div className="rankIcons">
+              <h3>{metric.m_name}</h3>
+              {metric.rank === 1 && <Rank1Icon />}
+              {metric.rank === 2 && <Rank2Icon />}
+              {metric.rank === 3 && <Rank3Icon />}
+              {metric.rank === 4 && <Rank4Icon />}
+              {metric.rank === 5 && <Rank5Icon />}
+              {metric.rank > 5 && <BronzeIcon number={metric.rank} />}
+              <div className="memberStreaks">
+                <p id="currentStreak-top">Current Streak: {metric.currStreak} </p>
+                <p id="maxStreak-bottom">Max Streak: {metric.maxStreak}</p>
+                {/* <p>Current Streak: {metric.currStreak} </p>
                       <p>Max Streak: {metric.maxStreak}</p> */}
-                      <p></p>
-                      <p></p>
-                    </div>
-                    </div>
-                </div>
-                ))}
+                <p></p>
+                <p></p>
+              </div>
+            </div>
           </div>
+        ))}
+      </div>
 
 
-          
 
-        </div>
-      );
+
+    </div>
+  );
 }
 export default Membercard;

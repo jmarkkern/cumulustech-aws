@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import rank1 from "../assets/ranks/rank1.png"; 
+import rank1 from "../assets/ranks/rank1.png";
 import rank2 from "../assets/ranks/rank2.png";
 import rank3 from "../assets/ranks/rank3.png";
 import rank4 from "../assets/ranks/rank4.png";
@@ -36,7 +36,7 @@ const Leaderboard = () => {
       }
       fetchData(url, (data) => {
         if (data) {
-          if (dataName == "AverageActiveTime") {
+          if (dataName === "AverageActiveTime") {
             data = data.AverageActiveTime
           }
           else if (dataName === "AverageHandleTime") {
@@ -76,7 +76,7 @@ const Leaderboard = () => {
   };
 
   const rankBadges = [rank1, rank2, rank3, rank4, rank5];
-    return(
+  return (
     <div className="containerLeaderboard">
       <h1 className="agentDashTitle">Leaderboard</h1>
       <div className="leaderboardFilters">
@@ -89,27 +89,27 @@ const Leaderboard = () => {
       </div>
       <h2>{selectedOption}</h2>
       <div className="table-container">
-          {names.length > 0 ? (
-            <table className="leaderboardTable">
-              <tbody>
-                <tr>
-                  <th>Rank</th>
-                  <th>Agent</th>
-                  <th>Time</th>
+        {names.length > 0 ? (
+          <table className="leaderboardTable">
+            <tbody>
+              <tr>
+                <th>Rank</th>
+                <th>Agent</th>
+                <th>Time</th>
+              </tr>
+              {names.slice(0, 5).map((item, index) => (
+                <tr key={index} >
+                  <td>{rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />}</td>
+                  <td>{item.name}</td>
+                  <td>{item.time}</td>
                 </tr>
-                {names.slice(0,5).map((item, index) => (
-                  <tr key={index} >
-                    <td>{rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />}</td>
-                    <td>{item.name}</td>
-                    <td>{item.time}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>No data available</p>
-          )}
-        </div>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No data available</p>
+        )}
+      </div>
     </div>
   );
 }
