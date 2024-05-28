@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Jessica Lyn",
-        "imgURL": "https://www.shutterstock.com/image-vector/top-knot-bun-latina-pretty-260nw-2387965703.jpg",
+        "imgURL": "https://img.freepik.com/free-vector/cute-woman-illustration_25030-68273.jpg",
         "achievements": 5,
         "level": 3,
         "metrics": [
@@ -14,7 +14,7 @@
     {
         "id": 2,
         "name": "Bauer Nor",
-        "imgURL": "https://www.shutterstock.com/image-vector/humble-smile-latino-guy-relaxed-260nw-2387965715.jpg",
+        "imgURL": "https://img.freepik.com/free-vector/happy-man-design_25030-68400.jpg",
         "achievements": 10,
         "level": 8,
         "metrics": [
@@ -26,7 +26,7 @@
     {
         "id": 3,
         "name": "Penop Ven",
-        "imgURL": "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
+        "imgURL": "https://img.freepik.com/free-vector/woman-with-blue-hair_25030-68543.jpg",
         "achievements": 2,
         "level": 1,
         "metrics": [
@@ -38,7 +38,7 @@
     {
         "id": 4,
         "name": "Wynn Opiz",
-        "imgURL": "https://www.shutterstock.com/image-vector/eyeglasses-asian-grandma-relaxed-smiling-260nw-2393654147.jpg",
+        "imgURL": "https://img.freepik.com/free-vector/woman-with-red-hair_25030-68390.jpg",
         "achievements": 6,
         "level": 1,
         "metrics": [

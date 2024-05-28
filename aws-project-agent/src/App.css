@@ -1,44 +1,49 @@
 /* AGENT DASHBOARD */
 .containerAgentDashboard {
   display: grid;
-  grid-template-columns: auto 240px 240px 240px auto;
-  grid-template-rows: 60px 145px 60px;
+  margin: 0px calc((100% - 750px) / 2);
+  grid-template-columns: 240px 240px 240px;
+  grid-template-rows: 60px 145px 60px auto 40px;
   gap: 15px;
-}
 
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.containerAgentDashboard h2 {
-  font-size: 20px;
-  font-weight: normal;
-  margin: 0;
-  cursor: pointer;
+  h1 {
+    margin-left: 0;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+  }
+  .agentNumbers {
+    line-height: 50px;
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 6px 0 12px 0;
+  }
 }
 
 .agentDashPic {
-  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
   padding: 20px 0;
-  margin: 0;
+
+  img {
+    height: 200px;
+    width: 240px;
+    padding:0 20px 0 20px;
+    border-radius: 10px;
+    border: 1px solid #9BA3AC;
+  }
 }
 
-.agentDashPic img {
-  width: 200px;
-  border-radius: 10px;
-}
-
-.agentDashName {
-  grid-column-start: 3;
-  grid-column-end: 5;
+.agentName {
+  grid-column: 2 / span 2;
   padding-top: 20px;
 }
 
-.agentDashTrophies {
-  grid-column-start: 3;
-  grid-column-end: 5;
+.agentTrophies {
+  grid-column: 2 / span 2;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 50% 50%;
@@ -47,21 +52,17 @@ h1 {
   border-width: 1px;
   border-radius: 10px;
   border-color: #9BA3AC;
-  padding: 15px 0;}
+  padding: 15px 0;
   h2 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column: 1 / span 2;
   }
   p {
     margin: 0;
   }
-  .agentDashNum {
-    line-height: 50px;
-    margin: 0;
-  }
+}
 
 
-.agentDashMetric {
+.agentMetric {
   text-align: center;
   border-style: solid;
   border-width: 1px;
@@ -70,19 +71,18 @@ h1 {
   padding: 15px 0 0px 0px;
 }
 
-.agentDashStreak {
+.agentStreak {
   background-color: #FF9900;
   padding-top: 10px;
   padding-bottom: 15px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  p {
+    margin-bottom: 0px;
+  }
 }
 
-.agentDashStreak p {
-  margin-bottom: 0px;
-}
-
-.agentDashTooltip {
+.agentTooltip {
   position: absolute;
   visibility: hidden;
   background-color: #9BA3AC;
@@ -91,27 +91,35 @@ h1 {
   border-radius: 10px;
   padding: 10px;
 }
-.agentDashTrophies .agentDashTooltip {
-  width: 245px;
-  transform: translate(120px, 35px);
+.agentTrophies .agentTooltip {
+  width: 250px;
+  transform: translate(125px, 35px);
 }
 
-.agentDashMetric .agentDashTooltip {
+.agentMetric .agentTooltip {
   width: 220px;
   transform: translate(9px, 10px);
 }
 
-.agentDashNum {
-  font-size: 48px;
-  font-weight: bold;
-  margin: 6px 0 12px 0;
-}
-
 .agentDashTitle {
-  grid-column-start: 2;
-  grid-column-end: 5;
+  grid-column: 1 / span 3;
   padding-top: 20px;
 }
+
+/* MOTIVATION*/
+.agentMotivation{
+  grid-column: 1 / span 3;
+  border: 1px solid #9BA3AC;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  p {
+    font-size: small;
+    margin: 0;
+  }
+}
+
 
 /*nav bar*/
 .logo {
@@ -158,8 +166,6 @@ h1 {
 /* AGENT CHALLENGE Page */
 .agentChallenges h1 {
   margin: 25px;
-  font-size: 2.5rem;
-  
 }
 
 #nameOfChallenge{
@@ -217,44 +223,31 @@ h1 {
 
 /* LEADERBOARD */
 .flexMain {
+  margin: 0px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding-top: 2%;
 }
 
-.flexcompareFilters select {
-  background-color: #FFA500;
-  /*or white*/
+.leaderboardFilters select {
+  background-color: #FF9900;
   color: black;
-  margin-left: 25px;
-  padding: 5px 15px;
+  width: 200px;
+  margin-top: 10px;
+  padding: 6px;
+  border-left: 6px;
   height: max-content;
-  border-radius: 15px;
+  border-radius: 20px;
+  text-align: center;
   font-size: 16px;
-  border: none;
+  border: 0;
+  option {
+    background-color: #fff;
+    border: #9BA3AC;
+  }
 }
+
 h1 {
-  margin: 25px;
   font-size: 2.5rem;
 }
-
-
-/* MOTIVATION*/
-.agentMotivation{
-  display: flex;
-  border: 1px solid #ccc; 
-  border-radius: 10px;
-  min-height: 90px;
-  align-items: center;
-  color: #483108;
-  font-size: .9rem;
-  padding: 1%;
-  margin: 1.2%;
-  /* margin-left: 15%;
-  margin-right: 15%; */
-  margin-left: 21%;
-  margin-right: 21%;
-
-}
-

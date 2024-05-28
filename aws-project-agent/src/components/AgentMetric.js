@@ -15,13 +15,13 @@ function AgentMetric({metric}) {
     }
 
     return(
-        <div class="agentDashMetric">
+        <div class="agentMetric">
             <h2 onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>{metricName}</h2>
-            <div class="agentDashTooltip" style={show? {visibility: "visible"}:{}}>
+            <div class="agentTooltip" style={show? {visibility: "visible"}:{}}>
                 {""}
             </div>
-            <p class="agentDashNum">{agentRank}</p>
-            <div class="agentDashStreak">
+            <div class="agentNumbers">{agentRank}</div>
+            <div class="agentStreak">
                 <p>Current Streak: <strong><u>{currentStreak} days!</u></strong></p>
                 <small>Top Streak: {topStreak} days</small>
             </div>

@@ -28,12 +28,11 @@ function ProgressPage() {
     return (
         <div>
             <div class="containerAgentDashboard">
-                <div></div>
                 <div class="agentDashPic">
                     <img src={agent.imgURL}></img>
                 </div>
 
-                <div class="agentDashName">
+                <div class="agentName">
                     <h1>{agent.FirstName} {agent.LastName}</h1>
                 </div>
                
@@ -43,21 +42,13 @@ function ProgressPage() {
                     <h1>Metric Ranks</h1>
                 </div>
 
-                <div></div><div></div>
-
                 {metrics.map(metric => (
-              <AgentMetric metric ={metric}/>   //show the metrics rank+top streak
+                    <AgentMetric metric ={metric}/>   //show the metrics rank+top streak
                 ))}
                 
-                <div></div>
+                <Motivation />
                
             </div>
-
-
-            <div className="agentMotivation">
-                <Motivation />
-            </div>
-            
         </div>
     )
 }

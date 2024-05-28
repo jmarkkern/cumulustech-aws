@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 #emptyChallenges {
   color: gray;
   display: flex;
@@ -33,9 +19,9 @@ code {
 .dropdown-btn {
   background-color: #FF9900;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   width: 200px;
-  padding: 8px 12px;
+  padding: 6px 12px;
   cursor: pointer;
 }
 
@@ -75,27 +61,14 @@ code {
 
 }
 
+/* Table rows and Columns Styles */
 .table-container {
-    background-color: rgb(255, 255, 255);
-    grid-row-start: 3;
-    grid-row-end: -1;
-    position: absolute;
-    top: 2000px;
-    width: 100%;
+    grid-column: 1 / span 3;
 }
 
 table {
-    border-spacing: 20px;
-    position: absolute;
-    top: flex;
-    left: 0;
-    z-index: 1;
-
+    text-align: center;
 }
-
-
-
-/* Table rows and Columns Styles */
 tr {
     height: auto;
     font-size: 1em;
@@ -105,57 +78,49 @@ tr {
 td {
     color: white;
     background-color: #37475A;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 1em;
-
 }
 
 
 /*AGENT LEADERBOARD*/
 
-
-.containerAgentLeaderboard {
+.containerLeaderboard {
     height: 100vh;
     display: grid;
-    grid-template-columns: .5fr 2fr 4fr;
-    grid-template-rows: .3fr .4fr 1fr 1fr;
-    gap: 2px;
+    margin: 0 1% 0 1%;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 60px 60px auto;
+    gap: 15px;
 
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
 }
 
 
 /* Table Styles */
-.table3 td:nth-child(3) {
-    text-align: center;
-}
 
-/* Pic / Agent */
-.table3 td:nth-child(2) {
-    text-align: center;
-}
-
-/* Rank */
-.table3 td:nth-child(1) {
-    text-align: left;
-}
-
-.table3 tr:not(:last-child) {
-    border-bottom: 10px solid white;
-    /* Add a white border between rows */
-
-}
-
-.table3 {
-    padding-left: 20px;
-    /* Add left padding */
-    padding-right: 20px;
-    /* Add right padding */
+.leaderboardTable {
     width: 100%;
-    border-spacing: 0px 20px;
-    /* Spacing between rows */
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    td:nth-child(1) {
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      width: 10%;
+    }
+    td:nth-child(2) {
+      width: 45%;
+    }
+    td:nth-child(3) {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      width: 45%;
+    }
 }
-
 
 
 /* Rows fading in*/
@@ -169,5 +134,5 @@ td {
 .rank-badge {
     height: calc(1em + 22px);
     position: absolute;
-    transform: translate(0%, -50%);
+    transform: translate(-50%, -50%);
 }

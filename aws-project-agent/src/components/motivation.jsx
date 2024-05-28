@@ -7,7 +7,7 @@ function Motivation(){
     const randomQuote = motivateQ[randomIndex];
 
     return(
-        <div class="motivate">
+        <div class="agentMotivation">
             <p><strong>Kind Regards:</strong> <em>{randomQuote}</em></p>
         </div>
     );

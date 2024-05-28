@@ -77,47 +77,31 @@ const Leaderboard = () => {
 
   const rankBadges = [rank1, rank2, rank3, rank4, rank5];
     return(
-        <div className="grid-item1">
-      <div className="flexMain">
-        <h1>Leaderboard</h1>
+    <div className="containerLeaderboard">
+      <h1 className="agentDashTitle">Leaderboard</h1>
+      <div className="leaderboardFilters">
+        <select id="selectMetric" onChange={handleMetric}>
+          {/* <option value="" disabled selected>Select A Metric</option> */}
+          <option value="Avg Active Time">Average Active Time</option>
+          <option value="Avg Handle Time">Average Handle Time</option>
+          <option value="Avg Non-Talk Time">Average Non-Talk Time</option>
+        </select>
       </div>
-      <div className="grid-item2">
-        <div className="flexcompareFilters">
-          <select className="flex-item" id="selectMetric" onChange={handleMetric}>
-            {/* <option value="" disabled selected>Select A Metric</option> */}
-            <option value="Avg Active Time">Average Active Time</option>
-            <option value="Avg Handle Time">Average Handle Time</option>
-            <option value="Avg Non-Talk Time">Average Non-Talk Time</option>
-          </select>
-        </div>
-      </div>
-      <div className="containerLeaderboard1">
-        <div className="item title">
-          <h1>{selectedOption}</h1>
-        </div>
-        <div className="item table">
+      <h2>{selectedOption}</h2>
+      <div className="table-container">
           {names.length > 0 ? (
-            <table className="table3">
+            <table className="leaderboardTable">
               <tbody>
                 <tr>
-                  <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
-                  <th style={{ textAlign: 'center' }}>Agent</th>
-                  <th style={{ textAlign: 'center' }}>Times</th>
+                  <th>Rank</th>
+                  <th>Agent</th>
+                  <th>Time</th>
                 </tr>
                 {names.slice(0,5).map((item, index) => (
                   <tr key={index} >
-                    <td style={{
-                      paddingLeft: '15px', // Increased padding for rows >= 5
-                      textAlign: 'left',
-                      borderTopLeftRadius: '20px',
-                      borderBottomLeftRadius: '20px',
-                    }}>
-                      {
-                        rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />
-                      }
-                    </td>
-                    <td style={{ width: '33%' }}>{item.name}</td>
-                    <td style={{ width: '33%', borderTopRightRadius: '20px', borderBottomRightRadius: '20px' }}>{item.time}</td>
+                    <td>{rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />}</td>
+                    <td>{item.name}</td>
+                    <td>{item.time}</td>
                   </tr>
                 ))}
               </tbody>
@@ -126,7 +110,6 @@ const Leaderboard = () => {
             <p>No data available</p>
           )}
         </div>
-      </div>
     </div>
   );
 }
