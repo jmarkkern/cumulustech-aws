@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import rank1 from "../ranks/rank1.png";
-import rank2 from "../ranks/rank2.png";
-import rank3 from "../ranks/rank3.png";
-import rank4 from "../ranks/rank4.png";
-import rank5 from "../ranks/rank5.png";
+import rank1 from "../assets/ranks/rank1.png";
+import rank2 from "../assets/ranks/rank2.png";
+import rank3 from "../assets/ranks/rank3.png";
+import rank4 from "../assets/ranks/rank4.png";
+import rank5 from "../assets/ranks/rank5.png";
 import '../global.css';
 import { fetchData } from '../fetchData.js';
 
@@ -92,26 +92,21 @@ const Leaderboard = () => {
             <table className="table3">
               <tbody>
                 <tr>
-                  <th style={{ paddingLeft: '15px', textAlign: 'left' }}>Rank</th>
-                  <th style={{ textAlign: 'center' }}>Agent</th>
-                  <th style={{ textAlign: 'center' }}>Times</th>
+                  <th>Rank</th>
+                  <th>Agent</th>
+                  <th>Time</th>
                 </tr>
                 {names.map((item, index) => (
                   <tr key={index} >
-                    <td style={{
-                      paddingLeft: index >= 5 ? '30px' : '15px', // Increased padding for rows >= 5
-                      textAlign: 'left',
-                      borderTopLeftRadius: '20px',
-                      borderBottomLeftRadius: '20px',
-                    }}>
+                    <td>
                       {index < 5 ? (
                         rankBadges[index] && <img src={rankBadges[index]} className='rank-badge' alt={`rank${index + 1}`} />
                       ) : (
                         index + 1
                       )}
                     </td>
-                    <td style={{ width: '33%' }}>{item.name}</td>
-                    <td style={{ width: '33%', borderTopRightRadius: '20px', borderBottomRightRadius: '20px' }}>{item.time}</td>
+                    <td>{item.name}</td>
+                    <td>{item.time}</td>
                   </tr>
                 ))}
               </tbody>
