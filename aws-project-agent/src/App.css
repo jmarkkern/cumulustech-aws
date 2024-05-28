@@ -57,7 +57,7 @@
     grid-column: 1 / span 2;
   }
   p {
-    margin: 0;
+    margin: 6px 0 0 0;
   }
 }
 
@@ -85,20 +85,20 @@
 .agentTooltip {
   position: absolute;
   visibility: hidden;
-  background-color: #9BA3AC;
+  background-color: #37475A;
   font-size: 14px;
   color: white;
   border-radius: 10px;
   padding: 10px;
 }
 .agentTrophies .agentTooltip {
-  width: 250px;
-  transform: translate(125px, 35px);
+  width: 465px;
+  transform: translate(15px, 35px);
 }
 
 .agentMetric .agentTooltip {
-  width: 220px;
-  transform: translate(9px, 10px);
+  width: 210px;
+  transform: translate(15px, 10px);
 }
 
 .agentDashTitle {
