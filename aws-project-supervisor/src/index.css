@@ -226,7 +226,7 @@ h1 {
 
 /* Member Card  */
 .card {
-  border-radius: 15px;
+  border-radius: 10px;
   position: relative;
   padding: 25px 15px;
   background-color: #D7ECFF;
@@ -237,7 +237,7 @@ h1 {
 }
 
 .top {
-  border-radius: 15px 15px 0 0;
+  border-radius: 10px 10px 0 0;
   height: 100px;
   width: 100%;
   background-color: #37475A;
@@ -266,7 +266,7 @@ h1 {
 
 
 .img {
-  border-radius: 12%;
+  border-radius: 10px;
   border: 3px solid #FF9900;
   width: 130px;
   height: 130px;
@@ -279,6 +279,10 @@ h1 {
 .info {
   margin: 20px 0;
   color: #000000;
+}
+
+.metric-name {
+  font-size: 1.5em;
 }
 
 .metricSummary li {
@@ -303,7 +307,7 @@ h1 {
   right:70px;
   left:10px;
   margin-bottom:3%;
-  border-radius: 18px;
+  border-radius: 10px;
 }
 
 .memberStreaks::before {
@@ -397,6 +401,7 @@ h1 {
   color: gray;
   display: flex;
   border: 1px solid #9BA3AC;
+  border-radius: 10px;
   min-height: 300px;
   margin-right: 3%;
   margin-left: 3%;
@@ -414,14 +419,13 @@ h1 {
   display: grid;
   grid-template-rows: .35fr 1fr;
   border: #9BA3AC solid 1px;
+  border-radius: 10px;
   min-height: 300px;
   margin-right: 3%;
   margin-left: 3%;
   margin-top: 0%;
   margin-bottom: 2%;
-
   padding-top: 1%;
-
 }
 
 .topC {
@@ -455,7 +459,8 @@ h1 {
 
 #deleteChallenge{
   background-color: #fff;
-  border-color: rgb(218, 115, 115);
+  border-color: #FF9900;
+  border-radius: 15px;
 }
 
 
@@ -505,7 +510,7 @@ h1 {
     background-color: #fff;
     color: #000;
     border: #c3c3c3 .5px sold;
-    border-radius: 20px;
+    border-radius: 10px;
     min-height: 10px;
     padding-left: 2%;
     margin-left:10px;
@@ -895,6 +900,7 @@ h1 {
   color: gray;
   display: flex;
   border: 1px solid gray;
+  border-radius: 10px;
   min-height: 300px;
   margin-right: 3%;
   margin-left: 3%;

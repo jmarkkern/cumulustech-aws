@@ -1,11 +1,9 @@
 #emptyChallenges {
-  color: gray;
+  color: #9BA3AC;
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid #9BA3AC;
+  border-radius: 10px;
   min-height: 300px;
-  margin-right: 3%;
-  margin-left: 3%;
-  margin-top: 0%;
   justify-content: center;
   align-items: center;
 

@@ -58,12 +58,12 @@ function Membercard(props) {
           <div>
 
             <div className="rankIcons">
-              <h3>{metric.m_name}</h3>
-              {metric.rank === 1 && <Rank1Icon />}
-              {metric.rank === 2 && <Rank2Icon />}
-              {metric.rank === 3 && <Rank3Icon />}
-              {metric.rank === 4 && <Rank4Icon />}
-              {metric.rank === 5 && <Rank5Icon />}
+              <h3 className="metric-name">{metric.m_name}</h3>
+              {metric.rank == 1 && <Rank1Icon />}
+              {metric.rank == 2 && <Rank2Icon />}
+              {metric.rank == 3 && <Rank3Icon />}
+              {metric.rank == 4 && <Rank4Icon />}
+              {metric.rank == 5 && <Rank5Icon />}
               {metric.rank > 5 && <BronzeIcon number={metric.rank} />}
               <div className="memberStreaks">
                 <p id="currentStreak-top">Current Streak: {metric.currStreak} </p>
