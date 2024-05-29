@@ -1,30 +1,30 @@
 [
   {
     "active": true,
-    "name": "sdasd",
+    "name": "First Call Resolutioners",
     "trophy": "Customer Service Hero",
-    "descrip": "dasd",
-    "howToWin": "sdad",
+    "descrip": "Increase your individual and the team's first call resolution.",
+    "howToWin": "The team must achieve 100 first call resolutions this week.",
     "date": "May 28, 2024",
     "progressCurrent": 1,
     "progressTotal": 100
   },
   {
     "active": false,
-    "name": "dasda",
+    "name": "Super Sonic",
     "trophy": "Customer Service Hero",
-    "descrip": "dasd",
-    "howToWin": "asda",
+    "descrip": "Resolve customer problems in sonic speed.",
+    "howToWin": "Everyone in the team must reduce their average handle time.",
     "date": "May 28, 2024",
     "progressCurrent": 11,
     "progressTotal": 100
   },
   {
     "active": true,
-    "name": "zX",
-    "trophy": "dasd",
-    "descrip": "xZX",
-    "howToWin": "ZxZ",
+    "name": "Reach For The Stars",
+    "trophy": "Most Improved",
+    "descrip": "Try your hand at rising in the ranks this week.",
+    "howToWin": "Improve your metric numbers this week.",
     "date": "May 28, 2024",
     "progressCurrent": 85,
     "progressTotal": 100
