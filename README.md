@@ -1,9 +1,9 @@
 # AWS Gamified Call Center
-by CumulusTech: Emily Boo, Waynelle Ize-Iyamu, Jaime Markkern, Kevin Li, Namit Srivastava
+CumulusTech: Emily Boo, Waynelle Ize-Iyamu, Jaime Markkern, Kevin Li, Namit Srivastava<br />
 Sponsor: Rosa Thomas - Amazon Connect (AWS) Sr. Software Development Manager
 
 ## Overview
-This software was designed to enhance agents' performance and motivation through the implementation of gamification techniques in call centers utilizing Amazon Connect, fostering a spirit of healthy competition and collaboration within the work environment.
+This software was designed to enhance agents' performance and motivation through the implementation of gamification techniques in call centers utilizing Amazon Connect, fostering a spirit of healthy competition and collaboration within the work environment.<br />
 This project was developed using the React framework, for functionality, and Bootstrap, for material design.
 
 ## The Repository
